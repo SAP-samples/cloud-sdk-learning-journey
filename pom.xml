@@ -11,6 +11,11 @@
     <java.target.level>${java.source.level}</java.target.level>
   </properties>
   <dependencies>
+    <dependency>
+      <groupId>com.sap.cloud.sdk.s4hana</groupId>
+      <artifactId>s4hana-all</artifactId>
+      <version>4.2.0</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
