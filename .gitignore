@@ -8,7 +8,6 @@
 **/.classpath
 **/.idea
 **/*.iml
-**/.vscode
 **/node_modules
 **/.DS_Store
 .pipeline/commonPipelineEnvironment
