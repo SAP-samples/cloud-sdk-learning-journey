@@ -14,30 +14,27 @@ public class App {
     public static void main(String[] args) {
 
         // Create the destination class
-        HttpDestination destination = DefaultDestination.builder()
-                .property("Name", "SANDBOX")
-                .property("URL", "https://sandbox.api.sap.com/s4hanacloud")
-                .property("Type", "HTTP")
-                .property("Authentication", "NoAuthentication")
-                .build().asHttp();
+HttpDestination destination = DefaultDestination.builder()
+    .property("Name", "S4CLOUD")
+    .property("URL", "https://my000000.s4hana.ondemand.com")
+    .property("Type", "HTTP")
+    .property("Authentication", "BasicAuthentication")
+    .property("User", "ADDRESS_MANAGER_###")
+    .property("Password", "WelcomeToTheClouds1!")
+    .build().asHttp();
 
         // Preparing the query to the Business Partner service
         final BusinessPartnerService service =
                 new DefaultBusinessPartnerService();
         BusinessPartnerFluentHelper helper =
-                service.getAllBusinessPartner()
-                        .select(
-                                BusinessPartner.BUSINESS_PARTNER,
-                                BusinessPartner.LAST_NAME,
-                                BusinessPartner.FIRST_NAME)
-                        .filter(
-                                BusinessPartner.FIRST_NAME.ge("E")
-                                        .and(BusinessPartner.FIRST_NAME.lt("F")));
-
-        // Setting the API Key in the request header (required for the
-        // SAP API Business Hub sandbox system, not required for
-        // SAP S/4HANA Cloud).
-        helper.withHeader("apikey", ">>>YOUR APIKEY<<<");
+            service.getAllBusinessPartner()
+                .select(
+                    BusinessPartner.BUSINESS_PARTNER,
+                    BusinessPartner.LAST_NAME,
+                    BusinessPartner.FIRST_NAME)
+                .filter(
+                    BusinessPartner.FIRST_NAME.ge("E")
+                        .and(BusinessPartner.FIRST_NAME.lt("F")));
 
         // Running the query
         List<BusinessPartner> list = helper.executeRequest(destination);
