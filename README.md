@@ -7,11 +7,3 @@ Creating a minimal Hello World application, based on the Java language and the A
 Clone this git repository and select the current branch, then:
 1. In the left side bar, go to **Run and Debug**.
 2. Aside the **Launch App** configuration, choose **Start Debugging**.
-
-## Running the application in the *Command Line*
-Clone this git repository to a local folder, open the command line in the folder itself, then execute the following commands:
-
-```console
-mvn clean install
-java -jar target/app-1.0-SNAPSHOT.jar
-```
