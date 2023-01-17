@@ -10,5 +10,12 @@ The [Business Partner (A2X)](https://api.sap.com/api/API_BUSINESS_PARTNER/overvi
 ## Running the application in *Visual Studio Code* or *SAP Business Application Studio*
 Clone this git repository and select the current branch, then:
 1. In the **App.java** file, replace values for properties **URL**, **User** and **Password** with the ones created in the previous exercise.
+```java
+    .property("URL", "https://my000000.s4hana.ondemand.com")
+    .property("User", "ADDRESS_MANAGER_###")
+    .property("Password", "WelcomeToTheClouds1!")
+```
 2. In the left side bar, go to **Run and Debug**.
 3. Aside the **Launch App** configuration, choose **Start Debugging**.
+
+
