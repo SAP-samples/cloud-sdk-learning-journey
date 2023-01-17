@@ -9,5 +9,8 @@ The result is then printed to the console.
 ## Running the application in *Visual Studio Code* or *SAP Business Application Studio*
 Clone this git repository and select the current branch, then:
 1. In the **App.java** file, replace **>>>YOUR APIKEY<<<** with your API Key. To know your API Key, go to https://api.sap.com/api/API_BUSINESS_PARTNER/overview, then login and choose **Show API Key**. 
+```java
+        helper.withHeader("apikey", ">>>YOUR APIKEY<<<");
+```
 2. In the left side bar, go to **Run and Debug**.
 3. Aside the **Launch App** configuration, choose **Start Debugging**.
