@@ -8,7 +8,7 @@ Create a simple Java Program that uses SAP Cloud SDK to read the [Business Partn
 ## Running this application 
 In *Visual Studio Code* or *SAP Business Application Studio* ...
 1. Clone this git repository and select current branch
-2. In the **App.java** file, replace values for properties **URL**, **User** and **Password** with the ones created in the previous exercise.
+2. In the **App.java** file, replace values for properties **URL**, **User** and **Password** with the backend SAP API ones, created in the prerequisite exercise.
 ```java
     .property("URL", "https://my000000.s4hana.ondemand.com")
     .property("User", "ADDRESS_MANAGER_###")
