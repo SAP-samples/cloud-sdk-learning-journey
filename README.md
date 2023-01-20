@@ -14,5 +14,4 @@ In *Visual Studio Code* or *SAP Business Application Studio* ...
 ```java
         helper.withHeader("apikey", ">>>YOUR APIKEY<<<");
 ```
-3. In the left side bar, go to **Run and Debug**.
-4. Aside the **Launch App** configuration, choose **Start Debugging**.
+3. Choose F5 (Run &rarr; Start Debugging)
