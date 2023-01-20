@@ -1,4 +1,4 @@
-## SAP Learning Journey
+SAP Learning Journey
 # Develop Advanced Extensions with SAP Cloud SDK
 [see full learning journey](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk)
 
