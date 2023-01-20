@@ -1,6 +1,6 @@
 ## Learning.sap.com exercise
 # Querying SAP APIs in a Java program
-[see full exercise](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk/exercise-querying-sap-apis-in-a-java-program_c97a89ce-9ca9-4ad9-8037-3a155bcaca51)
+[see the full exercise](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk/exercise-querying-sap-apis-in-a-java-program_c97a89ce-9ca9-4ad9-8037-3a155bcaca51)
 
 ## Step 3
 Create a simple Java Program that uses SAP Cloud SDK to read the [Business Partner (A2X)](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) API from your SAP S/4HANA Cloud tenant. 
