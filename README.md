@@ -14,4 +14,8 @@ In *Visual Studio Code* or *SAP Business Application Studio* ...
 ```java
         helper.withHeader("apikey", ">>>YOUR APIKEY<<<");
 ```
-3. Choose F5 (Run &rarr; Start Debugging)
+3. Open a **Terminal** and run:
+```console
+mvn clean install
+```
+4. Choose **F5** (Run &rarr; Start Debugging)
