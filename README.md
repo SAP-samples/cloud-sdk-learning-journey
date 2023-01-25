@@ -10,4 +10,8 @@ Creating a minimal Hello World application, based on the Java language and the A
 In *Visual Studio Code* or *SAP Business Application Studio* ...
 
 1. Clone this git repository and select current branch.
-2. Choose F5 (Run &rarr; Start Debugging)
+2. Open a **Terminal** and run:
+```console
+mvn clean install
+```
+3. Choose **F5** (Run &rarr; Start Debugging)
