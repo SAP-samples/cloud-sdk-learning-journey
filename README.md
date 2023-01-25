@@ -1,4 +1,4 @@
-## Learning.sap.com exercise 
+Learning.sap.com exercise 
 # Querying SAP APIs in a Java program
 [see the full exercise](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk/exercise-querying-sap-apis-in-a-java-program_c97a89ce-9ca9-4ad9-8037-3a155bcaca51)
 
