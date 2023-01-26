@@ -7,7 +7,10 @@ Welcome to this repository for the learning journey *Develop Advanced Extensions
 As a starting point for your learning experience, we recommend you go to the full learning journey, published on [learning.sap.com](https://learning.sap.com) at the following link: [Develop Advanced Extensions with SAP Cloud SDK](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk).
 
 ## Requirements
-Within the full exercise documentation (on *learning.sap.com*) you will find individual exercise prerequisites, such as: other exercises to be executed, software to be installed on your laptop, information to be collected. 
+Within the full exercise documentation (on *learning.sap.com*) you will find individual exercise prerequisites, such as: 
+- exercises to be executed 
+- software to be installed on your laptop 
+- information to be collected. 
 
 ## Running the code examples
 Code examples are stored in repository branches other than *main*. Every branch contains specific instructions to run the example in [Visual Studio Code](https://code.visualstudio.com) or [SAP Business Application Studio](https://www.sap.com/products/technology-platform/business-application-studio.html).
