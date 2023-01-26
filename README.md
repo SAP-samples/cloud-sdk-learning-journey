@@ -1,13 +1,16 @@
 SAP Learning Journey
 # Develop Advanced Extensions with SAP Cloud SDK
 
-Welcome to this repository for the learning journey *Develop Advanced Extensions with SAP Cloud SDK*. We provide here code examples used in the learning journey exercises. Such examples are stored in repository branches other than *main*, including the instruction to run them.
+Welcome to this repository for the learning journey *Develop Advanced Extensions with SAP Cloud SDK*. We provide here code examples used in the learning journey exercises.
 
 ## Start the journey
-As a starting point for your learning experience, we recommend you go to the full learning journey, published on [learning.sap.com](https://learning.sap.com), at the following link: [Develop Advanced Extensions with SAP Cloud SDK](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk).
+As a starting point for your learning experience, we recommend you go to the full learning journey, published on [learning.sap.com](https://learning.sap.com) at the following link: [Develop Advanced Extensions with SAP Cloud SDK](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk).
 
 ## Requirements
-Within the full exercise documentation (on *learning.sap.com*) you will find individual exercise prerequisites, in terms of other exercises to be executed, software to be installed, information to be collected. 
+Within the full exercise documentation (on *learning.sap.com*) you will find individual exercise prerequisites, such as: other exercises to be executed, software to be installed on your laptop, information to be collected. 
+
+## Running the code examples
+Code examples are stored in repository branches other than *main*. Every branch contains specific instructions to run the example in [Visual Studio Code](https://code.visualstudio.com) or [SAP Business Application Studio](https://www.sap.com/products/technology-platform/business-application-studio.html).
 
 ## Contributing
 If you have suggestions on how to improve the tutorial, you're welcome to provide your input [here](https://github.com/SAP-samples/cloud-sdk-learning-journey/issues).
