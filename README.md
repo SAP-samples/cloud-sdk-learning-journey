@@ -1,4 +1,3 @@
-SAP Learning Journey
 # Develop Advanced Extensions with SAP Cloud SDK
 
 Welcome to this repository for the learning journey *Develop Advanced Extensions with SAP Cloud SDK*. We provide here code examples used in the learning journey exercises.
@@ -21,6 +20,6 @@ If you have suggestions on how to improve the tutorial, you're welcome to provid
 If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 
 ## License
-Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-sdk-learning-journey)](https://api.reuse.software/info/github.com/SAP-samples/cloud-sdk-learning-journey)
