@@ -3,7 +3,7 @@
 Welcome to this repository for the learning journey *Develop Advanced Extensions with SAP Cloud SDK*. We provide here code examples used in the learning journey exercises.
 
 ## Start the journey
-As a starting point for your learning experience, we recommend you go to the full learning journey, published on [learning.sap.com](https://learning.sap.com) at the following link: [Develop Advanced Extensions with SAP Cloud SDK](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk).
+As a starting point for your learning experience, we recommend you go to the full learning journey, published on [SAP Learning](https://learning.sap.com) at the following link: [Develop Advanced Extensions with SAP Cloud SDK](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk).
 
 ## Requirements
 Within the full exercise documentation (on *learning.sap.com*) you will find individual exercise prerequisites, such as: 
