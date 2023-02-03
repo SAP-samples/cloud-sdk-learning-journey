@@ -3,4 +3,29 @@ GET http://localhost:8080/hello
 
 
 ### GET getBusinessPartners
-GET http://localhost:8080/getBusinessPartners
+GET http://localhost:8080/businessPartners
+
+### GET getBusinessPartner
+GET http://localhost:8080/businessPartners/1003767
+
+
+### GET getBusinessPartner
+GET http://localhost:8080/businessPartners/9980001225
+
+
+### PUT updateBusinessPartner
+PUT http://localhost:8080/businessPartners/1003767
+Content-Type: application/json
+
+{
+    "name": "Kyle"
+}
+
+
+### PUT updateBusinessPartner
+PUT http://localhost:8080/businessPartners/9980001225
+Content-Type: application/json
+
+{
+    "name": "Kyle"
+}
