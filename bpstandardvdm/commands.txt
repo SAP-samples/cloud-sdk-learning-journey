@@ -1,0 +1,21 @@
+INITIALIZE:
+----------------------------------------------------------------------------------------
+
+mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.sdk.archetypes" "-DarchetypeArtifactId=scp-cf-spring" "-DarchetypeVersion=RELEASE" "-DartifactId=bpstandardvdm" "-DgroupId=com.sap.cloud.sdk.tutorial" "-Dpackage=com.sap.cloud.sdk.tutorial"
+
+
+
+BUILD & RUN:
+----------------------------------------------------------------------------------------
+
+mvn clean install -Dmaven.test.skip=true
+
+
+SETUP & DEPLOY:
+----------------------------------------------------------------------------------------
+
+cf create-service destination lite mydestination
+cf create-service xsuaa application myxsuaa
+
+mvn clean install -Dmaven.test.skip=true
+cf push
