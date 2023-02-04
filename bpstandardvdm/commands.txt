@@ -19,3 +19,4 @@ cf create-service xsuaa application myxsuaa
 
 mvn clean install -Dmaven.test.skip=true
 cf push
+cf set-env bpstandardvdm API_KEY <YOUR API KEY GOES HERE>

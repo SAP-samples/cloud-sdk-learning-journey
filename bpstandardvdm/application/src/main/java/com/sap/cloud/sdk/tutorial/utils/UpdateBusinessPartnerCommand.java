@@ -63,11 +63,14 @@ public class UpdateBusinessPartnerCommand {
                             BusinessPartner.IS_MALE, 
                             BusinessPartner.IS_FEMALE, 
                             BusinessPartner.CREATION_DATE)
-                    .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
+                    .withHeader(APIKEY_HEADER, System.getenv("API_KEY"))
                     .executeRequest(destination);
 
-            bp.setFirstName(businessPartner.FIRST_NAME.toString());
-            businessPartnerService.updateBusinessPartner(bp);
+            bp.setFirstName(businessPartner.getFirstName());
+            bp.setLastName(businessPartner.getLastName());
+            businessPartnerService
+                .updateBusinessPartner(bp)
+                .executeRequest(destination);
 
             return "Business Partner update succeeded...";
 

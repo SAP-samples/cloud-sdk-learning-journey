@@ -1,0 +1,11 @@
+#
+#Thu Feb 02 16:03:09 UTC 2023
+Type=HTTP
+TrustAll=true
+HTML5.DynamicDestination=true
+Authentication=NoAuthentication
+WebIDEUsage=apihub_catalog
+Name=mydestination
+WebIDEEnabled=true
+ProxyType=Internet
+URL=https\://sandbox.api.sap.com/s4hanacloud/

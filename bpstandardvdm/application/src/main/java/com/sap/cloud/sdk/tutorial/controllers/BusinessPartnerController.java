@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestination;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
 import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.datamodel.odata.helper.ModificationResponse;
 import com.sap.cloud.sdk.tutorial.utils.GetBusinessPartnerCommand;
@@ -33,12 +34,16 @@ public class BusinessPartnerController {
     private static final long serialVersionUID = 1L;
     private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerController.class);
 
-    private final HttpDestination destination = DefaultDestination.builder()
-                                                .property("Name", "mydestination")
-                                                .property("URL", "http://localhost:8081")
-                                                .property("Type", "HTTP")
-                                                .property("Authentication", "NoAuthentication")
-                                                .build().asHttp();
+
+    final String destinationName = "mydestination";
+    final HttpDestination destination = DestinationAccessor.getDestination(destinationName).asHttp();
+
+    // private final HttpDestination destination = DefaultDestination.builder()
+    //                                             .property("Name", "mydestination")
+    //                                             .property("URL", "http://localhost:8081")
+    //                                             .property("Type", "HTTP")
+    //                                             .property("Authentication", "NoAuthentication")
+    //                                             .build().asHttp();
 
     // private final HttpDestination destination = DefaultDestination.builder()
     //                                             .property("Name", "mydestination")

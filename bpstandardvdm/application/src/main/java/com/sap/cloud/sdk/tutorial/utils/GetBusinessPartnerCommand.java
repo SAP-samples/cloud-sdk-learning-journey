@@ -67,7 +67,7 @@ public class GetBusinessPartnerCommand {
                             BusinessPartner.IS_MALE, 
                             BusinessPartner.IS_FEMALE, 
                             BusinessPartner.CREATION_DATE)
-                    .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
+                    .withHeader(APIKEY_HEADER, System.getenv("API_KEY"))
                     .executeRequest(destination);
         } catch (ODataException e) {
             throw new ResilienceRuntimeException(e);
