@@ -18,7 +18,10 @@ PUT http://localhost:8080/businessPartners/1003767
 Content-Type: application/json
 
 {
-    "name": "Kyle"
+  "FirstName": "Kyle",
+  "IsFemale": true,
+  "IsMale": false,
+  "LastName": "Coe"
 }
 
 

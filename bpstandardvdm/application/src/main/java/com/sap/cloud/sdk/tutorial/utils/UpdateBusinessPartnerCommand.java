@@ -66,8 +66,11 @@ public class UpdateBusinessPartnerCommand {
                     .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
                     .executeRequest(destination);
 
-            bp.setFirstName(businessPartner.FIRST_NAME.toString());
-            businessPartnerService.updateBusinessPartner(bp);
+            bp.setFirstName(businessPartner.getFirstName());
+            bp.setLastName(businessPartner.getLastName());
+            businessPartnerService
+                .updateBusinessPartner(bp)
+                .executeRequest(destination);
 
             return "Business Partner update succeeded...";
 
