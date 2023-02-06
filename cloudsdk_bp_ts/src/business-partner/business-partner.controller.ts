@@ -8,9 +8,14 @@ export class BusinessPartnerController {
 
     @Get()
     async getBusinessPartners(): Promise<BusinessPartner[]> {
+
         return await this.businessPartnerService
             .getAllBusinessPartners()
             .catch(error => {
+
+                console.log("Error: ", error.message);
+                console.log("Error: ", error);
+
                 throw new HttpException(
                     `Failed to get business partners - ${error.message}`,
                     500

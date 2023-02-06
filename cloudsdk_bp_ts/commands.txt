@@ -24,3 +24,13 @@ ADDITIONAL PACKAGES:
 ----------------------------------------------------------------------------------------
 npm install @sap-cloud-sdk/http-client@next @sap-cloud-sdk/resilience @sap-cloud-sdk/odata-v2
 
+
+DEPLOY TO CF:
+----------------------------------------------------------------------------------------
+cf create-service destination lite mydestination
+cf create-service xsuaa application myxsuaa
+
+cf push
+
+cf set-env cloudsdk_bp_ts APIKEY <YOUR APIKEY GOES HERE>
+cf set-env cloudsdk_bp_ts DESTINATION_NAME mydestination

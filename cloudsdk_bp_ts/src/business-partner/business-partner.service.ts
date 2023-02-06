@@ -24,9 +24,7 @@ export class BusinessPartnerService {
                         .filter(businessPartnerApi.schema.BUSINESS_PARTNER_CATEGORY.equals("1"))
                         .top(10)
                         .addCustomHeaders({apiKey: process.env.APIKEY})
-                        .execute({
-                            url: process.env.URL
-                        });
+                        .execute({destinationName: process.env.DESTINATION_NAME});
     }
 
     async getBusinessPartnerById(id: string): Promise<BusinessPartner> {
@@ -49,7 +47,7 @@ export class BusinessPartnerService {
             .middleware(resilience({ timeout: 10000, circuitBreaker: true, retry: true }))
             .addCustomHeaders({ apikey: process.env.APIKEY })
             .execute({
-                url: process.env.URL
+                destinationName: process.env.DESTINATION_NAME
             });
     }
 
@@ -67,7 +65,7 @@ export class BusinessPartnerService {
             .middleware(resilience({ timeout: 10000, circuitBreaker: true, retry: true }))
             .addCustomHeaders({ apikey: process.env.APIKEY })
             .execute({
-                url: process.env.URL
+                destinationName: process.env.DESTINATION_NAME
             });
     }
 
@@ -85,7 +83,7 @@ export class BusinessPartnerService {
             .middleware(resilience({ timeout: 10000, circuitBreaker: true, retry: true }))
             .addCustomHeaders({ apikey: process.env.APIKEY })
             .execute({
-                url: process.env.URL
+                destinationName: process.env.DESTINATION_NAME
             });
     }
 
@@ -99,7 +97,7 @@ export class BusinessPartnerService {
             .middleware(resilience({ timeout: 10000, circuitBreaker: true, retry: true }))
             .addCustomHeaders({ apikey: process.env.APIKEY })
             .execute({
-                url: process.env.URL
+                destinationName: process.env.DESTINATION_NAME
             });
     }
 }
