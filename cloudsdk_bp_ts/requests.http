@@ -2,4 +2,30 @@
 GET http://localhost:8080/
 
 ### GET Business Partners
-http://localhost:8080/business-partner
+GET http://localhost:8080/business-partner
+
+### GET Business Partner
+GET http://localhost:8080/business-partner/1003764
+
+### POST Business Partner Address
+POST http://localhost:8080/business-partner/1003764/Address
+Content-Type: application/json;IEEE754Compatible=true
+
+{
+    "postalCode": "14469",
+    "cityName": "Potsdam",
+    "streetName": "Konrad-Zuse-Ring",
+    "houseNumber": "10"
+}
+
+### PUT Business Partner Address
+PUT http://localhost:8080/business-partner/1003764/Address/28238
+Content-Type: application/json;IEEE754Compatible=true
+
+{
+    "houseNumber": "123"
+}
+
+
+### DELETE Business Partner Address
+DELETE http://localhost:8080/business-partner/1003764/address/28248
