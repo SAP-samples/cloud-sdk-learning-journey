@@ -13,7 +13,7 @@ export class BusinessPartnerService {
         return await businessPartnerApi
                         .requestBuilder()
                         .getAll()
-                        .middleware(resilience({ timeout: 10000, circuitBreaker: true, retry: true }))
+                        .middleware(resilience({ timeout: 30000, circuitBreaker: true, retry: true }))
                         .select(
                             businessPartnerApi.schema.BUSINESS_PARTNER,
                             businessPartnerApi.schema.FIRST_NAME,
