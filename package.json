@@ -12,5 +12,8 @@
     "@types/node": "^18.13.0",
     "rimraf": "^4.1.2",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@sap/cloud-sdk-vdm-business-partner-service": "^2.1.0"
   }
 }
