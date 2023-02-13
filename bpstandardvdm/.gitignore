@@ -1,5 +1,6 @@
 **/credentials.*
 **/target/
+/s4hana_pipeline
 **/*.log
 **/*.trc
 **/.settings/
@@ -7,6 +8,7 @@
 **/.classpath
 **/.idea
 **/*.iml
+**/.vscode
 **/node_modules
 **/.DS_Store
-**/.vscode
+.pipeline/commonPipelineEnvironment
