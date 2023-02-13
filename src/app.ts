@@ -1,16 +1,27 @@
 import {
   BusinessPartner,
   businessPartnerService,
-} from "services/business-partner-service";
+} from "../services/business-partner-service";
 
 async function getAllBusinessPartners(): Promise<BusinessPartner[]> {
-  const { businessPartnerApi } = businessPartnerService();
+  const { businessPartnerApi, businessPartnerAddressApi } =
+    businessPartnerService();
   return await businessPartnerApi
     .requestBuilder()
     .getAll()
-    .top(5)
+    .select(
+      businessPartnerApi.schema.BUSINESS_PARTNER,
+      businessPartnerApi.schema.FIRST_NAME,
+      businessPartnerApi.schema.LAST_NAME,
+      businessPartnerApi.schema.TO_BUSINESS_PARTNER_ADDRESS.select(
+        businessPartnerAddressApi.schema.ADDRESS_ID,
+        businessPartnerAddressApi.schema.COUNTRY,
+        businessPartnerAddressApi.schema.CITY_NAME
+      )
+    )
+    .filter(businessPartnerApi.schema.LAST_NAME.equals("Smith"))
     .addCustomHeaders({
-      APIKey: "",
+      APIKey: "H6aeNlgso5S5f2sSJbFFoRZXqQembSEW",
     })
     .execute({
       url: "https://sandbox.api.sap.com/s4hanacloud",

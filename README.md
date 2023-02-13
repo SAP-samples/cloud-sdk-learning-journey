@@ -61,4 +61,5 @@ npm install -D @sap-cloud-sdk/generator
 npx generate-odata-client --inputDir service-specifications --outputDir services
 ```
 
-Check under services the generated files.
+Run the app and see the queried results.
+Don't forget to build the app on new changes.
