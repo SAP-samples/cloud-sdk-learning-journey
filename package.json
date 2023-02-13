@@ -1,0 +1,16 @@
+{
+  "name": "ts-cloud-sdk",
+  "version": "0.0.1",
+  "description": "Setup project for SAP Cloud SDK exercise",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "start": "node dist/app"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "@types/node": "^18.13.0",
+    "rimraf": "^4.1.2"
+  }
+}
