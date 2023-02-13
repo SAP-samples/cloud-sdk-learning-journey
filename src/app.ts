@@ -21,7 +21,7 @@ async function getAllBusinessPartners(): Promise<BusinessPartner[]> {
     )
     .filter(businessPartnerApi.schema.LAST_NAME.equals("Smith"))
     .addCustomHeaders({
-      APIKey: "H6aeNlgso5S5f2sSJbFFoRZXqQembSEW",
+      APIKey: "YOUR_API_KEY", // from https://api.sap.com/api/API_BUSINESS_PARTNER/overview
     })
     .execute({
       url: "https://sandbox.api.sap.com/s4hanacloud",
