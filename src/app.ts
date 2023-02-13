@@ -1,14 +1,14 @@
 import {
   BusinessPartner,
   businessPartnerService,
-} from "@sap/cloud-sdk-vdm-business-partner-service";
+} from "services/business-partner-service";
 
 async function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   const { businessPartnerApi } = businessPartnerService();
   return await businessPartnerApi
     .requestBuilder()
     .getAll()
-    .top(1)
+    .top(5)
     .addCustomHeaders({
       APIKey: "",
     })
