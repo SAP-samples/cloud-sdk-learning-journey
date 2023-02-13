@@ -27,6 +27,7 @@ public class BusinessPartnerController {
     @RequestMapping( value = "/getBusinessPartners", method = RequestMethod.GET )
     public String getBusinessPartners() {
 
+        // Destination to the local Mock Server
         final HttpDestination destination = DefaultDestination.builder()
                                                 .property("Name", "mydestination")
                                                 .property("URL", "http://localhost:8081")
@@ -34,11 +35,22 @@ public class BusinessPartnerController {
                                                 .property("Authentication", "NoAuthentication")
                                                 .build().asHttp();
 
+        // Destination to the SAP API Business Hub Sandbox
         // final HttpDestination destination = DefaultDestination.builder()
         //                                         .property("Name", "mydestination")
         //                                         .property("URL", "https://sandbox.api.sap.com/s4hanacloud")
         //                                         .property("Type", "HTTP")
         //                                         .property("Authentication", "NoAuthentication")
+        //                                         .build().asHttp();
+
+        // Destination to a SAP S/4HANA Cloud (public edition) tenant
+        //final HttpDestination destination = DefaultDestination.builder()
+        //                                         .property("Name", "mydestination")
+        //                                         .property("URL", "https://my######.s4hana.ondemand.com")
+        //                                         .property("Type", "HTTP")
+        //                                         .property("Authentication", "BasicAuthentication")
+        //                                         .property("User", "ADDRESS_MANAGER_###")
+        //                                         .property("Password", "WelcomeToTheClouds1!")
         //                                         .build().asHttp();
 
         final List<BusinessPartner> businessPartners =
