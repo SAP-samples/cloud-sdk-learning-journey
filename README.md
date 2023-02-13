@@ -32,4 +32,33 @@ npm run build
 npm run start
 ```
 
-Check in console the Hello World message.
+3. Install SAP Cloud SDK dependencies
+
+```sh
+npm install -D @sap-cloud-sdk/generator
+```
+
+## Generating services
+
+1. Create a folder service-specifications at the root of the project.
+2. Download the EDMX file for the business partner service from [SAP API Business Hub](<https://api.sap.com/odata/1.0/catalog.svc/APIContent.APIs('API_BUSINESS_PARTNER')/$value?type=EDMX&attachment=true>)
+3. Copy the API_BUSINESS_PARTNER.edmx file into the service-specifications folder
+4. Create a service-mapping.json file in the service-specifications folder with the following content:
+
+```json
+{
+  "API_BUSINESS_PARTNER": {
+    "directoryName": "business-partner-service",
+    "servicePath": "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
+    "npmPackageName": "business-partner-service"
+  }
+}
+```
+
+4. Generate the BusinessPartner service
+
+```sh
+npx generate-odata-client --inputDir service-specifications --outputDir services
+```
+
+Check under services the generated files.

@@ -9,8 +9,8 @@
   },
   "devDependencies": {
     "@sap-cloud-sdk/generator": "^2.14.0",
-    "typescript": "^4.9.5",
     "@types/node": "^18.13.0",
-    "rimraf": "^4.1.2"
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.5"
   }
 }
