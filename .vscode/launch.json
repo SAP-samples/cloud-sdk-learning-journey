@@ -1,0 +1,37 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Application - sandbox",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "java-adman-spring-application",
+            "env": {
+                "S4_URL": "https://sandbox.api.sap.com/s4hanacloud",
+                "S4_APIKEY": ">>>YOUR API KEY<<<"
+            }
+        },{
+            "type": "java",
+            "name": "Launch Application - s4cloud",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "java-adman-spring-application",
+            "env": {
+                "S4_URL": "https://my000000.s4hana.ondemand.com",
+                "S4_USERNAME": "ADDRESS_MANAGER_###",
+                "S4_PASSWORD": "WelcomeToTheClouds1!"
+            }
+        },
+        {
+            "type": "java",
+            "name": "Attach Application",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 5005,
+            "sourcePaths": [
+                "${workspaceFolder}"
+            ]
+        }
+    ]
+}
