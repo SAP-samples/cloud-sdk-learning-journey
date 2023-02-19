@@ -22,15 +22,16 @@ npx generate-odata-client --inputDir service-specifications --outputDir services
 
 ADDITIONAL PACKAGES:
 ----------------------------------------------------------------------------------------
-npm install @sap-cloud-sdk/http-client@next @sap-cloud-sdk/resilience @sap-cloud-sdk/odata-v2
+npm install @sap-cloud-sdk/http-client@next @sap-cloud-sdk/resilience@next @sap-cloud-sdk/odata-v2@next @sap-cloud-sdk/connectivity@next
 
 
 DEPLOY TO CF:
 ----------------------------------------------------------------------------------------
 cf create-service destination lite mydestination
 cf create-service xsuaa application myxsuaa
+cf create-service xsuaa application mysecurexsuaa -c xs-security.json
 
 cf push
 
 cf set-env cloudsdk_bp_ts APIKEY <YOUR APIKEY GOES HERE>
-cf set-env cloudsdk_bp_ts DESTINATION_NAME mydestination
+cf set-env cloudsdk_bp_ts DESTINATION_NAME bpdestination

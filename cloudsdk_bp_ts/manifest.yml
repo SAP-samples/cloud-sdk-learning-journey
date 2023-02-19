@@ -8,4 +8,4 @@ applications:
     random-route: true
     services:
       - mydestination
-      - myxsuaa
+      - mysecurexsuaa

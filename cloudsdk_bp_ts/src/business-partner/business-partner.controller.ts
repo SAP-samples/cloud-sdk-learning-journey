@@ -9,6 +9,9 @@ export class BusinessPartnerController {
     @Get()
     async getBusinessPartners(): Promise<BusinessPartner[]> {
 
+        // const myJwt = retrieveJwt(request);
+        // console.log("JWT Token: ", myJwt);
+
         return await this.businessPartnerService
             .getAllBusinessPartners()
             .catch(error => {

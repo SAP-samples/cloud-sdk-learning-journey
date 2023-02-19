@@ -24,6 +24,7 @@
     "@nestjs/config": "^2.3.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@sap-cloud-sdk/connectivity": "^3.0.0-20230219023108.0",
     "@sap-cloud-sdk/http-client": "^3.0.0-20230206023130.0",
     "@sap-cloud-sdk/odata-v2": "^3.0.0-20230206023130.0",
     "@sap-cloud-sdk/resilience": "^3.0.0-20230206023130.0",

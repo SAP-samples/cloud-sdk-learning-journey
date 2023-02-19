@@ -6,6 +6,7 @@ import {
 } from '../../services/business-partner-service';
 import { resilience } from '@sap-cloud-sdk/resilience';
 
+
 const { businessPartnerApi, businessPartnerAddressApi } = businessPartnerService();
 
 @Injectable()
