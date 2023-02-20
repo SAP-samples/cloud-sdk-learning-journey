@@ -13,6 +13,9 @@ const { businessPartnerApi, businessPartnerAddressApi } = businessPartnerService
 export class BusinessPartnerService {
     async getAllBusinessPartners(): Promise<BusinessPartner[]> {
 
+        console.log("APIKEY: ", process.env.APIKEY);
+        console.log("URL: ", process.env.URL);
+
         return await businessPartnerApi
                         .requestBuilder()
                         .getAll()
@@ -25,7 +28,8 @@ export class BusinessPartnerService {
                         .filter(businessPartnerApi.schema.BUSINESS_PARTNER_CATEGORY.equals("1"))
                         .top(10)
                         .addCustomHeaders({apiKey: process.env.APIKEY})
-                        .execute({destinationName: process.env.DESTINATION_NAME});
+                        // .execute({destinationName: process.env.DESTINATION_NAME});
+                        .execute({url: process.env.URL});
     }
 
     async getBusinessPartnerById(id: string): Promise<BusinessPartner> {

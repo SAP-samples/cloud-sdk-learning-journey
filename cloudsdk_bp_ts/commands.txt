@@ -17,7 +17,7 @@ GENERATE SERVICE ENTITIES:
 ----------------------------------------------------------------------------------------
 npm install -D @sap-cloud-sdk/generator@next
 npm i @nestjs/config
-npx generate-odata-client --inputDir service-specifications --outputDir services
+npx generate-odata-client --input service-specifications --outputDir services
 
 
 ADDITIONAL PACKAGES:
@@ -35,3 +35,4 @@ cf push
 
 cf set-env cloudsdk_bp_ts APIKEY <YOUR APIKEY GOES HERE>
 cf set-env cloudsdk_bp_ts DESTINATION_NAME bpdestination
+cf set-env cloudsdk_bp_ts URL https://sandbox.api.sap.com/s4hanacloud/
