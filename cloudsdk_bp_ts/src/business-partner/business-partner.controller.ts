@@ -1,16 +1,18 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpException, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, HttpException, Param, Post, Put, Req } from '@nestjs/common';
 import { BusinessPartner, BusinessPartnerAddress } from '../../services/business-partner-service';
 import { BusinessPartnerService } from './business-partner.service';
+import { Request } from 'express';
+import { retrieveJwt } from '@sap-cloud-sdk/connectivity';
 
-@Controller('business-partner')
+@Controller('/business-partner')
 export class BusinessPartnerController {
     constructor(private businessPartnerService: BusinessPartnerService) { }
 
     @Get()
-    async getBusinessPartners(): Promise<BusinessPartner[]> {
+    async getBusinessPartners(@Req() request: Request): Promise<BusinessPartner[]> {
 
-        // const myJwt = retrieveJwt(request);
-        // console.log("JWT Token: ", myJwt);
+        const myJwt = retrieveJwt(request);
+        console.log("JWT Token: ", myJwt);
 
         return await this.businessPartnerService
             .getAllBusinessPartners()

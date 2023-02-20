@@ -1,39 +1,7 @@
 {
-    "xsappname": "cloudsdk_bp_ts-dev",
-    "tenant-mode": "dedicated",
-    "scopes": [
-      {
-        "name": "$XSAPPNAME.Admin",
-        "description": "Admin"
-      }
-    ],
-    "attributes": [],
-    "role-templates": [
-      {
-        "name": "Admin",
-        "description": "generated",
-        "scope-references": [
-          "$XSAPPNAME.Admin"
-        ],
-        "attribute-references": []
-      }
-    ],
-    "role-collections": [
-        {
-          "name": "TypeScript NestJS SDK Tutorial Admin",
-          "description": "Admin",
-          "role-template-references": ["$XSAPPNAME.Admin"]
-        }
-      ],
-    "oauth2-configuration": {
-      "token-validity": 3600,
-      "redirect-uris": [
-        "http://localhost:5000/**",
-        "http://localhost:4004/**",
-        "https://*.*.applicationstudio.cloud.sap/**",
-        "https://*.cfapps.*.hana.ondemand.com/**",
-        "https://*.authentication.*.hana.ondemand.com/**"
-      ]
-    }
-  }
-  
+  "xsappname": "cloudsdk_bp_ts-dev",
+  "tenant-mode": "dedicated",
+  "scopes": [],
+  "attributes": [],
+  "role-templates": []
+}
