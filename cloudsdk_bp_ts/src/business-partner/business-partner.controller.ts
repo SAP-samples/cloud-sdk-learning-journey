@@ -3,6 +3,7 @@ import { BusinessPartner, BusinessPartnerAddress } from '../../services/business
 import { BusinessPartnerService } from './business-partner.service';
 import { Request } from 'express';
 import { retrieveJwt } from '@sap-cloud-sdk/connectivity';
+import jwt_decode from "jwt-decode";
 
 @Controller('/business-partner')
 export class BusinessPartnerController {
@@ -13,6 +14,8 @@ export class BusinessPartnerController {
 
         const myJwt = retrieveJwt(request);
         console.log("JWT Token: ", myJwt);
+        let decoded = jwt_decode(myJwt);
+        console.log("Decoded JWT token: ", decoded);
 
         return await this.businessPartnerService
             .getAllBusinessPartners()
