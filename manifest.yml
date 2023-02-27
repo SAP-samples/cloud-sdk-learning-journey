@@ -1,0 +1,27 @@
+---
+# My Cloud Foundry applications
+instances: 1
+applications:
+  - name: cloudsdk_bp_ts
+    random-route: true
+    memory: 1024M
+    path: ./cloudsdk_bp_ts/
+    buildpack: nodejs_buildpack  
+    command: npm run start:prod
+    services:
+      - mydestination
+      - mysecurexsuaa
+  - name: approuter
+    random-route: true
+    memory: 512M
+    path: ./approuter/
+    buildpack: nodejs_buildpack
+    command: npm run start
+    services:
+    # Use the same services across approuter and application
+      - mysecurexsuaa
+    env:
+      TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.us10.sap.hana.ondemand.com'
+      # Replace the url with your application's url
+      # Example: sdk-sample-application.<REPLACE-ME>
+      destinations: '[{"name":"backend", "url":"https://cloudsdk_bp_ts-active-dingo-cc.cfapps.us10.hana.ondemand.com", "forwardAuthToken": true}]'
