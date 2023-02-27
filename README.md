@@ -38,28 +38,28 @@ npm run start
 npm install -D @sap-cloud-sdk/generator
 ```
 
-## Generating services
+## Setup mock server for Business Partner
 
-1. Create a folder service-specifications at the root of the project.
-2. Download the EDMX file for the business partner service from [SAP API Business Hub](<https://api.sap.com/odata/1.0/catalog.svc/APIContent.APIs('API_BUSINESS_PARTNER')/$value?type=EDMX&attachment=true>)
-3. Copy the API_BUSINESS_PARTNER.edmx file into the service-specifications folder
-4. Create a service-mapping.json file in the service-specifications folder with the following content:
+1. Setup the OData Mock Service for the business partner API following [these steps](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server)
+2. run the mock server locally
+3. In our app service, we will not use anymose the Sanbox URL, and we will change it to the local one
 
-```json
-{
-  "API_BUSINESS_PARTNER": {
-    "directoryName": "business-partner-service",
-    "servicePath": "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
-    "npmPackageName": "business-partner-service"
-  }
-}
-```
+Remove:
 
-4. Generate the BusinessPartner service
+`url: "https://sandbox.api.sap.com/s4hanacloud"`
+
+and
+
+`.addCustomHeaders({
+      APIKey: "YOUR_API_KEY",
+    })`
+
+and add instead
 
 ```sh
-npx generate-odata-client --inputDir service-specifications --outputDir services
+url: "http://localhost:3000/"
 ```
 
 Run the app and see the queried results.
 Don't forget to build the app on new changes.
+Now, we can see the results are coming from our mock server and not anymore from Sandbox API.
