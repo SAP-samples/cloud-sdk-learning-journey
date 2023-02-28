@@ -25,6 +25,14 @@ export class BusinessPartnerController {
         let decodedJWT = jwt_decode(myJWT);
         console.log("Decoded JWT token: ", decodedJWT);
 
+        if (!decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Admin") 
+            && !decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Viewer")) {
+            throw new HttpException(
+                `Admin or Viewer role is needed for GET operation.  Authorization failed...`,
+                401
+            );
+        }
+
         return await this.businessPartnerService
             .getAllBusinessPartners()
             .catch(error => {
@@ -48,6 +56,17 @@ export class BusinessPartnerController {
         if (!myJWT) {
             throw new HttpException(
                 `Missing JWT token.  Authentication failed...`,
+                401
+            );
+        }
+
+        let decodedJWT = jwt_decode(myJWT);
+        console.log("Decoded JWT token: ", decodedJWT);
+
+        if (!decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Admin") 
+            && !decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Viewer")) {
+            throw new HttpException(
+                `Admin or Viewer role is needed for GET operation.  Authorization failed...`,
                 401
             );
         }
