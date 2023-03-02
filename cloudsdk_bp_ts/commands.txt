@@ -15,14 +15,14 @@ nest g service business-partner
 
 GENERATE SERVICE ENTITIES:
 ----------------------------------------------------------------------------------------
-npm install -D @sap-cloud-sdk/generator@next
+npm install -D @sap-cloud-sdk/generator
 npm i @nestjs/config
-npx generate-odata-client --inputDir service-specifications --outputDir services
+npx generate-odata-client --input service-specifications --outputDir services --optionsPerService service-specifications/options-per-service.json
 
 
 ADDITIONAL PACKAGES:
 ----------------------------------------------------------------------------------------
-npm install @sap-cloud-sdk/http-client@next @sap-cloud-sdk/resilience @sap-cloud-sdk/odata-v2
+npm install @sap-cloud-sdk/http-client @sap-cloud-sdk/resilience @sap-cloud-sdk/odata-v2
 
 
 DEPLOY TO CF:
