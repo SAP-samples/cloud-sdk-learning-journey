@@ -204,10 +204,24 @@ export class CustomerSalesAreaApi<
       true,
       true
     >;
+    CREDIT_CONTROL_AREA: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
     CURRENCY: OrderableEdmTypeField<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
       'Edm.String',
+      true,
+      true
+    >;
+    CUST_IS_RLVT_FOR_SETTLMT_MGMT: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
       true,
       true
     >;
@@ -232,6 +246,13 @@ export class CustomerSalesAreaApi<
       true,
       true
     >;
+    CUSTOMER_IS_REBATE_RELEVANT: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
     CUSTOMER_PAYMENT_TERMS: OrderableEdmTypeField<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
@@ -247,6 +268,13 @@ export class CustomerSalesAreaApi<
       true
     >;
     CUSTOMER_PRICING_PROCEDURE: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    CUST_PROD_PROPOSAL_PROCEDURE: OrderableEdmTypeField<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
       'Edm.String',
@@ -295,6 +323,27 @@ export class CustomerSalesAreaApi<
       true,
       true
     >;
+    INCOTERMS_SUP_CHN_LOC_1_ADDL_UUID: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Guid',
+      true,
+      true
+    >;
+    INCOTERMS_SUP_CHN_LOC_2_ADDL_UUID: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Guid',
+      true,
+      true
+    >;
+    INCOTERMS_SUP_CHN_DVTG_LOC_ADDL_UUID: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Guid',
+      true,
+      true
+    >;
     DELETION_INDICATOR: OrderableEdmTypeField<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
@@ -306,6 +355,13 @@ export class CustomerSalesAreaApi<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
       'Edm.String',
+      true,
+      true
+    >;
+    INSP_SBST_HAS_NO_TIME_OR_QUANTITY: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
       true,
       true
     >;
@@ -323,6 +379,20 @@ export class CustomerSalesAreaApi<
       true,
       true
     >;
+    MANUAL_INVOICE_MAINT_IS_RELEVANT: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
+    MAX_NMBR_OF_PARTIAL_DELIVERY: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Decimal',
+      true,
+      true
+    >;
     ORDER_COMBINATION_IS_ALLOWED: OrderableEdmTypeField<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
@@ -334,6 +404,13 @@ export class CustomerSalesAreaApi<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
       'Edm.String',
+      true,
+      true
+    >;
+    OVERDELIV_TOLRTD_LMT_RATIO_IN_PCT: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Decimal',
       true,
       true
     >;
@@ -351,7 +428,28 @@ export class CustomerSalesAreaApi<
       true,
       true
     >;
+    PRODUCT_UNIT_GROUP: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    PROOF_OF_DELIVERY_TIME_VALUE: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Decimal',
+      true,
+      true
+    >;
     SALES_GROUP: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    SALES_ITEM_PROPOSAL: OrderableEdmTypeField<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
       'Edm.String',
@@ -372,6 +470,20 @@ export class CustomerSalesAreaApi<
       true,
       true
     >;
+    SLS_DOC_IS_RLVT_FOR_PROOF_OF_DELIV: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
+    SLS_UNLMTD_OVRDELIV_IS_ALLWD: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
     SUPPLYING_PLANT: OrderableEdmTypeField<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
@@ -383,6 +495,13 @@ export class CustomerSalesAreaApi<
       CustomerSalesArea<DeSerializers>,
       DeSerializersT,
       'Edm.String',
+      true,
+      true
+    >;
+    UNDERDELIV_TOLRTD_LMT_RATIO_IN_PCT: OrderableEdmTypeField<
+      CustomerSalesArea<DeSerializers>,
+      DeSerializersT,
+      'Edm.Decimal',
       true,
       true
     >;
@@ -565,12 +684,30 @@ export class CustomerSalesAreaApi<
           true
         ),
         /**
+         * Static representation of the {@link creditControlArea} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        CREDIT_CONTROL_AREA: fieldBuilder.buildEdmTypeField(
+          'CreditControlArea',
+          'Edm.String',
+          true
+        ),
+        /**
          * Static representation of the {@link currency} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
         CURRENCY: fieldBuilder.buildEdmTypeField(
           'Currency',
           'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link custIsRlvtForSettlmtMgmt} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        CUST_IS_RLVT_FOR_SETTLMT_MGMT: fieldBuilder.buildEdmTypeField(
+          'CustIsRlvtForSettlmtMgmt',
+          'Edm.Boolean',
           true
         ),
         /**
@@ -601,6 +738,15 @@ export class CustomerSalesAreaApi<
           true
         ),
         /**
+         * Static representation of the {@link customerIsRebateRelevant} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        CUSTOMER_IS_REBATE_RELEVANT: fieldBuilder.buildEdmTypeField(
+          'CustomerIsRebateRelevant',
+          'Edm.Boolean',
+          true
+        ),
+        /**
          * Static representation of the {@link customerPaymentTerms} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
@@ -624,6 +770,15 @@ export class CustomerSalesAreaApi<
          */
         CUSTOMER_PRICING_PROCEDURE: fieldBuilder.buildEdmTypeField(
           'CustomerPricingProcedure',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link custProdProposalProcedure} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        CUST_PROD_PROPOSAL_PROCEDURE: fieldBuilder.buildEdmTypeField(
+          'CustProdProposalProcedure',
           'Edm.String',
           true
         ),
@@ -682,6 +837,33 @@ export class CustomerSalesAreaApi<
           true
         ),
         /**
+         * Static representation of the {@link incotermsSupChnLoc1AddlUuid} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INCOTERMS_SUP_CHN_LOC_1_ADDL_UUID: fieldBuilder.buildEdmTypeField(
+          'IncotermsSupChnLoc1AddlUUID',
+          'Edm.Guid',
+          true
+        ),
+        /**
+         * Static representation of the {@link incotermsSupChnLoc2AddlUuid} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INCOTERMS_SUP_CHN_LOC_2_ADDL_UUID: fieldBuilder.buildEdmTypeField(
+          'IncotermsSupChnLoc2AddlUUID',
+          'Edm.Guid',
+          true
+        ),
+        /**
+         * Static representation of the {@link incotermsSupChnDvtgLocAddlUuid} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INCOTERMS_SUP_CHN_DVTG_LOC_ADDL_UUID: fieldBuilder.buildEdmTypeField(
+          'IncotermsSupChnDvtgLocAddlUUID',
+          'Edm.Guid',
+          true
+        ),
+        /**
          * Static representation of the {@link deletionIndicator} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
@@ -697,6 +879,15 @@ export class CustomerSalesAreaApi<
         INCOTERMS_TRANSFER_LOCATION: fieldBuilder.buildEdmTypeField(
           'IncotermsTransferLocation',
           'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link inspSbstHasNoTimeOrQuantity} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INSP_SBST_HAS_NO_TIME_OR_QUANTITY: fieldBuilder.buildEdmTypeField(
+          'InspSbstHasNoTimeOrQuantity',
+          'Edm.Boolean',
           true
         ),
         /**
@@ -718,6 +909,24 @@ export class CustomerSalesAreaApi<
           true
         ),
         /**
+         * Static representation of the {@link manualInvoiceMaintIsRelevant} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        MANUAL_INVOICE_MAINT_IS_RELEVANT: fieldBuilder.buildEdmTypeField(
+          'ManualInvoiceMaintIsRelevant',
+          'Edm.Boolean',
+          true
+        ),
+        /**
+         * Static representation of the {@link maxNmbrOfPartialDelivery} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        MAX_NMBR_OF_PARTIAL_DELIVERY: fieldBuilder.buildEdmTypeField(
+          'MaxNmbrOfPartialDelivery',
+          'Edm.Decimal',
+          true
+        ),
+        /**
          * Static representation of the {@link orderCombinationIsAllowed} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
@@ -733,6 +942,15 @@ export class CustomerSalesAreaApi<
         ORDER_IS_BLOCKED_FOR_CUSTOMER: fieldBuilder.buildEdmTypeField(
           'OrderIsBlockedForCustomer',
           'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link overdelivTolrtdLmtRatioInPct} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        OVERDELIV_TOLRTD_LMT_RATIO_IN_PCT: fieldBuilder.buildEdmTypeField(
+          'OverdelivTolrtdLmtRatioInPct',
+          'Edm.Decimal',
           true
         ),
         /**
@@ -754,11 +972,38 @@ export class CustomerSalesAreaApi<
           true
         ),
         /**
+         * Static representation of the {@link productUnitGroup} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        PRODUCT_UNIT_GROUP: fieldBuilder.buildEdmTypeField(
+          'ProductUnitGroup',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link proofOfDeliveryTimeValue} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        PROOF_OF_DELIVERY_TIME_VALUE: fieldBuilder.buildEdmTypeField(
+          'ProofOfDeliveryTimeValue',
+          'Edm.Decimal',
+          true
+        ),
+        /**
          * Static representation of the {@link salesGroup} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
         SALES_GROUP: fieldBuilder.buildEdmTypeField(
           'SalesGroup',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link salesItemProposal} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        SALES_ITEM_PROPOSAL: fieldBuilder.buildEdmTypeField(
+          'SalesItemProposal',
           'Edm.String',
           true
         ),
@@ -781,6 +1026,24 @@ export class CustomerSalesAreaApi<
           true
         ),
         /**
+         * Static representation of the {@link slsDocIsRlvtForProofOfDeliv} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        SLS_DOC_IS_RLVT_FOR_PROOF_OF_DELIV: fieldBuilder.buildEdmTypeField(
+          'SlsDocIsRlvtForProofOfDeliv',
+          'Edm.Boolean',
+          true
+        ),
+        /**
+         * Static representation of the {@link slsUnlmtdOvrdelivIsAllwd} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        SLS_UNLMTD_OVRDELIV_IS_ALLWD: fieldBuilder.buildEdmTypeField(
+          'SlsUnlmtdOvrdelivIsAllwd',
+          'Edm.Boolean',
+          true
+        ),
+        /**
          * Static representation of the {@link supplyingPlant} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
@@ -796,6 +1059,15 @@ export class CustomerSalesAreaApi<
         SALES_DISTRICT: fieldBuilder.buildEdmTypeField(
           'SalesDistrict',
           'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link underdelivTolrtdLmtRatioInPct} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        UNDERDELIV_TOLRTD_LMT_RATIO_IN_PCT: fieldBuilder.buildEdmTypeField(
+          'UnderdelivTolrtdLmtRatioInPct',
+          'Edm.Decimal',
           true
         ),
         /**

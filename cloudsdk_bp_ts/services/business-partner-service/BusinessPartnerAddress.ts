@@ -45,7 +45,7 @@ export class BusinessPartnerAddress<
   /**
    * Default url path for the according service.
    */
-  static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
+  static _defaultBasePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * All key fields of the BusinessPartnerAddress entity
    */
@@ -94,7 +94,7 @@ export class BusinessPartnerAddress<
    */
   additionalStreetSuffixName?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Address time zone.
+   * Address Time Zone.
    * Maximum length: 6.
    * @nullable
    */

@@ -27,7 +27,7 @@ export class CustSlsAreaAddrDepdntInfo<
   /**
    * Default url path for the according service.
    */
-  static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
+  static _defaultBasePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * All key fields of the CustSlsAreaAddrDepdntInfo entity
    */
@@ -82,6 +82,21 @@ export class CustSlsAreaAddrDepdntInfo<
    */
   incotermsLocation2?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Location UUID.
+   * @nullable
+   */
+  incotermsSupChnLoc1AddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  /**
+   * Location UUID.
+   * @nullable
+   */
+  incotermsSupChnLoc2AddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  /**
+   * Location UUID.
+   * @nullable
+   */
+  incotermsSupChnDvtgLocAddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  /**
    * Customer delivery block (sales area).
    * Maximum length: 2.
    * @nullable
@@ -134,6 +149,9 @@ export interface CustSlsAreaAddrDepdntInfoType<
   incotermsClassification?: DeserializedType<T, 'Edm.String'> | null;
   incotermsLocation1?: DeserializedType<T, 'Edm.String'> | null;
   incotermsLocation2?: DeserializedType<T, 'Edm.String'> | null;
+  incotermsSupChnLoc1AddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  incotermsSupChnLoc2AddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  incotermsSupChnDvtgLocAddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
   deliveryIsBlocked?: DeserializedType<T, 'Edm.String'> | null;
   salesOffice?: DeserializedType<T, 'Edm.String'> | null;
   salesGroup?: DeserializedType<T, 'Edm.String'> | null;

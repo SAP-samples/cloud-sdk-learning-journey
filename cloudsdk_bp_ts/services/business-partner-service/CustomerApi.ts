@@ -275,6 +275,76 @@ export class CustomerApi<
       true,
       true
     >;
+    FREE_DEFINED_ATTRIBUTE_01: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    FREE_DEFINED_ATTRIBUTE_02: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    FREE_DEFINED_ATTRIBUTE_03: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    FREE_DEFINED_ATTRIBUTE_04: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    FREE_DEFINED_ATTRIBUTE_05: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    FREE_DEFINED_ATTRIBUTE_06: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    FREE_DEFINED_ATTRIBUTE_07: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    FREE_DEFINED_ATTRIBUTE_08: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    FREE_DEFINED_ATTRIBUTE_09: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    FREE_DEFINED_ATTRIBUTE_10: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
     NF_PARTNER_IS_NATURAL_PERSON: OrderableEdmTypeField<
       Customer<DeSerializers>,
       DeSerializersT,
@@ -360,6 +430,20 @@ export class CustomerApi<
       true
     >;
     INTERNATIONAL_LOCATION_NUMBER_1: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    INTERNATIONAL_LOCATION_NUMBER_2: OrderableEdmTypeField<
+      Customer<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    INTERNATIONAL_LOCATION_NUMBER_3: OrderableEdmTypeField<
       Customer<DeSerializers>,
       DeSerializersT,
       'Edm.String',
@@ -634,6 +718,96 @@ export class CustomerApi<
           true
         ),
         /**
+         * Static representation of the {@link freeDefinedAttribute01} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_01: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute01',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link freeDefinedAttribute02} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_02: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute02',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link freeDefinedAttribute03} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_03: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute03',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link freeDefinedAttribute04} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_04: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute04',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link freeDefinedAttribute05} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_05: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute05',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link freeDefinedAttribute06} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_06: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute06',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link freeDefinedAttribute07} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_07: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute07',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link freeDefinedAttribute08} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_08: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute08',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link freeDefinedAttribute09} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_09: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute09',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link freeDefinedAttribute10} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        FREE_DEFINED_ATTRIBUTE_10: fieldBuilder.buildEdmTypeField(
+          'FreeDefinedAttribute10',
+          'Edm.String',
+          true
+        ),
+        /**
          * Static representation of the {@link nfPartnerIsNaturalPerson} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
@@ -747,6 +921,24 @@ export class CustomerApi<
          */
         INTERNATIONAL_LOCATION_NUMBER_1: fieldBuilder.buildEdmTypeField(
           'InternationalLocationNumber1',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link internationalLocationNumber2} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INTERNATIONAL_LOCATION_NUMBER_2: fieldBuilder.buildEdmTypeField(
+          'InternationalLocationNumber2',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link internationalLocationNumber3} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INTERNATIONAL_LOCATION_NUMBER_3: fieldBuilder.buildEdmTypeField(
+          'InternationalLocationNumber3',
           'Edm.String',
           true
         ),

@@ -10,6 +10,11 @@ import { AddressPhoneNumberApi } from './AddressPhoneNumberApi';
 import { BpAddrDepdntIntlLocNumberApi } from './BpAddrDepdntIntlLocNumberApi';
 import { BpContactToAddressApi } from './BpContactToAddressApi';
 import { BpContactToFuncAndDeptApi } from './BpContactToFuncAndDeptApi';
+import { BpCreditWorthinessApi } from './BpCreditWorthinessApi';
+import { BpFinancialServicesExtnApi } from './BpFinancialServicesExtnApi';
+import { BpFinancialServicesReportingApi } from './BpFinancialServicesReportingApi';
+import { BpFiscalYearInformationApi } from './BpFiscalYearInformationApi';
+import { BpRelationshipApi } from './BpRelationshipApi';
 import { BuPaAddressUsageApi } from './BuPaAddressUsageApi';
 import { BuPaIdentificationApi } from './BuPaIdentificationApi';
 import { BuPaIndustryApi } from './BuPaIndustryApi';
@@ -17,6 +22,7 @@ import { BusinessPartnerApi } from './BusinessPartnerApi';
 import { BusinessPartnerAddressApi } from './BusinessPartnerAddressApi';
 import { BusinessPartnerBankApi } from './BusinessPartnerBankApi';
 import { BusinessPartnerContactApi } from './BusinessPartnerContactApi';
+import { BusinessPartnerRatingApi } from './BusinessPartnerRatingApi';
 import { BusinessPartnerRoleApi } from './BusinessPartnerRoleApi';
 import { BusinessPartnerTaxNumberApi } from './BusinessPartnerTaxNumberApi';
 import { BusPartAddrDepdntTaxNmbrApi } from './BusPartAddrDepdntTaxNmbrApi';
@@ -179,6 +185,35 @@ class BusinessPartnerService<
     return this.initApi('bpContactToFuncAndDeptApi', BpContactToFuncAndDeptApi);
   }
 
+  get bpCreditWorthinessApi(): BpCreditWorthinessApi<DeSerializersT> {
+    return this.initApi('bpCreditWorthinessApi', BpCreditWorthinessApi);
+  }
+
+  get bpFinancialServicesExtnApi(): BpFinancialServicesExtnApi<DeSerializersT> {
+    return this.initApi(
+      'bpFinancialServicesExtnApi',
+      BpFinancialServicesExtnApi
+    );
+  }
+
+  get bpFinancialServicesReportingApi(): BpFinancialServicesReportingApi<DeSerializersT> {
+    return this.initApi(
+      'bpFinancialServicesReportingApi',
+      BpFinancialServicesReportingApi
+    );
+  }
+
+  get bpFiscalYearInformationApi(): BpFiscalYearInformationApi<DeSerializersT> {
+    return this.initApi(
+      'bpFiscalYearInformationApi',
+      BpFiscalYearInformationApi
+    );
+  }
+
+  get bpRelationshipApi(): BpRelationshipApi<DeSerializersT> {
+    return this.initApi('bpRelationshipApi', BpRelationshipApi);
+  }
+
   get buPaAddressUsageApi(): BuPaAddressUsageApi<DeSerializersT> {
     return this.initApi('buPaAddressUsageApi', BuPaAddressUsageApi);
   }
@@ -194,11 +229,20 @@ class BusinessPartnerService<
   get businessPartnerApi(): BusinessPartnerApi<DeSerializersT> {
     const api = this.initApi('businessPartnerApi', BusinessPartnerApi);
     const linkedApis = [
+      this.initApi('bpCreditWorthinessApi', BpCreditWorthinessApi),
+      this.initApi(
+        'bpFinancialServicesReportingApi',
+        BpFinancialServicesReportingApi
+      ),
+      this.initApi('bpFiscalYearInformationApi', BpFiscalYearInformationApi),
+      this.initApi('bpRelationshipApi', BpRelationshipApi),
       this.initApi('buPaIdentificationApi', BuPaIdentificationApi),
       this.initApi('buPaIndustryApi', BuPaIndustryApi),
+      this.initApi('bpFinancialServicesExtnApi', BpFinancialServicesExtnApi),
       this.initApi('businessPartnerAddressApi', BusinessPartnerAddressApi),
       this.initApi('businessPartnerBankApi', BusinessPartnerBankApi),
       this.initApi('businessPartnerContactApi', BusinessPartnerContactApi),
+      this.initApi('businessPartnerRatingApi', BusinessPartnerRatingApi),
       this.initApi('businessPartnerRoleApi', BusinessPartnerRoleApi),
       this.initApi('businessPartnerTaxNumberApi', BusinessPartnerTaxNumberApi),
       this.initApi('busPartAddrDepdntTaxNmbrApi', BusPartAddrDepdntTaxNmbrApi),
@@ -245,6 +289,10 @@ class BusinessPartnerService<
     ];
     api._addNavigationProperties(linkedApis);
     return api;
+  }
+
+  get businessPartnerRatingApi(): BusinessPartnerRatingApi<DeSerializersT> {
+    return this.initApi('businessPartnerRatingApi', BusinessPartnerRatingApi);
   }
 
   get businessPartnerRoleApi(): BusinessPartnerRoleApi<DeSerializersT> {

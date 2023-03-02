@@ -41,7 +41,7 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
   /**
    * Default url path for the according service.
    */
-  static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
+  static _defaultBasePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * All key fields of the CustomerSalesArea entity
    */
@@ -95,11 +95,22 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    */
   completeDeliveryIsDefined?: DeserializedType<T, 'Edm.Boolean'> | null;
   /**
+   * Credit Control Area.
+   * Maximum length: 4.
+   * @nullable
+   */
+  creditControlArea?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * Currency.
    * Maximum length: 5.
    * @nullable
    */
   currency?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Indicator: Relevant for Settlement Management.
+   * @nullable
+   */
+  custIsRlvtForSettlmtMgmt?: DeserializedType<T, 'Edm.Boolean'> | null;
   /**
    * Customer classification (ABC analysis).
    * Maximum length: 2.
@@ -119,6 +130,11 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    */
   customerGroup?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Indicator: Customer Is Rebate-Relevant.
+   * @nullable
+   */
+  customerIsRebateRelevant?: DeserializedType<T, 'Edm.Boolean'> | null;
+  /**
    * Terms of Payment Key.
    * Maximum length: 4.
    * @nullable
@@ -136,6 +152,12 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    * @nullable
    */
   customerPricingProcedure?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Customer procedure for product proposal.
+   * Maximum length: 2.
+   * @nullable
+   */
+  custProdProposalProcedure?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Customer delivery block (sales area).
    * Maximum length: 2.
@@ -173,6 +195,21 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    */
   incotermsLocation1?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Location UUID.
+   * @nullable
+   */
+  incotermsSupChnLoc1AddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  /**
+   * Location UUID.
+   * @nullable
+   */
+  incotermsSupChnLoc2AddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  /**
+   * Location UUID.
+   * @nullable
+   */
+  incotermsSupChnDvtgLocAddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  /**
    * Deletion flag for customer (sales level).
    * @nullable
    */
@@ -183,6 +220,11 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    * @nullable
    */
   incotermsTransferLocation?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Relevant for price determination ID.
+   * @nullable
+   */
+  inspSbstHasNoTimeOrQuantity?: DeserializedType<T, 'Edm.Boolean'> | null;
   /**
    * Invoice Dates (Calendar Identification).
    * Maximum length: 2.
@@ -196,6 +238,16 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    */
   itemOrderProbabilityInPercent?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Manual Invoice Maintenance.
+   * @nullable
+   */
+  manualInvoiceMaintIsRelevant?: DeserializedType<T, 'Edm.Boolean'> | null;
+  /**
+   * Maximum Number of Partial Deliveries Allowed Per Item.
+   * @nullable
+   */
+  maxNmbrOfPartialDelivery?: DeserializedType<T, 'Edm.Decimal'> | null;
+  /**
    * Order Combination Indicator.
    * @nullable
    */
@@ -206,6 +258,11 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    * @nullable
    */
   orderIsBlockedForCustomer?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Overdelivery Tolerance.
+   * @nullable
+   */
+  overdelivTolrtdLmtRatioInPct?: DeserializedType<T, 'Edm.Decimal'> | null;
   /**
    * Partial Delivery at Item Level.
    * Maximum length: 1.
@@ -219,11 +276,28 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    */
   priceListType?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Unit of Measure Group.
+   * Maximum length: 4.
+   * @nullable
+   */
+  productUnitGroup?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Timeframe for Confirmation of POD.
+   * @nullable
+   */
+  proofOfDeliveryTimeValue?: DeserializedType<T, 'Edm.Decimal'> | null;
+  /**
    * Sales Group.
    * Maximum length: 3.
    * @nullable
    */
   salesGroup?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Item proposal.
+   * Maximum length: 10.
+   * @nullable
+   */
+  salesItemProposal?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Sales Office.
    * Maximum length: 4.
@@ -237,6 +311,16 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    */
   shippingCondition?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Relevant for POD processing.
+   * @nullable
+   */
+  slsDocIsRlvtForProofOfDeliv?: DeserializedType<T, 'Edm.Boolean'> | null;
+  /**
+   * Unlimited Overdelivery Allowed.
+   * @nullable
+   */
+  slsUnlmtdOvrdelivIsAllwd?: DeserializedType<T, 'Edm.Boolean'> | null;
+  /**
    * Delivering Plant (Own or External).
    * Maximum length: 4.
    * @nullable
@@ -248,6 +332,11 @@ export class CustomerSalesArea<T extends DeSerializers = DefaultDeSerializers>
    * @nullable
    */
   salesDistrict?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Underdelivery Tolerance.
+   * @nullable
+   */
+  underdelivTolrtdLmtRatioInPct?: DeserializedType<T, 'Edm.Decimal'> | null;
   /**
    * Invoice List Schedule (calendar identification).
    * Maximum length: 2.
@@ -335,32 +424,49 @@ export interface CustomerSalesAreaType<
   authorizationGroup?: DeserializedType<T, 'Edm.String'> | null;
   billingIsBlockedForCustomer?: DeserializedType<T, 'Edm.String'> | null;
   completeDeliveryIsDefined?: DeserializedType<T, 'Edm.Boolean'> | null;
+  creditControlArea?: DeserializedType<T, 'Edm.String'> | null;
   currency?: DeserializedType<T, 'Edm.String'> | null;
+  custIsRlvtForSettlmtMgmt?: DeserializedType<T, 'Edm.Boolean'> | null;
   customerAbcClassification?: DeserializedType<T, 'Edm.String'> | null;
   customerAccountAssignmentGroup?: DeserializedType<T, 'Edm.String'> | null;
   customerGroup?: DeserializedType<T, 'Edm.String'> | null;
+  customerIsRebateRelevant?: DeserializedType<T, 'Edm.Boolean'> | null;
   customerPaymentTerms?: DeserializedType<T, 'Edm.String'> | null;
   customerPriceGroup?: DeserializedType<T, 'Edm.String'> | null;
   customerPricingProcedure?: DeserializedType<T, 'Edm.String'> | null;
+  custProdProposalProcedure?: DeserializedType<T, 'Edm.String'> | null;
   deliveryIsBlockedForCustomer?: DeserializedType<T, 'Edm.String'> | null;
   deliveryPriority?: DeserializedType<T, 'Edm.String'> | null;
   incotermsClassification?: DeserializedType<T, 'Edm.String'> | null;
   incotermsLocation2?: DeserializedType<T, 'Edm.String'> | null;
   incotermsVersion?: DeserializedType<T, 'Edm.String'> | null;
   incotermsLocation1?: DeserializedType<T, 'Edm.String'> | null;
+  incotermsSupChnLoc1AddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  incotermsSupChnLoc2AddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
+  incotermsSupChnDvtgLocAddlUuid?: DeserializedType<T, 'Edm.Guid'> | null;
   deletionIndicator?: DeserializedType<T, 'Edm.Boolean'> | null;
   incotermsTransferLocation?: DeserializedType<T, 'Edm.String'> | null;
+  inspSbstHasNoTimeOrQuantity?: DeserializedType<T, 'Edm.Boolean'> | null;
   invoiceDate?: DeserializedType<T, 'Edm.String'> | null;
   itemOrderProbabilityInPercent?: DeserializedType<T, 'Edm.String'> | null;
+  manualInvoiceMaintIsRelevant?: DeserializedType<T, 'Edm.Boolean'> | null;
+  maxNmbrOfPartialDelivery?: DeserializedType<T, 'Edm.Decimal'> | null;
   orderCombinationIsAllowed?: DeserializedType<T, 'Edm.Boolean'> | null;
   orderIsBlockedForCustomer?: DeserializedType<T, 'Edm.String'> | null;
+  overdelivTolrtdLmtRatioInPct?: DeserializedType<T, 'Edm.Decimal'> | null;
   partialDeliveryIsAllowed?: DeserializedType<T, 'Edm.String'> | null;
   priceListType?: DeserializedType<T, 'Edm.String'> | null;
+  productUnitGroup?: DeserializedType<T, 'Edm.String'> | null;
+  proofOfDeliveryTimeValue?: DeserializedType<T, 'Edm.Decimal'> | null;
   salesGroup?: DeserializedType<T, 'Edm.String'> | null;
+  salesItemProposal?: DeserializedType<T, 'Edm.String'> | null;
   salesOffice?: DeserializedType<T, 'Edm.String'> | null;
   shippingCondition?: DeserializedType<T, 'Edm.String'> | null;
+  slsDocIsRlvtForProofOfDeliv?: DeserializedType<T, 'Edm.Boolean'> | null;
+  slsUnlmtdOvrdelivIsAllwd?: DeserializedType<T, 'Edm.Boolean'> | null;
   supplyingPlant?: DeserializedType<T, 'Edm.String'> | null;
   salesDistrict?: DeserializedType<T, 'Edm.String'> | null;
+  underdelivTolrtdLmtRatioInPct?: DeserializedType<T, 'Edm.Decimal'> | null;
   invoiceListSchedule?: DeserializedType<T, 'Edm.String'> | null;
   exchangeRateType?: DeserializedType<T, 'Edm.String'> | null;
   additionalCustomerGroup1?: DeserializedType<T, 'Edm.String'> | null;

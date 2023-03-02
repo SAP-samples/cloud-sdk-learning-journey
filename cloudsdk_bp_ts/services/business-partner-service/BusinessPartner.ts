@@ -11,10 +11,27 @@ import {
 } from '@sap-cloud-sdk/odata-v2';
 import type { BusinessPartnerApi } from './BusinessPartnerApi';
 import {
+  BpCreditWorthiness,
+  BpCreditWorthinessType
+} from './BpCreditWorthiness';
+import {
+  BpFinancialServicesReporting,
+  BpFinancialServicesReportingType
+} from './BpFinancialServicesReporting';
+import {
+  BpFiscalYearInformation,
+  BpFiscalYearInformationType
+} from './BpFiscalYearInformation';
+import { BpRelationship, BpRelationshipType } from './BpRelationship';
+import {
   BuPaIdentification,
   BuPaIdentificationType
 } from './BuPaIdentification';
 import { BuPaIndustry, BuPaIndustryType } from './BuPaIndustry';
+import {
+  BpFinancialServicesExtn,
+  BpFinancialServicesExtnType
+} from './BpFinancialServicesExtn';
 import {
   BusinessPartnerAddress,
   BusinessPartnerAddressType
@@ -27,6 +44,10 @@ import {
   BusinessPartnerContact,
   BusinessPartnerContactType
 } from './BusinessPartnerContact';
+import {
+  BusinessPartnerRating,
+  BusinessPartnerRatingType
+} from './BusinessPartnerRating';
 import {
   BusinessPartnerRole,
   BusinessPartnerRoleType
@@ -56,7 +77,7 @@ export class BusinessPartner<T extends DeSerializers = DefaultDeSerializers>
   /**
    * Default url path for the according service.
    */
-  static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
+  static _defaultBasePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * All key fields of the BusinessPartner entity
    */
@@ -142,7 +163,7 @@ export class BusinessPartner<T extends DeSerializers = DefaultDeSerializers>
    */
   creationTime?: DeserializedType<T, 'Edm.Time'> | null;
   /**
-   * First name of business partner (person).
+   * First Name of Business Partner (Person).
    * Maximum length: 40.
    * @nullable
    */
@@ -221,7 +242,7 @@ export class BusinessPartner<T extends DeSerializers = DefaultDeSerializers>
    */
   lastChangedByUser?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Last name of business partner (person).
+   * Last Name of Business Partner (Person).
    * Maximum length: 40.
    * @nullable
    */
@@ -455,6 +476,22 @@ export class BusinessPartner<T extends DeSerializers = DefaultDeSerializers>
    */
   tradingPartner?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * One-to-one navigation property to the {@link BpCreditWorthiness} entity.
+   */
+  toBpCreditWorthiness?: BpCreditWorthiness<T> | null;
+  /**
+   * One-to-one navigation property to the {@link BpFinancialServicesReporting} entity.
+   */
+  toBpFinServicesReporting?: BpFinancialServicesReporting<T> | null;
+  /**
+   * One-to-many navigation property to the {@link BpFiscalYearInformation} entity.
+   */
+  toBpFiscalYearInformation!: BpFiscalYearInformation<T>[];
+  /**
+   * One-to-many navigation property to the {@link BpRelationship} entity.
+   */
+  toBpRelationship!: BpRelationship<T>[];
+  /**
    * One-to-many navigation property to the {@link BuPaIdentification} entity.
    */
   toBuPaIdentification!: BuPaIdentification<T>[];
@@ -462,6 +499,10 @@ export class BusinessPartner<T extends DeSerializers = DefaultDeSerializers>
    * One-to-many navigation property to the {@link BuPaIndustry} entity.
    */
   toBuPaIndustry!: BuPaIndustry<T>[];
+  /**
+   * One-to-one navigation property to the {@link BpFinancialServicesExtn} entity.
+   */
+  toBusinessPartner?: BpFinancialServicesExtn<T> | null;
   /**
    * One-to-many navigation property to the {@link BusinessPartnerAddress} entity.
    */
@@ -474,6 +515,10 @@ export class BusinessPartner<T extends DeSerializers = DefaultDeSerializers>
    * One-to-many navigation property to the {@link BusinessPartnerContact} entity.
    */
   toBusinessPartnerContact!: BusinessPartnerContact<T>[];
+  /**
+   * One-to-many navigation property to the {@link BusinessPartnerRating} entity.
+   */
+  toBusinessPartnerRating!: BusinessPartnerRating<T>[];
   /**
    * One-to-many navigation property to the {@link BusinessPartnerRole} entity.
    */
@@ -571,11 +616,17 @@ export interface BusinessPartnerType<
   lastNameSecondPrefix?: DeserializedType<T, 'Edm.String'> | null;
   initials?: DeserializedType<T, 'Edm.String'> | null;
   tradingPartner?: DeserializedType<T, 'Edm.String'> | null;
+  toBpCreditWorthiness?: BpCreditWorthinessType<T> | null;
+  toBpFinServicesReporting?: BpFinancialServicesReportingType<T> | null;
+  toBpFiscalYearInformation: BpFiscalYearInformationType<T>[];
+  toBpRelationship: BpRelationshipType<T>[];
   toBuPaIdentification: BuPaIdentificationType<T>[];
   toBuPaIndustry: BuPaIndustryType<T>[];
+  toBusinessPartner?: BpFinancialServicesExtnType<T> | null;
   toBusinessPartnerAddress: BusinessPartnerAddressType<T>[];
   toBusinessPartnerBank: BusinessPartnerBankType<T>[];
   toBusinessPartnerContact: BusinessPartnerContactType<T>[];
+  toBusinessPartnerRating: BusinessPartnerRatingType<T>[];
   toBusinessPartnerRole: BusinessPartnerRoleType<T>[];
   toBusinessPartnerTax: BusinessPartnerTaxNumberType<T>[];
   toBusPartAddrDepdntTaxNmbr: BusPartAddrDepdntTaxNmbrType<T>[];

@@ -142,6 +142,13 @@ export class SupplierPurchasingOrgApi<
       false,
       true
     >;
+    AUTOMATIC_EVALUATED_RCPT_SETTLMT: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
     CALCULATION_SCHEMA_GROUP_CODE: OrderableEdmTypeField<
       SupplierPurchasingOrg<DeSerializers>,
       DeSerializersT,
@@ -150,6 +157,13 @@ export class SupplierPurchasingOrgApi<
       true
     >;
     DELETION_INDICATOR: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
+    EVALD_RECEIPT_SETTLEMENT_IS_ACTIVE: OrderableEdmTypeField<
       SupplierPurchasingOrg<DeSerializers>,
       DeSerializersT,
       'Edm.Boolean',
@@ -191,7 +205,42 @@ export class SupplierPurchasingOrgApi<
       true,
       true
     >;
+    INCOTERMS_SUP_CHN_LOC_1_ADDL_UUID: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Guid',
+      true,
+      true
+    >;
+    INCOTERMS_SUP_CHN_LOC_2_ADDL_UUID: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Guid',
+      true,
+      true
+    >;
+    INCOTERMS_SUP_CHN_DVTG_LOC_ADDL_UUID: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Guid',
+      true,
+      true
+    >;
+    INTRASTAT_CRS_BORDER_TR_MODE: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
     INVOICE_IS_GOODS_RECEIPT_BASED: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
+    INVOICE_IS_MM_SERVICE_ENTRY_BASED: OrderableEdmTypeField<
       SupplierPurchasingOrg<DeSerializers>,
       DeSerializersT,
       'Edm.Boolean',
@@ -219,7 +268,28 @@ export class SupplierPurchasingOrgApi<
       true,
       true
     >;
+    PLANNING_CYCLE: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
     PRICING_DATE_CONTROL: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    PROD_STOCK_AND_SLS_DATA_TRANSF_PRFL: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    PRODUCT_UNIT_GROUP: OrderableEdmTypeField<
       SupplierPurchasingOrg<DeSerializers>,
       DeSerializersT,
       'Edm.String',
@@ -254,6 +324,13 @@ export class SupplierPurchasingOrgApi<
       true,
       true
     >;
+    ROUNDING_PROFILE: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
     SHIPPING_CONDITION: OrderableEdmTypeField<
       SupplierPurchasingOrg<DeSerializers>,
       DeSerializersT,
@@ -261,7 +338,42 @@ export class SupplierPurchasingOrgApi<
       true,
       true
     >;
+    SUPLR_DISCOUNT_IN_KIND_IS_GRANTED: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
+    SUPLR_INVC_REVAL_IS_ALLOWED: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
+    SUPLR_IS_RLVT_FOR_SETTLMT_MGMT: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
+    SUPLR_PURG_ORG_IS_RLVT_FOR_PRICE_DETN: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.Boolean',
+      true,
+      true
+    >;
     SUPPLIER_ABC_CLASSIFICATION_CODE: OrderableEdmTypeField<
+      SupplierPurchasingOrg<DeSerializers>,
+      DeSerializersT,
+      'Edm.String',
+      true,
+      true
+    >;
+    SUPPLIER_ACCOUNT_NUMBER: OrderableEdmTypeField<
       SupplierPurchasingOrg<DeSerializers>,
       DeSerializersT,
       'Edm.String',
@@ -354,6 +466,15 @@ export class SupplierPurchasingOrgApi<
           false
         ),
         /**
+         * Static representation of the {@link automaticEvaluatedRcptSettlmt} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        AUTOMATIC_EVALUATED_RCPT_SETTLMT: fieldBuilder.buildEdmTypeField(
+          'AutomaticEvaluatedRcptSettlmt',
+          'Edm.Boolean',
+          true
+        ),
+        /**
          * Static representation of the {@link calculationSchemaGroupCode} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
@@ -368,6 +489,15 @@ export class SupplierPurchasingOrgApi<
          */
         DELETION_INDICATOR: fieldBuilder.buildEdmTypeField(
           'DeletionIndicator',
+          'Edm.Boolean',
+          true
+        ),
+        /**
+         * Static representation of the {@link evaldReceiptSettlementIsActive} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        EVALD_RECEIPT_SETTLEMENT_IS_ACTIVE: fieldBuilder.buildEdmTypeField(
+          'EvaldReceiptSettlementIsActive',
           'Edm.Boolean',
           true
         ),
@@ -417,11 +547,56 @@ export class SupplierPurchasingOrgApi<
           true
         ),
         /**
+         * Static representation of the {@link incotermsSupChnLoc1AddlUuid} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INCOTERMS_SUP_CHN_LOC_1_ADDL_UUID: fieldBuilder.buildEdmTypeField(
+          'IncotermsSupChnLoc1AddlUUID',
+          'Edm.Guid',
+          true
+        ),
+        /**
+         * Static representation of the {@link incotermsSupChnLoc2AddlUuid} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INCOTERMS_SUP_CHN_LOC_2_ADDL_UUID: fieldBuilder.buildEdmTypeField(
+          'IncotermsSupChnLoc2AddlUUID',
+          'Edm.Guid',
+          true
+        ),
+        /**
+         * Static representation of the {@link incotermsSupChnDvtgLocAddlUuid} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INCOTERMS_SUP_CHN_DVTG_LOC_ADDL_UUID: fieldBuilder.buildEdmTypeField(
+          'IncotermsSupChnDvtgLocAddlUUID',
+          'Edm.Guid',
+          true
+        ),
+        /**
+         * Static representation of the {@link intrastatCrsBorderTrMode} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INTRASTAT_CRS_BORDER_TR_MODE: fieldBuilder.buildEdmTypeField(
+          'IntrastatCrsBorderTrMode',
+          'Edm.String',
+          true
+        ),
+        /**
          * Static representation of the {@link invoiceIsGoodsReceiptBased} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
         INVOICE_IS_GOODS_RECEIPT_BASED: fieldBuilder.buildEdmTypeField(
           'InvoiceIsGoodsReceiptBased',
+          'Edm.Boolean',
+          true
+        ),
+        /**
+         * Static representation of the {@link invoiceIsMmServiceEntryBased} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INVOICE_IS_MM_SERVICE_ENTRY_BASED: fieldBuilder.buildEdmTypeField(
+          'InvoiceIsMMServiceEntryBased',
           'Edm.Boolean',
           true
         ),
@@ -453,11 +628,38 @@ export class SupplierPurchasingOrgApi<
           true
         ),
         /**
+         * Static representation of the {@link planningCycle} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        PLANNING_CYCLE: fieldBuilder.buildEdmTypeField(
+          'PlanningCycle',
+          'Edm.String',
+          true
+        ),
+        /**
          * Static representation of the {@link pricingDateControl} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
         PRICING_DATE_CONTROL: fieldBuilder.buildEdmTypeField(
           'PricingDateControl',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link prodStockAndSlsDataTransfPrfl} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        PROD_STOCK_AND_SLS_DATA_TRANSF_PRFL: fieldBuilder.buildEdmTypeField(
+          'ProdStockAndSlsDataTransfPrfl',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link productUnitGroup} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        PRODUCT_UNIT_GROUP: fieldBuilder.buildEdmTypeField(
+          'ProductUnitGroup',
           'Edm.String',
           true
         ),
@@ -498,6 +700,15 @@ export class SupplierPurchasingOrgApi<
           true
         ),
         /**
+         * Static representation of the {@link roundingProfile} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        ROUNDING_PROFILE: fieldBuilder.buildEdmTypeField(
+          'RoundingProfile',
+          'Edm.String',
+          true
+        ),
+        /**
          * Static representation of the {@link shippingCondition} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
@@ -507,11 +718,56 @@ export class SupplierPurchasingOrgApi<
           true
         ),
         /**
+         * Static representation of the {@link suplrDiscountInKindIsGranted} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        SUPLR_DISCOUNT_IN_KIND_IS_GRANTED: fieldBuilder.buildEdmTypeField(
+          'SuplrDiscountInKindIsGranted',
+          'Edm.Boolean',
+          true
+        ),
+        /**
+         * Static representation of the {@link suplrInvcRevalIsAllowed} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        SUPLR_INVC_REVAL_IS_ALLOWED: fieldBuilder.buildEdmTypeField(
+          'SuplrInvcRevalIsAllowed',
+          'Edm.Boolean',
+          true
+        ),
+        /**
+         * Static representation of the {@link suplrIsRlvtForSettlmtMgmt} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        SUPLR_IS_RLVT_FOR_SETTLMT_MGMT: fieldBuilder.buildEdmTypeField(
+          'SuplrIsRlvtForSettlmtMgmt',
+          'Edm.Boolean',
+          true
+        ),
+        /**
+         * Static representation of the {@link suplrPurgOrgIsRlvtForPriceDetn} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        SUPLR_PURG_ORG_IS_RLVT_FOR_PRICE_DETN: fieldBuilder.buildEdmTypeField(
+          'SuplrPurgOrgIsRlvtForPriceDetn',
+          'Edm.Boolean',
+          true
+        ),
+        /**
          * Static representation of the {@link supplierAbcClassificationCode} property for query construction.
          * Use to reference this property in query operations such as 'select' in the fluent request API.
          */
         SUPPLIER_ABC_CLASSIFICATION_CODE: fieldBuilder.buildEdmTypeField(
           'SupplierABCClassificationCode',
+          'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link supplierAccountNumber} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        SUPPLIER_ACCOUNT_NUMBER: fieldBuilder.buildEdmTypeField(
+          'SupplierAccountNumber',
           'Edm.String',
           true
         ),

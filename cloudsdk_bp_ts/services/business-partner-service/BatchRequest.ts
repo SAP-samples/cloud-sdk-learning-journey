@@ -22,6 +22,11 @@ import {
   BpAddrDepdntIntlLocNumber,
   BpContactToAddress,
   BpContactToFuncAndDept,
+  BpCreditWorthiness,
+  BpFinancialServicesExtn,
+  BpFinancialServicesReporting,
+  BpFiscalYearInformation,
+  BpRelationship,
   BuPaAddressUsage,
   BuPaIdentification,
   BuPaIndustry,
@@ -29,6 +34,7 @@ import {
   BusinessPartnerAddress,
   BusinessPartnerBank,
   BusinessPartnerContact,
+  BusinessPartnerRating,
   BusinessPartnerRole,
   BusinessPartnerTaxNumber,
   BusPartAddrDepdntTaxNmbr,
@@ -133,6 +139,20 @@ export type ReadBusinessPartnerServiceRequestBuilder<
     >
   | GetAllRequestBuilder<BpContactToAddress<DeSerializersT>, DeSerializersT>
   | GetAllRequestBuilder<BpContactToFuncAndDept<DeSerializersT>, DeSerializersT>
+  | GetAllRequestBuilder<BpCreditWorthiness<DeSerializersT>, DeSerializersT>
+  | GetAllRequestBuilder<
+      BpFinancialServicesExtn<DeSerializersT>,
+      DeSerializersT
+    >
+  | GetAllRequestBuilder<
+      BpFinancialServicesReporting<DeSerializersT>,
+      DeSerializersT
+    >
+  | GetAllRequestBuilder<
+      BpFiscalYearInformation<DeSerializersT>,
+      DeSerializersT
+    >
+  | GetAllRequestBuilder<BpRelationship<DeSerializersT>, DeSerializersT>
   | GetAllRequestBuilder<BuPaAddressUsage<DeSerializersT>, DeSerializersT>
   | GetAllRequestBuilder<BuPaIdentification<DeSerializersT>, DeSerializersT>
   | GetAllRequestBuilder<BuPaIndustry<DeSerializersT>, DeSerializersT>
@@ -140,6 +160,7 @@ export type ReadBusinessPartnerServiceRequestBuilder<
   | GetAllRequestBuilder<BusinessPartnerAddress<DeSerializersT>, DeSerializersT>
   | GetAllRequestBuilder<BusinessPartnerBank<DeSerializersT>, DeSerializersT>
   | GetAllRequestBuilder<BusinessPartnerContact<DeSerializersT>, DeSerializersT>
+  | GetAllRequestBuilder<BusinessPartnerRating<DeSerializersT>, DeSerializersT>
   | GetAllRequestBuilder<BusinessPartnerRole<DeSerializersT>, DeSerializersT>
   | GetAllRequestBuilder<
       BusinessPartnerTaxNumber<DeSerializersT>,
@@ -206,6 +227,20 @@ export type ReadBusinessPartnerServiceRequestBuilder<
       BpContactToFuncAndDept<DeSerializersT>,
       DeSerializersT
     >
+  | GetByKeyRequestBuilder<BpCreditWorthiness<DeSerializersT>, DeSerializersT>
+  | GetByKeyRequestBuilder<
+      BpFinancialServicesExtn<DeSerializersT>,
+      DeSerializersT
+    >
+  | GetByKeyRequestBuilder<
+      BpFinancialServicesReporting<DeSerializersT>,
+      DeSerializersT
+    >
+  | GetByKeyRequestBuilder<
+      BpFiscalYearInformation<DeSerializersT>,
+      DeSerializersT
+    >
+  | GetByKeyRequestBuilder<BpRelationship<DeSerializersT>, DeSerializersT>
   | GetByKeyRequestBuilder<BuPaAddressUsage<DeSerializersT>, DeSerializersT>
   | GetByKeyRequestBuilder<BuPaIdentification<DeSerializersT>, DeSerializersT>
   | GetByKeyRequestBuilder<BuPaIndustry<DeSerializersT>, DeSerializersT>
@@ -217,6 +252,10 @@ export type ReadBusinessPartnerServiceRequestBuilder<
   | GetByKeyRequestBuilder<BusinessPartnerBank<DeSerializersT>, DeSerializersT>
   | GetByKeyRequestBuilder<
       BusinessPartnerContact<DeSerializersT>,
+      DeSerializersT
+    >
+  | GetByKeyRequestBuilder<
+      BusinessPartnerRating<DeSerializersT>,
       DeSerializersT
     >
   | GetByKeyRequestBuilder<BusinessPartnerRole<DeSerializersT>, DeSerializersT>
@@ -320,6 +359,48 @@ export type WriteBusinessPartnerServiceRequestBuilder<
   | CreateRequestBuilder<BpContactToFuncAndDept<DeSerializersT>, DeSerializersT>
   | UpdateRequestBuilder<BpContactToFuncAndDept<DeSerializersT>, DeSerializersT>
   | DeleteRequestBuilder<BpContactToFuncAndDept<DeSerializersT>, DeSerializersT>
+  | CreateRequestBuilder<BpCreditWorthiness<DeSerializersT>, DeSerializersT>
+  | UpdateRequestBuilder<BpCreditWorthiness<DeSerializersT>, DeSerializersT>
+  | DeleteRequestBuilder<BpCreditWorthiness<DeSerializersT>, DeSerializersT>
+  | CreateRequestBuilder<
+      BpFinancialServicesExtn<DeSerializersT>,
+      DeSerializersT
+    >
+  | UpdateRequestBuilder<
+      BpFinancialServicesExtn<DeSerializersT>,
+      DeSerializersT
+    >
+  | DeleteRequestBuilder<
+      BpFinancialServicesExtn<DeSerializersT>,
+      DeSerializersT
+    >
+  | CreateRequestBuilder<
+      BpFinancialServicesReporting<DeSerializersT>,
+      DeSerializersT
+    >
+  | UpdateRequestBuilder<
+      BpFinancialServicesReporting<DeSerializersT>,
+      DeSerializersT
+    >
+  | DeleteRequestBuilder<
+      BpFinancialServicesReporting<DeSerializersT>,
+      DeSerializersT
+    >
+  | CreateRequestBuilder<
+      BpFiscalYearInformation<DeSerializersT>,
+      DeSerializersT
+    >
+  | UpdateRequestBuilder<
+      BpFiscalYearInformation<DeSerializersT>,
+      DeSerializersT
+    >
+  | DeleteRequestBuilder<
+      BpFiscalYearInformation<DeSerializersT>,
+      DeSerializersT
+    >
+  | CreateRequestBuilder<BpRelationship<DeSerializersT>, DeSerializersT>
+  | UpdateRequestBuilder<BpRelationship<DeSerializersT>, DeSerializersT>
+  | DeleteRequestBuilder<BpRelationship<DeSerializersT>, DeSerializersT>
   | CreateRequestBuilder<BuPaAddressUsage<DeSerializersT>, DeSerializersT>
   | UpdateRequestBuilder<BuPaAddressUsage<DeSerializersT>, DeSerializersT>
   | DeleteRequestBuilder<BuPaAddressUsage<DeSerializersT>, DeSerializersT>
@@ -341,6 +422,9 @@ export type WriteBusinessPartnerServiceRequestBuilder<
   | CreateRequestBuilder<BusinessPartnerContact<DeSerializersT>, DeSerializersT>
   | UpdateRequestBuilder<BusinessPartnerContact<DeSerializersT>, DeSerializersT>
   | DeleteRequestBuilder<BusinessPartnerContact<DeSerializersT>, DeSerializersT>
+  | CreateRequestBuilder<BusinessPartnerRating<DeSerializersT>, DeSerializersT>
+  | UpdateRequestBuilder<BusinessPartnerRating<DeSerializersT>, DeSerializersT>
+  | DeleteRequestBuilder<BusinessPartnerRating<DeSerializersT>, DeSerializersT>
   | CreateRequestBuilder<BusinessPartnerRole<DeSerializersT>, DeSerializersT>
   | UpdateRequestBuilder<BusinessPartnerRole<DeSerializersT>, DeSerializersT>
   | DeleteRequestBuilder<BusinessPartnerRole<DeSerializersT>, DeSerializersT>

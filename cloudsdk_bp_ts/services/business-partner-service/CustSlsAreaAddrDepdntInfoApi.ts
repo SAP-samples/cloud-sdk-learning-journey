@@ -152,6 +152,27 @@ export class CustSlsAreaAddrDepdntInfoApi<
       true,
       true
     >;
+    INCOTERMS_SUP_CHN_LOC_1_ADDL_UUID: OrderableEdmTypeField<
+      CustSlsAreaAddrDepdntInfo<DeSerializers>,
+      DeSerializersT,
+      'Edm.Guid',
+      true,
+      true
+    >;
+    INCOTERMS_SUP_CHN_LOC_2_ADDL_UUID: OrderableEdmTypeField<
+      CustSlsAreaAddrDepdntInfo<DeSerializers>,
+      DeSerializersT,
+      'Edm.Guid',
+      true,
+      true
+    >;
+    INCOTERMS_SUP_CHN_DVTG_LOC_ADDL_UUID: OrderableEdmTypeField<
+      CustSlsAreaAddrDepdntInfo<DeSerializers>,
+      DeSerializersT,
+      'Edm.Guid',
+      true,
+      true
+    >;
     DELIVERY_IS_BLOCKED: OrderableEdmTypeField<
       CustSlsAreaAddrDepdntInfo<DeSerializers>,
       DeSerializersT,
@@ -271,6 +292,33 @@ export class CustSlsAreaAddrDepdntInfoApi<
         INCOTERMS_LOCATION_2: fieldBuilder.buildEdmTypeField(
           'IncotermsLocation2',
           'Edm.String',
+          true
+        ),
+        /**
+         * Static representation of the {@link incotermsSupChnLoc1AddlUuid} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INCOTERMS_SUP_CHN_LOC_1_ADDL_UUID: fieldBuilder.buildEdmTypeField(
+          'IncotermsSupChnLoc1AddlUUID',
+          'Edm.Guid',
+          true
+        ),
+        /**
+         * Static representation of the {@link incotermsSupChnLoc2AddlUuid} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INCOTERMS_SUP_CHN_LOC_2_ADDL_UUID: fieldBuilder.buildEdmTypeField(
+          'IncotermsSupChnLoc2AddlUUID',
+          'Edm.Guid',
+          true
+        ),
+        /**
+         * Static representation of the {@link incotermsSupChnDvtgLocAddlUuid} property for query construction.
+         * Use to reference this property in query operations such as 'select' in the fluent request API.
+         */
+        INCOTERMS_SUP_CHN_DVTG_LOC_ADDL_UUID: fieldBuilder.buildEdmTypeField(
+          'IncotermsSupChnDvtgLocAddlUUID',
+          'Edm.Guid',
           true
         ),
         /**

@@ -5,11 +5,17 @@
  */
 import { BusinessPartner } from './BusinessPartner';
 import { BusinessPartnerRequestBuilder } from './BusinessPartnerRequestBuilder';
+import { BpCreditWorthinessApi } from './BpCreditWorthinessApi';
+import { BpFinancialServicesReportingApi } from './BpFinancialServicesReportingApi';
+import { BpFiscalYearInformationApi } from './BpFiscalYearInformationApi';
+import { BpRelationshipApi } from './BpRelationshipApi';
 import { BuPaIdentificationApi } from './BuPaIdentificationApi';
 import { BuPaIndustryApi } from './BuPaIndustryApi';
+import { BpFinancialServicesExtnApi } from './BpFinancialServicesExtnApi';
 import { BusinessPartnerAddressApi } from './BusinessPartnerAddressApi';
 import { BusinessPartnerBankApi } from './BusinessPartnerBankApi';
 import { BusinessPartnerContactApi } from './BusinessPartnerContactApi';
+import { BusinessPartnerRatingApi } from './BusinessPartnerRatingApi';
 import { BusinessPartnerRoleApi } from './BusinessPartnerRoleApi';
 import { BusinessPartnerTaxNumberApi } from './BusinessPartnerTaxNumberApi';
 import { BusPartAddrDepdntTaxNmbrApi } from './BusPartAddrDepdntTaxNmbrApi';
@@ -27,8 +33,8 @@ import {
   FieldBuilder,
   Time,
   OrderableEdmTypeField,
-  Link,
-  OneToOneLink
+  OneToOneLink,
+  Link
 } from '@sap-cloud-sdk/odata-v2';
 export class BusinessPartnerApi<
   DeSerializersT extends DeSerializers = DefaultDeSerializers
@@ -56,6 +62,42 @@ export class BusinessPartnerApi<
 
   private navigationPropertyFields!: {
     /**
+     * Static representation of the one-to-one navigation property {@link toBpCreditWorthiness} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BP_CREDIT_WORTHINESS: OneToOneLink<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpCreditWorthinessApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-one navigation property {@link toBpFinServicesReporting} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BP_FIN_SERVICES_REPORTING: OneToOneLink<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpFinancialServicesReportingApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-many navigation property {@link toBpFiscalYearInformation} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BP_FISCAL_YEAR_INFORMATION: Link<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpFiscalYearInformationApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-many navigation property {@link toBpRelationship} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BP_RELATIONSHIP: Link<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpRelationshipApi<DeSerializersT>
+    >;
+    /**
      * Static representation of the one-to-many navigation property {@link toBuPaIdentification} for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
@@ -72,6 +114,15 @@ export class BusinessPartnerApi<
       BusinessPartner<DeSerializersT>,
       DeSerializersT,
       BuPaIndustryApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-one navigation property {@link toBusinessPartner} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BUSINESS_PARTNER: OneToOneLink<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpFinancialServicesExtnApi<DeSerializersT>
     >;
     /**
      * Static representation of the one-to-many navigation property {@link toBusinessPartnerAddress} for query construction.
@@ -99,6 +150,15 @@ export class BusinessPartnerApi<
       BusinessPartner<DeSerializersT>,
       DeSerializersT,
       BusinessPartnerContactApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-many navigation property {@link toBusinessPartnerRating} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BUSINESS_PARTNER_RATING: Link<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BusinessPartnerRatingApi<DeSerializersT>
     >;
     /**
      * Static representation of the one-to-many navigation property {@link toBusinessPartnerRole} for query construction.
@@ -149,11 +209,17 @@ export class BusinessPartnerApi<
 
   _addNavigationProperties(
     linkedApis: [
+      BpCreditWorthinessApi<DeSerializersT>,
+      BpFinancialServicesReportingApi<DeSerializersT>,
+      BpFiscalYearInformationApi<DeSerializersT>,
+      BpRelationshipApi<DeSerializersT>,
       BuPaIdentificationApi<DeSerializersT>,
       BuPaIndustryApi<DeSerializersT>,
+      BpFinancialServicesExtnApi<DeSerializersT>,
       BusinessPartnerAddressApi<DeSerializersT>,
       BusinessPartnerBankApi<DeSerializersT>,
       BusinessPartnerContactApi<DeSerializersT>,
+      BusinessPartnerRatingApi<DeSerializersT>,
       BusinessPartnerRoleApi<DeSerializersT>,
       BusinessPartnerTaxNumberApi<DeSerializersT>,
       BusPartAddrDepdntTaxNmbrApi<DeSerializersT>,
@@ -162,44 +228,70 @@ export class BusinessPartnerApi<
     ]
   ): this {
     this.navigationPropertyFields = {
-      TO_BU_PA_IDENTIFICATION: new Link(
-        'to_BuPaIdentification',
+      TO_BP_CREDIT_WORTHINESS: new OneToOneLink(
+        'to_BPCreditWorthiness',
         this,
         linkedApis[0]
       ),
-      TO_BU_PA_INDUSTRY: new Link('to_BuPaIndustry', this, linkedApis[1]),
+      TO_BP_FIN_SERVICES_REPORTING: new OneToOneLink(
+        'to_BPFinServicesReporting',
+        this,
+        linkedApis[1]
+      ),
+      TO_BP_FISCAL_YEAR_INFORMATION: new Link(
+        'to_BPFiscalYearInformation',
+        this,
+        linkedApis[2]
+      ),
+      TO_BP_RELATIONSHIP: new Link('to_BPRelationship', this, linkedApis[3]),
+      TO_BU_PA_IDENTIFICATION: new Link(
+        'to_BuPaIdentification',
+        this,
+        linkedApis[4]
+      ),
+      TO_BU_PA_INDUSTRY: new Link('to_BuPaIndustry', this, linkedApis[5]),
+      TO_BUSINESS_PARTNER: new OneToOneLink(
+        'to_BusinessPartner',
+        this,
+        linkedApis[6]
+      ),
       TO_BUSINESS_PARTNER_ADDRESS: new Link(
         'to_BusinessPartnerAddress',
         this,
-        linkedApis[2]
+        linkedApis[7]
       ),
       TO_BUSINESS_PARTNER_BANK: new Link(
         'to_BusinessPartnerBank',
         this,
-        linkedApis[3]
+        linkedApis[8]
       ),
       TO_BUSINESS_PARTNER_CONTACT: new Link(
         'to_BusinessPartnerContact',
         this,
-        linkedApis[4]
+        linkedApis[9]
+      ),
+      TO_BUSINESS_PARTNER_RATING: new Link(
+        'to_BusinessPartnerRating',
+        this,
+        linkedApis[10]
       ),
       TO_BUSINESS_PARTNER_ROLE: new Link(
         'to_BusinessPartnerRole',
         this,
-        linkedApis[5]
+        linkedApis[11]
       ),
       TO_BUSINESS_PARTNER_TAX: new Link(
         'to_BusinessPartnerTax',
         this,
-        linkedApis[6]
+        linkedApis[12]
       ),
       TO_BUS_PART_ADDR_DEPDNT_TAX_NMBR: new Link(
         'to_BusPartAddrDepdntTaxNmbr',
         this,
-        linkedApis[7]
+        linkedApis[13]
       ),
-      TO_CUSTOMER: new OneToOneLink('to_Customer', this, linkedApis[8]),
-      TO_SUPPLIER: new OneToOneLink('to_Supplier', this, linkedApis[9])
+      TO_CUSTOMER: new OneToOneLink('to_Customer', this, linkedApis[14]),
+      TO_SUPPLIER: new OneToOneLink('to_Supplier', this, linkedApis[15])
     };
     return this;
   }
@@ -718,6 +810,42 @@ export class BusinessPartnerApi<
       true
     >;
     /**
+     * Static representation of the one-to-one navigation property {@link toBpCreditWorthiness} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BP_CREDIT_WORTHINESS: OneToOneLink<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpCreditWorthinessApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-one navigation property {@link toBpFinServicesReporting} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BP_FIN_SERVICES_REPORTING: OneToOneLink<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpFinancialServicesReportingApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-many navigation property {@link toBpFiscalYearInformation} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BP_FISCAL_YEAR_INFORMATION: Link<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpFiscalYearInformationApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-many navigation property {@link toBpRelationship} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BP_RELATIONSHIP: Link<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpRelationshipApi<DeSerializersT>
+    >;
+    /**
      * Static representation of the one-to-many navigation property {@link toBuPaIdentification} for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
@@ -734,6 +862,15 @@ export class BusinessPartnerApi<
       BusinessPartner<DeSerializersT>,
       DeSerializersT,
       BuPaIndustryApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-one navigation property {@link toBusinessPartner} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BUSINESS_PARTNER: OneToOneLink<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BpFinancialServicesExtnApi<DeSerializersT>
     >;
     /**
      * Static representation of the one-to-many navigation property {@link toBusinessPartnerAddress} for query construction.
@@ -761,6 +898,15 @@ export class BusinessPartnerApi<
       BusinessPartner<DeSerializersT>,
       DeSerializersT,
       BusinessPartnerContactApi<DeSerializersT>
+    >;
+    /**
+     * Static representation of the one-to-many navigation property {@link toBusinessPartnerRating} for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    TO_BUSINESS_PARTNER_RATING: Link<
+      BusinessPartner<DeSerializersT>,
+      DeSerializersT,
+      BusinessPartnerRatingApi<DeSerializersT>
     >;
     /**
      * Static representation of the one-to-many navigation property {@link toBusinessPartnerRole} for query construction.

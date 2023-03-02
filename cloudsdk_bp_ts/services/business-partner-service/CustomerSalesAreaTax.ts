@@ -31,7 +31,7 @@ export class CustomerSalesAreaTax<
   /**
    * Default url path for the according service.
    */
-  static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
+  static _defaultBasePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * All key fields of the CustomerSalesAreaTax entity
    */
@@ -69,7 +69,7 @@ export class CustomerSalesAreaTax<
    */
   departureCountry!: DeserializedType<T, 'Edm.String'>;
   /**
-   * Tax category (sales tax, federal sales tax,...).
+   * Tax Condition Type (Sales Tax, Value-Added Tax,...).
    * Maximum length: 4.
    */
   customerTaxCategory!: DeserializedType<T, 'Edm.String'>;

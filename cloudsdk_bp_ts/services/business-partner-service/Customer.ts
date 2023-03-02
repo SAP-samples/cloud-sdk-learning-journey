@@ -48,7 +48,7 @@ export class Customer<T extends DeSerializers = DefaultDeSerializers>
   /**
    * Default url path for the according service.
    */
-  static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
+  static _defaultBasePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * All key fields of the Customer entity
    */
@@ -111,6 +111,66 @@ export class Customer<T extends DeSerializers = DefaultDeSerializers>
    * @nullable
    */
   deliveryIsBlocked?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 1.
+   * Maximum length: 2.
+   * @nullable
+   */
+  freeDefinedAttribute01?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 2.
+   * Maximum length: 2.
+   * @nullable
+   */
+  freeDefinedAttribute02?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 3.
+   * Maximum length: 2.
+   * @nullable
+   */
+  freeDefinedAttribute03?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 4.
+   * Maximum length: 2.
+   * @nullable
+   */
+  freeDefinedAttribute04?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 5.
+   * Maximum length: 2.
+   * @nullable
+   */
+  freeDefinedAttribute05?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 6.
+   * Maximum length: 3.
+   * @nullable
+   */
+  freeDefinedAttribute06?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 7.
+   * Maximum length: 3.
+   * @nullable
+   */
+  freeDefinedAttribute07?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 8.
+   * Maximum length: 3.
+   * @nullable
+   */
+  freeDefinedAttribute08?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 9.
+   * Maximum length: 3.
+   * @nullable
+   */
+  freeDefinedAttribute09?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Attribute 10.
+   * Maximum length: 3.
+   * @nullable
+   */
+  freeDefinedAttribute10?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Natural Person.
    * Maximum length: 1.
@@ -188,6 +248,18 @@ export class Customer<T extends DeSerializers = DefaultDeSerializers>
    * @nullable
    */
   internationalLocationNumber1?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * International location number (Part 2).
+   * Maximum length: 5.
+   * @nullable
+   */
+  internationalLocationNumber2?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Check digit for the international location number.
+   * Maximum length: 1.
+   * @nullable
+   */
+  internationalLocationNumber3?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Nielsen ID.
    * Maximum length: 2.
@@ -320,6 +392,16 @@ export interface CustomerType<T extends DeSerializers = DefaultDeSerializers> {
   customerFullName?: DeserializedType<T, 'Edm.String'> | null;
   customerName?: DeserializedType<T, 'Edm.String'> | null;
   deliveryIsBlocked?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute01?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute02?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute03?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute04?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute05?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute06?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute07?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute08?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute09?: DeserializedType<T, 'Edm.String'> | null;
+  freeDefinedAttribute10?: DeserializedType<T, 'Edm.String'> | null;
   nfPartnerIsNaturalPerson?: DeserializedType<T, 'Edm.String'> | null;
   orderIsBlockedForCustomer?: DeserializedType<T, 'Edm.String'> | null;
   postingIsBlocked?: DeserializedType<T, 'Edm.Boolean'> | null;
@@ -333,6 +415,8 @@ export interface CustomerType<T extends DeSerializers = DefaultDeSerializers> {
   industryCode4?: DeserializedType<T, 'Edm.String'> | null;
   industryCode5?: DeserializedType<T, 'Edm.String'> | null;
   internationalLocationNumber1?: DeserializedType<T, 'Edm.String'> | null;
+  internationalLocationNumber2?: DeserializedType<T, 'Edm.String'> | null;
+  internationalLocationNumber3?: DeserializedType<T, 'Edm.String'> | null;
   nielsenRegion?: DeserializedType<T, 'Edm.String'> | null;
   responsibleType?: DeserializedType<T, 'Edm.String'> | null;
   taxNumber1?: DeserializedType<T, 'Edm.String'> | null;
