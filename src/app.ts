@@ -20,11 +20,11 @@ async function getAllBusinessPartners(): Promise<BusinessPartner[]> {
       )
     )
     .filter(businessPartnerApi.schema.LAST_NAME.equals("Smith"))
-    .addCustomHeaders({
-      APIKey: "YOUR_API_KEY", // from https://api.sap.com/api/API_BUSINESS_PARTNER/overview
-    })
+    .addCustomHeaders({ Accept: "application/json" })
     .execute({
-      url: "https://sandbox.api.sap.com/s4hanacloud",
+      url: "https://my000000.s4hana.ondemand.com",
+      username: "ADDRESS_MANAGER_###",
+      password: "S4HANA_PASSWORD!",
     });
 }
 
