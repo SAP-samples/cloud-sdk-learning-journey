@@ -2,7 +2,7 @@
 applications:
 
 - name: bpstandardvdm
-  memory: 1500M
+  memory: 1024M
   timeout: 300
   random-route: true
   path: application/target/bpstandardvdm-application.jar
