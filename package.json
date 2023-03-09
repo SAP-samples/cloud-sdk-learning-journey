@@ -5,7 +5,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
-    "start": "node dist/app"
+    "start": "node dist/src/app"
   },
   "dependencies": {},
   "devDependencies": {
