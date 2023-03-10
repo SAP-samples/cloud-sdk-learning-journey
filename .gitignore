@@ -1,4 +1,5 @@
-**/.vscode
+.vscode/settings.json
 **/target
 node_modules
 dist/
+services/
