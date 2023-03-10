@@ -6,7 +6,7 @@ Learning.sap.com exercise
 
 ## Step 1
 
-Creating a minimal Hello World application, based on Typescript language and compiled with Node.
+Create a minimal Hello world project with Typescript and Node.js setup.
 
 ## Setup of the environment
 
@@ -32,7 +32,7 @@ npm run build
 npm run start
 ```
 
-3. Install SAP Cloud SDK dependencies
+3. Install SAP Cloud SDK as dev dependency
 
 ```sh
 npm install -D @sap-cloud-sdk/generator
@@ -43,7 +43,7 @@ npm install -D @sap-cloud-sdk/generator
 1. Create a folder service-specifications at the root of the project.
 2. Download the EDMX file for the business partner service from [SAP API Business Hub](<https://api.sap.com/odata/1.0/catalog.svc/APIContent.APIs('API_BUSINESS_PARTNER')/$value?type=EDMX&attachment=true>)
 3. Copy the API_BUSINESS_PARTNER.edmx file into the service-specifications folder
-4. Create a service-mapping.json file in the service-specifications folder with the following content:
+4. Create a options-per-service.json file in the service-specifications folder with the following content:
 
 ```json
 {
@@ -58,11 +58,24 @@ npm install -D @sap-cloud-sdk/generator
 4. Generate the BusinessPartner service
 
 ```sh
-npx generate-odata-client --inputDir service-specifications --outputDir services
+npx generate-odata-client --input service-specifications --outputDir services --optionsPerService service-specifications/options-per-service.json
 ```
 
-Run the app and see the queried results.
-Don't forget to build the app on new changes.
+Check the generated OData entities and services under the services directory.
+
+In app.ts file, we can now import the generated BusinessPartner entity and businessPartnerService which we will use to run the queries
+
+```
+import {
+BusinessPartner,
+businessPartnerService,
+} from "../services/business-partner-service";
+```
+
+In app.ts, provide the url and credentials for S4HANA system or add API Key for sandbox API (as you prefer).
 
 5. Deploy to CF
    [Follow these steps](https://sap.github.io/cloud-sdk/docs/js/tutorials/getting-started/deploy-app-to-cf)
+
+Run the app and see the queried results.
+Don't forget to build the app on new changes.
