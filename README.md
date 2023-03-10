@@ -6,7 +6,7 @@ Learning.sap.com exercise
 
 ## Step 1
 
-Creating a minimal Hello World application, based on Typescript language and compiled with Node.
+Create a minimal Hello world project with Typescript and Node.js setup.
 
 ## Setup of the environment
 
