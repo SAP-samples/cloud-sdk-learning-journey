@@ -1,25 +1,27 @@
-# Develop Advanced Extensions with SAP Cloud SDK
-
-Welcome to this repository for the learning journey *Develop Advanced Extensions with SAP Cloud SDK*. We provide here code examples used in the learning journey exercises.
-
 ## Start the journey
+
 As a starting point for your learning experience, we recommend you go to the full learning journey, published on [SAP Learning](https://learning.sap.com) at the following link: [Develop Advanced Extensions with SAP Cloud SDK](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk).
 
-## Requirements
-Within the full exercise documentation (on *learning.sap.com*) you will find individual exercise prerequisites, such as: 
-- exercises to be executed 
-- software to be installed on your laptop 
-- information to be collected. 
+# Exercise: Developing a Multi-Target Application
 
-## Running the code examples
-Code examples are stored in repository branches other than *main*. Every branch contains specific instructions to run the example in [Visual Studio Code](https://code.visualstudio.com) or [SAP Business Application Studio](https://www.sap.com/products/technology-platform/business-application-studio.html).
+Create a simple Node.js project and a simple Java project. Pack them in a unique Multi-Target Application. Include some simple environment variables. Build and deploy the application to Cloud Foundry.
 
-## Contributing
-If you have suggestions on how to improve the tutorial, you're welcome to provide your input [here](https://github.com/SAP-samples/cloud-sdk-learning-journey/issues).
+This code archive contains the final status of the java project, after the complete exercise execution.
 
-If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
+To build and deploy the application to Cloud Foundry, complete the following steps:
 
-## License
-Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+1.  Extract the archive to a folder in your local system, or to a workspace in the SAP Business Application Studio.
+2.  Open a command line window and change directory to the project root folder.
+3.  Execute the following sequence of commands:
 
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-sdk-learning-journey)](https://api.reuse.software/info/github.com/SAP-samples/cloud-sdk-learning-journey)
+        mbt build
+        cf login
+        cf deploy mta_archives/mta-intro_0.0.1.mtar
+
+## Origin
+
+The complete exercise description is included in SAP standard course [S4C80](https://training.sap.com/course/s4c80), collection 26 or later.
+
+## Author
+
+Paolo Ricciarelli - Learning Architect at SAP
