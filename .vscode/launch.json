@@ -6,20 +6,22 @@
       "type": "node",
       "program": "${workspaceFolder}/app1/main.js",
       "request": "launch",
-      "skipFiles": ["<node_internals>/**"]
+      "skipFiles": ["<node_internals>/**"],
+      "env": {
+        "TITLE": "Hello, Node!",
+        "A2URL": "https://9c235a74trial-workspaces-ws-ld7zh-app3.eu10.trial.applicationstudio.cloud.sap/"
+      }
     },
     {
       "name": "Launch Application 2",
       "type": "java",
       "request": "launch",
       "mainClass": "com.example.demo.DemoApplication",
-      "projectName": "demo"
+      "projectName": "demo",
+      "env": {
+        "TITLE": "Hello, Java!",
+        "A1URL": "https://9c235a74trial-workspaces-ws-ld7zh-app2.eu10.trial.applicationstudio.cloud.sap/"
+      }
     }
-  ],
-  "env": {
-    "TITLE1": "Hello, Node!",
-    "TITLE2": "Hello, Java!",
-    "A1URL": "trial-dev-mta-intro-app1.cfapps.us10-001.hana.ondemand.com",
-    "A2URL": "trial-dev-mta-intro-app2.cfapps.us10-001.hana.ondemand.com"
-  }
+  ]
 }
