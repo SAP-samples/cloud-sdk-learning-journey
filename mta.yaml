@@ -6,7 +6,25 @@ modules:
   - name: mta-intro-app1
     type: nodejs
     path: app1
+    requires:
+      - name: app2-provided
+    provides:
+      - name: app1-provided
+        properties:
+          url: ${default-url}
+    properties:
+      TITLE: "Hello Node!"
+      A2URL: ~{app2-provided/url}
 
   - name: mta-intro-app2
     type: java
     path: app2
+    requires:
+      - name: app1-provided
+    provides:
+      - name: app2-provided
+        properties:
+          url: ${default-url}
+    properties:
+      TITLE: "Hello Java!"
+      A1URL: ~{app1-provided/url}
