@@ -10,9 +10,7 @@ app.get("/", function (req, res) {
     "<h1>" +
     title +
     "</h1>" +
-    '<p>Navigate to <a href="' +
-    a2url +
-    '">Application 2</a></p>' +
+    `<p>Navigate to  <a href="${a2url}"> Application 2</p>` +
     "</body></html>";
 
   res.send(page);
