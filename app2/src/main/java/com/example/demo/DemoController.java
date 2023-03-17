@@ -9,7 +9,7 @@ public class DemoController {
     @GetMapping("/")
     public String hello() {
 
-        String title = System.getenv("TITLE");
+        String title = System.getenv("TITLE2");
         String a1url = System.getenv("A1URL");
         String page = "<!DOCTYPE html><html><body>" 
         + "<h1>" + title + "</h1>" 
