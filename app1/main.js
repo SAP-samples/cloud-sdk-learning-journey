@@ -1,14 +1,13 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
-app.get('/', function (req, res) {
+app.get("/", function (req, res) {
+  var page =
+    "<!DOCTYPE html><html><body>" + "<h1>Hello Node!</h1>" + "</body></html>";
 
-    var page = "<!DOCTYPE html><html><body>"
-        + "<h1>Hello Node!</h1>"
-        + "</body></html>";
-
-    res.send(page);
+  res.send(page);
 });
 
 const port = process.env.PORT || 3002;
+console.log(`App1 is running on port: ${port}`);
 app.listen(port);
