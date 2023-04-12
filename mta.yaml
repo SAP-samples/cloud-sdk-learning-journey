@@ -6,7 +6,11 @@ modules:
   - name: mta-intro-app1
     type: nodejs
     path: app1
+    properties:
+      TITLE: "Hello Node!"
 
   - name: mta-intro-app2
     type: java
     path: app2
+    properties:
+      TITLE: "Hello Java!"
