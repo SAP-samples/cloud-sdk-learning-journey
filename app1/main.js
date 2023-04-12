@@ -2,18 +2,8 @@ const express = require("express");
 
 const app = express();
 app.get("/", function (req, res) {
-  const title = process.env.TITLE || "Application 1";
-  const a2url = process.env.A2URL || "Application 2 URL";
-
-  const page =
-    "<!DOCTYPE html><html><body>" +
-    "<h1>" +
-    title +
-    "</h1>" +
-    '<p>Navigate to <a href="' +
-    a2url +
-    '">Application 2</a></p>' +
-    "</body></html>";
+  var page =
+    "<!DOCTYPE html><html><body>" + "<h1>Hello Node!</h1>" + "</body></html>";
 
   res.send(page);
 });
