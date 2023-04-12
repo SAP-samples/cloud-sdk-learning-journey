@@ -9,7 +9,8 @@
       "skipFiles": ["<node_internals>/**"],
       "env": {
         "TITLE": "Hello Node!",
-        "A2URL": "http://localhost:8080"
+        // replace with the url exposed by Business Application Studio
+        "A2URL": "https://port8080-workspaces-ws-knhqs.us10.trial.applicationstudio.cloud.sap/"
       }
     },
     {
@@ -20,7 +21,8 @@
       "projectName": "demo",
       "env": {
         "TITLE": "Hello Java!",
-        "A1URL": "http://localhost:3002"
+        // replace with the url exposed by Business Application Studio
+        "A1URL": "https://port3002-workspaces-ws-knhqs.us10.trial.applicationstudio.cloud.sap/"
       }
     }
   ]
