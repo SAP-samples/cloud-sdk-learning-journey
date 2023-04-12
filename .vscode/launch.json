@@ -8,8 +8,8 @@
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
       "env": {
-        "TITLE": "Hello, Node!",
-        "A2URL": "https://9c235a74trial-workspaces-ws-ld7zh-app3.eu10.trial.applicationstudio.cloud.sap/"
+        "TITLE": "Hello Node!",
+        "A2URL": "http://localhost:8080"
       }
     },
     {
@@ -19,8 +19,8 @@
       "mainClass": "com.example.demo.DemoApplication",
       "projectName": "demo",
       "env": {
-        "TITLE": "Hello, Java!",
-        "A1URL": "https://9c235a74trial-workspaces-ws-ld7zh-app2.eu10.trial.applicationstudio.cloud.sap/"
+        "TITLE": "Hello Java!",
+        "A1URL": "http://localhost:3002"
       }
     }
   ]
