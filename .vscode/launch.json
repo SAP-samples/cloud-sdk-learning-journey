@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "name": "Launch Application 1",
+      "type": "node",
+      "program": "${workspaceFolder}/app1/main.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Launch Application 2",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "com.example.demo.DemoApplication",
+      "projectName": "demo"
+    }
+  ]
+}
