@@ -13,7 +13,6 @@ public class DemoController {
         String a1url = System.getenv("A1URL");
         String page = "<!DOCTYPE html><html><body>" 
         + "<h1>" + title + "</h1>" 
-        + "<p>Navigate to <a href=\"" + a1url + "\">Application 1</a></p>" 
         + "</body></html>";
 
         return String.format(page);
