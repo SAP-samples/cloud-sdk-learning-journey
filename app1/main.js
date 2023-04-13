@@ -3,8 +3,7 @@ const express = require("express");
 const app = express();
 app.get("/", function (req, res) {
   const title = process.env.TITLE;
-  const a2url = process.env.A2URL;
-
+  
   const page =
     "<!DOCTYPE html><html><body>" +
     "<h1>" +
