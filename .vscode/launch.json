@@ -8,7 +8,7 @@
       "request": "launch",
       "skipFiles": ["<node_internals>/**"],
       "env": {
-        "TITLE": "Hello, Node!"
+        "TITLE": "Hello Node!"
       }
     },
     {
@@ -18,7 +18,7 @@
       "mainClass": "com.example.demo.DemoApplication",
       "projectName": "demo",
       "env": {
-        "TITLE": "Hello, Java!"
+        "TITLE": "Hello Java!"
       }
     }
   ]
