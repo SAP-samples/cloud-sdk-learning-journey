@@ -1,3 +1,5 @@
 **/target
+**/node_modules
+**/.vscode
 
-app1/node_modules
+!.vscode/launch.json
