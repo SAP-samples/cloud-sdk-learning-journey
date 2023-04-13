@@ -1,5 +1,6 @@
 **/target
 **/node_modules
 **/.vscode
+mta_archives
 
 !.vscode/launch.json
