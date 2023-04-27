@@ -1,0 +1,73 @@
+{
+    "xsappname": "cloudsdk_bp_ts-dev",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.Admin",
+            "description": "Admin"
+        },
+        {
+            "name": "$XSAPPNAME.Viewer",
+            "description": "Viewer"
+        }
+    ],
+    "attributes": [],
+    "role-templates": [
+        {
+            "name": "Admin",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.Admin"
+            ],
+            "attribute-references": []
+        },
+        {
+            "name": "Viewer",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.Viewer"
+            ],
+            "attribute-references": []
+        }
+    ],
+    "role-collections": [
+        {
+            "name": "TypeScript NestJS SDK Tutorial Admin",
+            "description": "Admin",
+            "role-template-references": [
+                "$XSAPPNAME.Admin"
+            ]
+        },
+        {
+            "name": "TypeScript NestJS SDK Tutorial Viewer",
+            "description": "Viewer",
+            "role-template-references": [
+                "$XSAPPNAME.Viewer"
+            ]
+        },
+        {
+            "name": "Java Spring SDK Tutorial Admin",
+            "description": "Admin",
+            "role-template-references": [
+                "$XSAPPNAME.Admin"
+            ]
+        },
+        {
+            "name": "Java Spring SDK Tutorial Viewer",
+            "description": "Viewer",
+            "role-template-references": [
+                "$XSAPPNAME.Viewer"
+            ]
+        }
+    ],
+    "oauth2-configuration": {
+        "token-validity": 3600,
+        "redirect-uris": [
+            "http://localhost:5000/**",
+            "http://localhost:4004/**",
+            "https://*.*.applicationstudio.cloud.sap/**",
+            "https://*.cfapps.*.hana.ondemand.com/**",
+            "https://*.authentication.*.hana.ondemand.com/**"
+        ]
+    }
+}

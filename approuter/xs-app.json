@@ -1,0 +1,12 @@
+{
+    "welcomeFile": "/",
+    "authenticationMethod": "route",
+    "routes": [
+        {
+            "source": "^/service/(.*)$",
+            "target": "$1",
+            "destination": "backend",
+            "authenticationType": "xsuaa"
+        }
+    ]
+}
