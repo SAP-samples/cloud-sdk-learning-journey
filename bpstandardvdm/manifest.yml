@@ -13,5 +13,5 @@ applications:
     SPRING_PROFILES_ACTIVE: 'cloud'
     JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
   services:
-  - myxsuaa
+  - mysecurexsuaa
   - mydestination
