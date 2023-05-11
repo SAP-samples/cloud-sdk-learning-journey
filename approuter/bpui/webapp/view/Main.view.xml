@@ -1,0 +1,46 @@
+<mvc:View controllerName="com.sap.bpui.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table inset="false" items="{path: 'bpModel>/BusinessPartners'}">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <content>
+                            <ToolbarSpacer />
+                            <Button icon="sap-icon://edit" text="Update" press=".onUpdate"></Button>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Business Partner ID"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="First Name"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Last Name"></Text>
+                    </Column>
+                    <Column >
+                        <Text text="Gender"></Text>
+                    </Column>
+                    <!-- <Column >
+                        <Text text="Creation Date"></Text>
+                    </Column> -->
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <ObjectIdentifier title="{bpModel>BusinessPartner}"></ObjectIdentifier>
+                            <Text text="{bpModel>FirstName}"></Text>
+                            <Input value="{bpModel>LastName}" change=".onLastNameChange"></Input>
+                            <Text text="{parts: ['bpModel>IsMale', 'bpModel>IsFemale'], formatter: '.formatter.getGender'}"></Text>
+                            <!-- <Text text="{path: 'CreationDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'yyyy-MM-dd'}}"/> -->
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
