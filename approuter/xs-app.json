@@ -1,12 +1,19 @@
 {
-    "welcomeFile": "/",
+    "welcomeFile": "/webapp/",
     "authenticationMethod": "route",
     "routes": [
+        {
+            "source": "^/webapp/(.*)$",
+            "localDir": "bpui",
+            "authenticationType": "xsuaa",
+            "csrfProtection": false
+        },
         {
             "source": "^/service/(.*)$",
             "target": "$1",
             "destination": "backend",
-            "authenticationType": "xsuaa"
+            "authenticationType": "xsuaa",
+            "csrfProtection": false
         }
     ]
 }
