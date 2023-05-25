@@ -22,8 +22,6 @@ sap.ui.define([
                     this._bpModel.setData({ BusinessPartners: businessPartners });
                 } catch (error) {
                     MessageToast.show("Something went wrong... " + error);
-                    // let businessPartners = [{ "BusinessPartner": "1003767", "CreationDate": "/Date(1683849600000)/", "FirstName": "Carla", "IsFemale": true, "IsMale": false, "LastName": "Coe" }, { "BusinessPartner": "1003764", "CreationDate": "/Date(1683849600000)/", "FirstName": "John", "IsFemale": false, "IsMale": true, "LastName": "Doe" }, { "BusinessPartner": "1003765", "CreationDate": "/Date(1683849600000)/", "FirstName": "Jane", "IsFemale": true, "IsMale": false, "LastName": "Roe" }, { "BusinessPartner": "1003766", "CreationDate": "/Date(1683849600000)/", "FirstName": "John", "IsFemale": false, "IsMale": true, "LastName": "Smith" }];
-                    // this._bpModel.setData({ BusinessPartners: businessPartners });
                 };
             },
 
@@ -47,12 +45,13 @@ sap.ui.define([
                                 headers: {
                                     "Content-Type": "application/json"
                                 },
-                                body: {
+                                body: JSON.stringify({
+                                    BusinessPartner: bp.BusinessPartner,
                                     FirstName: bp.FirstName,
                                     LastName: bp.LastName,
                                     IsMale: bp.IsMale,
                                     IsFemale: bp.IsFemale
-                                },
+                                }),
                             });
 
                             const data = await response.json();
