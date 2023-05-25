@@ -1,5 +1,5 @@
 {
-    "welcomeFile": "/",
+    "welcomeFile": "/service/business-partner",
     "authenticationMethod": "route",
     "routes": [
       {
