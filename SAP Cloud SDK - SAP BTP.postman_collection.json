@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "11a040eb-1630-40ff-8df7-2cbab79d9449",
+		"_postman_id": "eca182cb-9f8d-40a1-99b5-8fe47bdf2a19",
 		"name": "SAP Cloud SDK - SAP BTP",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "228851",
-		"_collection_link": "https://blue-spaceship-343355.postman.co/workspace/Learning-Journey~436caf44-047c-4406-add9-0d268a6344e1/collection/228851-11a040eb-1630-40ff-8df7-2cbab79d9449?action=share&creator=228851&source=collection_link"
+		"_collection_link": "https://blue-spaceship-343355.postman.co/workspace/Learning-Journey~436caf44-047c-4406-add9-0d268a6344e1/collection/228851-eca182cb-9f8d-40a1-99b5-8fe47bdf2a19?action=share&creator=228851&source=collection_link"
 	},
 	"item": [
 		{
@@ -20,7 +20,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"FirstName\": \"Kyle\",\r\n  \"IsFemale\": true,\r\n  \"IsMale\": false,\r\n  \"LastName\": \"Coleman\"\r\n}",
+					"raw": "{\r\n    \"houseNumber\": \"123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -28,10 +28,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://bpstandardvdm-agile-chimpanzee-pn.cfapps.us10.hana.ondemand.com/businessPartners/1003767",
+					"raw": "https://cloudsdk_bp_ts-active-dingo-cc.cfapps.us10.hana.ondemand.com/business-partner/1003764/Address/28238",
 					"protocol": "https",
 					"host": [
-						"bpstandardvdm-agile-chimpanzee-pn",
+						"cloudsdk_bp_ts-active-dingo-cc",
 						"cfapps",
 						"us10",
 						"hana",
@@ -39,8 +39,10 @@
 						"com"
 					],
 					"path": [
-						"businessPartners",
-						"1003767"
+						"business-partner",
+						"1003764",
+						"Address",
+						"28238"
 					]
 				}
 			},
@@ -52,10 +54,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://bpstandardvdm-agile-chimpanzee-pn.cfapps.us10.hana.ondemand.com/businessPartners",
+					"raw": "https://cloudsdk_bp_ts-active-dingo-cc.cfapps.us10.hana.ondemand.com/business-partner",
 					"protocol": "https",
 					"host": [
-						"bpstandardvdm-agile-chimpanzee-pn",
+						"cloudsdk_bp_ts-active-dingo-cc",
 						"cfapps",
 						"us10",
 						"hana",
@@ -63,7 +65,7 @@
 						"com"
 					],
 					"path": [
-						"businessPartners"
+						"business-partner"
 					]
 				}
 			},
@@ -73,6 +75,16 @@
 	"auth": {
 		"type": "oauth2",
 		"oauth2": [
+			{
+				"key": "clientSecret",
+				"value": "YmpqrZx9m86QJIzZDjjZTRkcxNs=",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://uxmobilena.authentication.us10.hana.ondemand.com/oauth/token",
+				"type": "string"
+			},
 			{
 				"key": "redirect_uri",
 				"value": "https://approuter-proud-sitatunga-uv.cfapps.us10.hana.ondemand.com",
@@ -84,8 +96,8 @@
 				"type": "boolean"
 			},
 			{
-				"key": "clientSecret",
-				"value": "YmpqrZx9m86QJIzZDjjZTRkcxNs==",
+				"key": "grant_type",
+				"value": "authorization_code",
 				"type": "string"
 			},
 			{
@@ -104,11 +116,6 @@
 				"type": "string"
 			},
 			{
-				"key": "grant_type",
-				"value": "authorization_code",
-				"type": "string"
-			},
-			{
 				"key": "authUrl",
 				"value": "https://uxmobilena.authentication.us10.hana.ondemand.com/oauth/authorize",
 				"type": "string"
@@ -121,11 +128,6 @@
 			{
 				"key": "client_authentication",
 				"value": "header",
-				"type": "string"
-			},
-			{
-				"key": "accessTokenUrl",
-				"value": "https://uxmobilena.authentication.us10.hana.ondemand.com/oauth/token/",
 				"type": "string"
 			}
 		]
