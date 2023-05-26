@@ -73,8 +73,11 @@ public class BusinessPartnerController {
         }
 
         DecodedJWT jwt = authToken.getJwt();
+        String clientId = jwt.getClaim("client_id").asString();
+        logger.info(String.format("Client id: %s", clientId));
+
         final List<String> viewerScope = jwt.getClaim("scope").asList(String.class).stream()
-                .filter(scope -> scope.equals("cloudsdk_bp_ts-dev!t8505.Viewer")).collect(
+                .filter(scope -> scope.equals(clientId.substring(3)+ ".Viewer")).collect(
                         Collectors.toList());
 
         logger.info(String.format("Scope list: %s", viewerScope.toString()));
@@ -106,8 +109,11 @@ public class BusinessPartnerController {
         }
 
         DecodedJWT jwt = authToken.getJwt();
+        String clientId = jwt.getClaim("client_id").asString();
+        logger.info(String.format("Client id: %s", clientId));
+
         final List<String> viewerScope = jwt.getClaim("scope").asList(String.class).stream()
-                .filter(scope -> scope.equals("cloudsdk_bp_ts-dev!t8505.Viewer")).collect(
+                .filter(scope -> scope.equals(clientId.substring(3)+ ".Viewer")).collect(
                         Collectors.toList());
 
         logger.info(String.format("Scope list: %s", viewerScope.toString()));
@@ -137,14 +143,17 @@ public class BusinessPartnerController {
         }
 
         DecodedJWT jwt = authToken.getJwt();
+        String clientId = jwt.getClaim("client_id").asString();
+        logger.info(String.format("Client id: %s", clientId));
+
         final List<String> viewerScope = jwt.getClaim("scope").asList(String.class).stream()
-                .filter(scope -> scope.equals("cloudsdk_bp_ts-dev!t8505.Admin")).collect(
+                .filter(scope -> scope.equals(clientId.substring(3)+ ".Admin")).collect(
                         Collectors.toList());
 
         logger.info(String.format("Scope list: %s", viewerScope.toString()));
 
         if (viewerScope.isEmpty()) {
-            return new ResponseEntity<String>("Missing Viewer scope...  Authorization failed", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<String>("Missing Admin scope...  Authorization failed", HttpStatus.FORBIDDEN);
         }
 
         logger.info("JWT token: ");
@@ -170,14 +179,17 @@ public class BusinessPartnerController {
         }
 
         DecodedJWT jwt = authToken.getJwt();
+        String clientId = jwt.getClaim("client_id").asString();
+        logger.info(String.format("Client id: %s", clientId));
+
         final List<String> viewerScope = jwt.getClaim("scope").asList(String.class).stream()
-                .filter(scope -> scope.equals("cloudsdk_bp_ts-dev!t8505.Admin")).collect(
+                .filter(scope -> scope.equals(clientId.substring(3)+ ".Admin")).collect(
                         Collectors.toList());
 
         logger.info(String.format("Scope list: %s", viewerScope.toString()));
 
         if (viewerScope.isEmpty()) {
-            return new ResponseEntity<String>("Missing Viewer scope...  Authorization failed", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<String>("Missing Admin scope...  Authorization failed", HttpStatus.FORBIDDEN);
         }
 
         logger.info("JWT token: ");
