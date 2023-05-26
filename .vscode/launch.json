@@ -1,0 +1,7 @@
+{
+  "name": "Launch Application",
+  "type": "pwa-node",
+  "request": "launch",
+  "program": "${workspaceFolder}/dist/main",
+  "skipFiles": ["<node_internals>/**"]
+}
