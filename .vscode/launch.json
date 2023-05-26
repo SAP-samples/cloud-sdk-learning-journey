@@ -1,7 +1,21 @@
 {
-  "name": "Launch Application",
-  "type": "pwa-node",
-  "request": "launch",
-  "program": "${workspaceFolder}/dist/main",
-  "skipFiles": ["<node_internals>/**"]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Application",
+      "type": "pwa-node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/main",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Attach Application",
+      "type": "pwa-node",
+      "request": "attach",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/home/vcap/app",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
 }
