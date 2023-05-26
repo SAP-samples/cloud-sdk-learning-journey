@@ -25,10 +25,12 @@ export class BusinessPartnerController {
         let decodedJWT = jwt_decode(myJWT);
         console.log("Decoded JWT token: ", decodedJWT);
 
-        if (!decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Admin") 
-            && !decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Viewer")) {
+        let clientId = decodedJWT["client_id"];
+        console.log("Client ID: ", clientId);
+
+        if (!decodedJWT["scope"].includes(clientId.slice(3) + ".Viewer")) {
             throw new HttpException(
-                `Admin or Viewer role is needed for GET operation.  Authorization failed...`,
+                `Viewer scope is needed for GET operation.  Authorization failed...`,
                 401
             );
         }
@@ -63,10 +65,12 @@ export class BusinessPartnerController {
         let decodedJWT = jwt_decode(myJWT);
         console.log("Decoded JWT token: ", decodedJWT);
 
-        if (!decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Admin") 
-            && !decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Viewer")) {
+        let clientId = decodedJWT["client_id"];
+        console.log("Client ID: ", clientId);
+
+        if (!decodedJWT["scope"].includes(clientId.slice(3) + ".Viewer")) {
             throw new HttpException(
-                `Admin or Viewer role is needed for GET operation.  Authorization failed...`,
+                `Viewer scope is needed for GET operation.  Authorization failed...`,
                 401
             );
         }
@@ -94,9 +98,12 @@ export class BusinessPartnerController {
         let decodedJWT = jwt_decode(myJWT);
         console.log("Decoded JWT token: ", decodedJWT);
 
-        if (!decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Admin")) {
+        let clientId = decodedJWT["client_id"];
+        console.log("Client ID: ", clientId);
+
+        if (!decodedJWT["scope"].includes(clientId.slice(3) + ".Admin")) {
             throw new HttpException(
-                `Admin role is needed for CREATE, UPDATE, DELETE operation.  Authorization failed...`,
+                `Admin scope is needed for CREATE, UPDATE, DELETE operation.  Authorization failed...`,
                 401
             );
         }
@@ -124,9 +131,12 @@ export class BusinessPartnerController {
         let decodedJWT = jwt_decode(myJWT);
         console.log("Decoded JWT token: ", decodedJWT);
 
-        if (!decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Admin")) {
+        let clientId = decodedJWT["client_id"];
+        console.log("Client ID: ", clientId);
+
+        if (!decodedJWT["scope"].includes(clientId.slice(3) + ".Admin")) {
             throw new HttpException(
-                `Admin role is needed for CREATE, UPDATE, DELETE operation.  Authorization failed...`,
+                `Admin scope is needed for CREATE, UPDATE, DELETE operation.  Authorization failed...`,
                 401
             );
         }
@@ -154,9 +164,12 @@ export class BusinessPartnerController {
         let decodedJWT = jwt_decode(myJWT);
         console.log("Decoded JWT token: ", decodedJWT);
 
-        if (!decodedJWT["xs.system.attributes"]["xs.rolecollections"].includes("TypeScript NestJS SDK Tutorial Admin")) {
+        let clientId = decodedJWT["client_id"];
+        console.log("Client ID: ", clientId);
+
+        if (!decodedJWT["scope"].includes(clientId.slice(3) + ".Admin")) {
             throw new HttpException(
-                `Admin role is needed for CREATE, UPDATE, DELETE operation.  Authorization failed...`,
+                `Admin scope is needed for CREATE, UPDATE, DELETE operation.  Authorization failed...`,
                 401
             );
         }
