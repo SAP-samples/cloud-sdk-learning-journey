@@ -1,20 +1,32 @@
-import { Controller, Get, HttpException } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
+import {
+  BusinessPartner,
+  BusinessPartnerAddress,
+} from '../../services/business-partner-service';
 import { BusinessPartnerService } from './business-partner.service';
-import { BusinessPartner } from 'services/business-partner-service';
 
 @Controller('business-partner')
 export class BusinessPartnerController {
-  constructor(private businessPartnerService: BusinessPartnerService) {}
+  constructor(
+    private readonly businessPartnerService: BusinessPartnerService,
+  ) {}
 
   @Get()
-  async getBusinessPartners(): Promise<BusinessPartner[]> {
-    return await this.businessPartnerService
-      .getAllBusinessPartners()
-      .catch((error) => {
-        throw new HttpException(
-          `Failed to get business partners - ${error.message}`,
-          500,
-        );
-      });
+  getAllBusinessPartners(): Promise<BusinessPartner[]> {
+    return this.businessPartnerService.getAllBusinessPartners();
+  }
+
+  @Get('/:id')
+  getBusinessPartnerById(@Param('id') id: string): Promise<BusinessPartner> {
+    return this.businessPartnerService.getBusinessPartnerById(id);
   }
 }
