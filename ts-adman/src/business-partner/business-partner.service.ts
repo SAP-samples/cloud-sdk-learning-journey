@@ -1,13 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import {
   BusinessPartner,
+  BusinessPartnerAddress,
   businessPartnerService,
 } from 'services/business-partner-service';
+
+const { businessPartnerApi, businessPartnerAddressApi } =
+  businessPartnerService();
+const API_KEY = '<YOUR-API-KEY>';
 
 @Injectable()
 export class BusinessPartnerService {
   async getAllBusinessPartners(): Promise<BusinessPartner[]> {
-    const { businessPartnerApi } = businessPartnerService();
     return await businessPartnerApi
       .requestBuilder()
       .getAll()
@@ -17,16 +21,13 @@ export class BusinessPartnerService {
         businessPartnerApi.schema.LAST_NAME,
       )
       .top(50)
-      .addCustomHeaders({ APIKey: 'H6aeNlgso5S5f2sSJbFFoRZXqQembSEW' })
+      .addCustomHeaders({ APIKey: API_KEY })
       .execute({
         url: 'https://sandbox.api.sap.com/s4hanacloud',
       });
   }
 
   async getBusinessPartnerById(id: string) {
-    const { businessPartnerApi } = businessPartnerService();
-    const { businessPartnerAddressApi } = businessPartnerService();
-
     return businessPartnerApi
       .requestBuilder()
       .getByKey(id)
@@ -44,7 +45,50 @@ export class BusinessPartnerService {
           businessPartnerAddressApi.schema.HOUSE_NUMBER,
         ),
       )
-      .addCustomHeaders({ APIKey: 'H6aeNlgso5S5f2sSJbFFoRZXqQembSEW' })
+      .addCustomHeaders({ APIKey: API_KEY })
+      .execute({
+        url: 'https://sandbox.api.sap.com/s4hanacloud',
+      });
+  }
+
+  createAddress(
+    address: Record<string, any>,
+    businessPartnerId: string,
+  ): Promise<BusinessPartnerAddress> {
+    const businessPartnerAddress = businessPartnerAddressApi
+      .entityBuilder()
+      .fromJson({ businessPartner: businessPartnerId, ...address });
+    return businessPartnerAddressApi
+      .requestBuilder()
+      .create(businessPartnerAddress)
+      .addCustomHeaders({ APIKey: API_KEY })
+      .execute({
+        url: 'https://sandbox.api.sap.com/s4hanacloud',
+      });
+  }
+
+  updateAddress(
+    address: Record<string, any>,
+    businessPartnerId: string,
+    addressId: string,
+  ): Promise<BusinessPartnerAddress> {
+    const businessPartnerAddress = businessPartnerAddressApi
+      .entityBuilder()
+      .fromJson({ businessPartner: businessPartnerId, addressId, ...address });
+    return businessPartnerAddressApi
+      .requestBuilder()
+      .update(businessPartnerAddress)
+      .addCustomHeaders({ APIKey: API_KEY })
+      .execute({
+        url: 'https://sandbox.api.sap.com/s4hanacloud',
+      });
+  }
+
+  deleteAddress(businessPartnerId: string, addressId: string): Promise<void> {
+    return businessPartnerAddressApi
+      .requestBuilder()
+      .delete(businessPartnerId, addressId)
+      .addCustomHeaders({ APIKey: API_KEY })
       .execute({
         url: 'https://sandbox.api.sap.com/s4hanacloud',
       });

@@ -29,4 +29,38 @@ export class BusinessPartnerController {
   getBusinessPartnerById(@Param('id') id: string): Promise<BusinessPartner> {
     return this.businessPartnerService.getBusinessPartnerById(id);
   }
+
+  @Post('/:id/address')
+  @HttpCode(201)
+  createAddress(
+    @Body() requestBody: Record<string, any>,
+    @Param('id') id: string,
+  ): Promise<BusinessPartnerAddress> {
+    return this.businessPartnerService.createAddress(requestBody, id);
+  }
+
+  @Put('/:businessPartnerId/address/:addressId')
+  updateBusinessPartnerAddress(
+    @Body() requestBody: Record<string, any>,
+    @Param('businessPartnerId') businessPartnerId: string,
+    @Param('addressId') addressId: string,
+  ): Promise<BusinessPartnerAddress> {
+    return this.businessPartnerService.updateAddress(
+      requestBody,
+      businessPartnerId,
+      addressId,
+    );
+  }
+
+  @Delete('/:businessPartnerId/address/:addressId')
+  @HttpCode(204)
+  deleteBusinessPartnerAddress(
+    @Param('businessPartnerId') businessPartnerId: string,
+    @Param('addressId') addressId: string,
+  ): Promise<void> {
+    return this.businessPartnerService.deleteAddress(
+      businessPartnerId,
+      addressId,
+    );
+  }
 }
