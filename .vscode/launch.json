@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Application",
+      "name": "Launch Application - sandbox",
       "type": "pwa-node",
       "request": "launch",
       "program": "${workspaceFolder}/dist/main",
@@ -10,6 +10,18 @@
       "env": {
         "S4_APIKEY": ">>>YOUR API KEY<<<",
         "S4_URL": "https://sandbox.api.sap.com/s4hanacloud"
+      }
+    },
+    {
+      "name": "Launch Application - s4cloud",
+      "type": "pwa-node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/main",
+      "skipFiles": ["<node_internals>/**"],
+      "env": {
+        "S4_URL": "https://my000000.s4hana.ondemand.com",
+        "S4_USERNAME": "ADDRESS_MANAGER_###",
+        "S4_PASSWORD": "WelcomeToTheClouds1!"
       }
     },
     {
