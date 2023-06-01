@@ -46,7 +46,7 @@ From terminal, in the root folder of project ts-adman please run:
 ```sh
 npm install
 npm run build
-npm run start
+npm run start:dev
 ```
 
 ## Contributing
