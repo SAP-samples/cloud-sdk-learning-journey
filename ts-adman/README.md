@@ -12,6 +12,8 @@ This branch is part of [Exercice:Building a BP address manager extension using T
 
 Current branch **tsadman_v2.0_services** covers the second step of the exercise: setup the back-end services.
 
+**Hint**: You can compare current branch with previous one by opening a new Pull Request in GitHub (**tsadman_v2.0_services** changes to **tsadman_v1.0_hello**), or directly from accessing [this link](https://github.com/SAP-samples/cloud-sdk-learning-journey/compare/tsadman_v1.0_hello...tsadman_v2.0_services?expand=1).
+
 ## Requirements
 
 Make sure you have latest node and npm installed, along with @nestjs/cli installed globally. If you don't, please go to [previous branch](https://github.com/SAP-samples/cloud-sdk-learning-journey/tree/tsadman_v1.0_hello) and follow the steps from requirements section.
