@@ -1,73 +1,62 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Develop Advanced Extensions with SAP Cloud SDK
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Welcome to this repository for the learning journey _Develop Advanced Extensions with SAP Cloud SDK_. We provide here code examples used in the learning journey exercises.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Start the journey
 
-## Description
+As a starting point for your learning experience, we recommend you go to the full learning journey, published on [SAP Learning](https://learning.sap.com) at the following link: [Develop Advanced Extensions with SAP Cloud SDK](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk).
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Current branch
 
-## Installation
+This branch is part of [Exercice:Building a BP address manager extension using TypeScript](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk/exercise-building-a-bp-address-manager-extension-using-typescript_a3b13216-a20d-407c-9469-157628546623)
 
-```bash
-$ npm install
+Current branch **tsadman_v2.0_services** covers the second step of the exercise: setup the back-end services.
+
+## Requirements
+
+Make sure you have latest node and npm installed, along with @nestjs/cli installed globally. If you don't, please go to [previous branch](https://github.com/SAP-samples/cloud-sdk-learning-journey/tree/tsadman_v1.0_hello) and follow the steps from requirements section.
+Make sure you are in the root of ts-adman project. Follow these steps:
+
+1. From terminal run: `npm install -D @sap-cloud-sdk/generator`
+2. In the root project, create new folder with name **service-specifications** . Download the [EDMX file](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) for business partner service. Copy the **API_BUSINESS_PARTNER.edmx** file into **service-specifications** folder.
+3. In same folder **service-specifications** create a new file **options-per-service.json** . Fill this file with the following content:
+
 ```
+{
+  "service-specifications/API_BUSINESS_PARTNER.edmx": {
+    "directoryName": "business-partner-service",
+    "basePath": "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
+    "packageName": "business-partner-service"
+  }
+}
+```
+
+4. From terminal, generate the **BusinessPartner** service using **@sap-cloud-sdk/generator** . Run the command:
+
+```sh
+npx generate-odata-client --input service-specifications --outputDir services --optionsPerService service-specifications/options-per-service.json
+```
+
+Check the services were generated under **service-specifications** folder.
 
 ## Running the app
 
-```bash
-# development
-$ npm run start
+From terminal, in the root folder of project ts-adman please run:
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```sh
+npm install
+npm run build
+npm run start
 ```
 
-## Test
+## Contributing
 
-```bash
-# unit tests
-$ npm run test
+If you have suggestions on how to improve the tutorial, you're welcome to provide your input [here](https://github.com/SAP-samples/cloud-sdk-learning-journey/issues).
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-sdk-learning-journey)](https://api.reuse.software/info/github.com/SAP-samples/cloud-sdk-learning-journey)
