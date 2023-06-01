@@ -5,7 +5,7 @@ import {
   BusinessPartner,
   businessPartnerService,
 } from 'services/business-partner-service';
-import { API_KEY } from './constants';
+import { API_KEY } from 'src/constants';
 
 const { businessPartnerApi, businessPartnerAddressApi } =
   businessPartnerService();

@@ -3,7 +3,7 @@ import {
   BusinessPartnerAddress,
   businessPartnerService,
 } from 'services/business-partner-service';
-import { API_KEY } from './constants';
+import { API_KEY } from 'src/constants';
 const { businessPartnerAddressApi } = businessPartnerService();
 
 @Injectable()
