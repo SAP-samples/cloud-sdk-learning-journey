@@ -7,7 +7,7 @@ import {
 
 const { businessPartnerApi, businessPartnerAddressApi } =
   businessPartnerService();
-const API_KEY = 'H6aeNlgso5S5f2sSJbFFoRZXqQembSEW';
+const API_KEY = '<API_KEY>';
 
 @Injectable()
 export class BusinessPartnerService {
