@@ -5,6 +5,8 @@ import { BusinessPartnerController } from './business-partner/business-partner.c
 import { BusinessPartnerService } from './business-partner/business-partner.service';
 import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { BusinessPartnerAddressController } from './business-partner/business-partner-address.controller';
+import { BusinessPartnerAddressService } from './business-partner/business-partner-address.service';
 
 @Module({
   imports: [
@@ -12,7 +14,15 @@ import { ServeStaticModule } from '@nestjs/serve-static';
       rootPath: join(__dirname, '../..', 'client'),
     }),
   ],
-  controllers: [AppController, BusinessPartnerController],
-  providers: [AppService, BusinessPartnerService],
+  controllers: [
+    AppController,
+    BusinessPartnerController,
+    BusinessPartnerAddressController,
+  ],
+  providers: [
+    AppService,
+    BusinessPartnerService,
+    BusinessPartnerAddressService,
+  ],
 })
 export class AppModule {}

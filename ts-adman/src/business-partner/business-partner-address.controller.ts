@@ -1,4 +1,12 @@
-import { Controller, Post, Body, Patch, Delete, Query } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Patch,
+  Delete,
+  Query,
+  BadRequestException,
+} from '@nestjs/common';
 import { BusinessPartnerAddressService } from './business-partner-address.service';
 import { businessPartnerService } from 'services/business-partner-service';
 
@@ -13,6 +21,7 @@ export class BusinessPartnerAddressController {
       console.log(
         `Failed to create business partner address - ${error.message}`,
       );
+      throw new BadRequestException(error.message);
     });
   }
 
@@ -25,6 +34,7 @@ export class BusinessPartnerAddressController {
           `${bpa.addressId} of business partner ${bpa.businessPartner} ` +
           ` - ${error.message}`,
       );
+      throw new BadRequestException(error.message);
     });
   }
 
@@ -40,6 +50,7 @@ export class BusinessPartnerAddressController {
       console.log(
         `Failed to update business partner address ${addressId} of business partner ${businessPartnerId}:   ${error.message}`,
       );
+      throw new BadRequestException(error.message);
     });
   }
 }

@@ -5,7 +5,7 @@
       "name": "Launch Application - sandbox",
       "type": "pwa-node",
       "request": "launch",
-      "program": "${workspaceFolder}/dist/main",
+      "program": "${workspaceFolder}/ts-adman/dist/src/main",
       "skipFiles": ["<node_internals>/**"],
       "env": {
         "S4_APIKEY": ">>>YOUR API KEY<<<",
@@ -32,6 +32,17 @@
       "localRoot": "${workspaceFolder}",
       "remoteRoot": "/home/vcap/app",
       "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Nest Debug application",
+      "type": "node",
+      "cwd": "${workspaceFolder}/ts-adman/src",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start:debug", "--", "--inspect-brk"],
+      "console": "integratedTerminal",
+      "restart": true,
+      "autoAttachChildProcesses": true
     }
   ]
 }
