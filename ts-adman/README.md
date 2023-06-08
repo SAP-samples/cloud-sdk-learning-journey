@@ -22,14 +22,12 @@ Make sure you are in the root of ts-adman project. Follow these steps:
 
 1. **Install all dependencies defined in the project**: From terminal, run `npm install`
 2. **Install Nest.js node client**: From terminal, run `npm install -g @nestjs/cli`
-3. From terminal, generate the **BusinessPartner** service using **@sap-cloud-sdk/generator** . Run the command:
+3. **Generate the OData services**: From terminal, run `npm run generate:client`
 
-```sh
-npx generate-odata-client --input service-specifications --outputDir services --optionsPerService service-specifications/options-per-service.json
-```
+Check the services were generated under **service-specifications** folder.
 
-Check the services were generated under **service-specifications** folder. 4. Retrieve your API Key: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
-Open the file **constants.ts** from **src** folder. At the beginning of the file, we export a constant for the API KEY. Set the value to be your API Key. Example:
+4. Retrieve your API Key: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
+   Open the file **constants.ts** from **src** folder. At the beginning of the file, we export a constant for the API KEY. Set the value to be your API Key. Example:
 
 ```
 const API_KEY = 'G6aeNlgXqQembSEV';
