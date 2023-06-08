@@ -1,7 +1,13 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import {
+  BadRequestException,
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Query,
+} from '@nestjs/common';
 import { BusinessPartnerService } from './business-partner.service';
 import { BusinessPartner } from 'services/business-partner-service';
-
 @Controller('api/business-partners')
 export class BusinessPartnerController {
   @Get()
@@ -11,12 +17,12 @@ export class BusinessPartnerController {
     if (id == null) {
       return BusinessPartnerService.findAll().catch((error) => {
         console.log(`Failed to get business partners - ${error.message}`);
-        return null;
+        throw new BadRequestException(error.message);
       });
     } else {
       return BusinessPartnerService.findById(id).catch((error) => {
         console.log(`Failed to get business partner ${id} - ${error.message}`);
-        return null;
+        throw new BadRequestException(error.message);
       });
     }
   }

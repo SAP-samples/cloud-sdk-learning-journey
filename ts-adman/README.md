@@ -23,7 +23,6 @@ The requirements from [previous branch](https://github.com/SAP-samples/cloud-sdk
 From terminal, in the root folder of project ts-adman please run:
 
 ```sh
-npm install
 npm run build
 npm run start:dev
 ```

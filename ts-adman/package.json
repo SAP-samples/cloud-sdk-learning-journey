@@ -8,6 +8,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "generate:client": "npx generate-odata-client --input service-specifications --outputDir services --optionsPerService service-specifications/options-per-service.json",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -24,6 +25,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/serve-static": "^3.0.0",
+    "dotenv": "^16.1.4",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
