@@ -13,21 +13,20 @@ Current branch **tsadman_v1.0_hello** is the initial part from the exercise, whe
 
 ## Requirements
 
-If you have already installed node and npm, skip the first step and jump to the second one. To check if you already have them installed, run in terminal:
+If you have already installed node and npm, skip current section.
+
+###### How to check if node is installed on your system
+
+From terminal, run:
 
 ```
 node -v
 npm -v
 ```
 
-1. Install Node and npm following [official documentation](https://nodejs.org/en/download) .
-2. Make sure you are in the root project of ts-adman. Open the terminal in this location and run:
+###### Install node and npm
 
-```
-npm i -g @nestjs/cli
-```
-
-Using the Nest.js generator we generated the hello world project you can find in this branch. We will benefit from other nest cli commands in the following steps.
+If no version is retrieved, please install Node and npm following [official documentation](https://nodejs.org/en/download) .
 
 ## Running the app
 
