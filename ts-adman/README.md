@@ -16,30 +16,19 @@ Current branch **tsadman_v2.0_services** covers the second step of the exercise:
 
 ## Requirements
 
-Make sure you have latest node and npm installed, along with @nestjs/cli installed globally. If you don't, please go to [previous branch](https://github.com/SAP-samples/cloud-sdk-learning-journey/tree/tsadman_v1.0_hello) and follow the steps from requirements section.
+Make sure you have latest node and npm installed. If you don't, please go to [previous branch](https://github.com/SAP-samples/cloud-sdk-learning-journey/tree/tsadman_v1.0_hello) and follow the steps from requirements section.
+
 Make sure you are in the root of ts-adman project. Follow these steps:
 
-1. From terminal run: `npm install -D @sap-cloud-sdk/generator`
-2. In the root project, create new folder with name **service-specifications** . Download the [EDMX file](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) for business partner service. Copy the **API_BUSINESS_PARTNER.edmx** file into **service-specifications** folder.
-3. In same folder **service-specifications** create a new file **options-per-service.json** . Fill this file with the following content:
-
-```
-{
-  "service-specifications/API_BUSINESS_PARTNER.edmx": {
-    "directoryName": "business-partner-service",
-    "basePath": "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
-    "packageName": "business-partner-service"
-  }
-}
-```
-
-4. From terminal, generate the **BusinessPartner** service using **@sap-cloud-sdk/generator** . Run the command:
+1. **Install all dependencies defined in the project**: From terminal, run `npm install`
+2. **Install Nest.js node client**: From terminal, run `npm install -g @nestjs/cli`
+3. From terminal, generate the **BusinessPartner** service using **@sap-cloud-sdk/generator** . Run the command:
 
 ```sh
 npx generate-odata-client --input service-specifications --outputDir services --optionsPerService service-specifications/options-per-service.json
 ```
 
-Check the services were generated under **service-specifications** folder. 5. Retrieve your API Key: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
+Check the services were generated under **service-specifications** folder. 4. Retrieve your API Key: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
 Open the file **constants.ts** from **src** folder. At the beginning of the file, we export a constant for the API KEY. Set the value to be your API Key. Example:
 
 ```
@@ -53,7 +42,6 @@ const API_KEY = 'G6aeNlgXqQembSEV';
 From terminal, in the root folder of project ts-adman please run:
 
 ```sh
-npm install
 npm run build
 npm run start:dev
 ```
