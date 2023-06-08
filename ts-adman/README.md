@@ -16,17 +16,20 @@ Current branch **tsadman_v2.0_services** covers the second step of the exercise:
 
 ## Requirements
 
-Make sure you have latest node and npm installed. If you don't, please go to [previous branch](https://github.com/SAP-samples/cloud-sdk-learning-journey/tree/tsadman_v1.0_hello) and follow the steps from requirements section.
+Make sure you have latest node and npm installed.
 
-Make sure you are in the root of ts-adman project. Follow these steps:
+1. **Install node and npm**
+   If no version is retrieved, please install Node and npm following [official documentation](https://nodejs.org/en/download) .
 
-1. **Install all dependencies defined in the project**: From terminal, run `npm install`
-2. **Install Nest.js node client**: From terminal, run `npm install -g @nestjs/cli`
-3. **Generate the OData services**: From terminal, run `npm run generate:client`
+2. Make sure you are in the root of ts-adman project. **Open the terminal**.
+
+3. **Install all dependencies defined in the project**: run `npm install`
+4. **Install Nest.js node client**: run: `npm install -g @nestjs/cli`
+5. **Generate the OData services**: run: `npm run generate:client`
 
 Check the services were generated under **service-specifications** folder.
 
-4. Retrieve your API Key: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
+6. Retrieve your API Key: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
    Open the file **constants.ts** from **src** folder. At the beginning of the file, we export a constant for the API KEY. Set the value to be your API Key. Example:
 
 ```
