@@ -29,11 +29,11 @@ Make sure you have latest node and npm installed.
 
 Check the services were generated under **service-specifications** folder.
 
-6. Retrieve your API Key: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
-   Open the file **constants.ts** from **src** folder. At the beginning of the file, we export a constant for the API KEY. Set the value to be your API Key. Example:
+6. **Retrieve your API Key**: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
+   Open the environment file **.env** from ts-adman root folder. At the beginning of the file, we define a variable for the API KEY. Set the value to be your API Key. Example:
 
 ```
-const API_KEY = 'G6aeNlgXqQembSEV';
+API_KEY="123456"
 ```
 
 **Hint**: In Visual Studio Code you can navigate to a file using shortcut: Ctrl + P.

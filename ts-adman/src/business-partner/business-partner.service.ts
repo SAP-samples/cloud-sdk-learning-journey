@@ -5,10 +5,11 @@ import {
   BusinessPartner,
   businessPartnerService,
 } from 'services/business-partner-service';
-import { API_KEY } from 'src/constants';
+import { getAPIKey } from 'src/config/config-service';
 
 const { businessPartnerApi, businessPartnerAddressApi } =
   businessPartnerService();
+const API_KEY = getAPIKey();
 
 @Injectable()
 export class BusinessPartnerService {
@@ -31,7 +32,7 @@ export class BusinessPartnerService {
         url: 'https://sandbox.api.sap.com/s4hanacloud',
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
         throw error;
       });
   }
