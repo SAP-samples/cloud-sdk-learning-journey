@@ -9,14 +9,52 @@ As a starting point for your learning experience, we recommend you go to the ful
 ## Current branch
 
 This branch is part of [Exercise:Building a BP address manager extension using TypeScript](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk/exercise-building-a-bp-address-manager-extension-using-typescript_a3b13216-a20d-407c-9469-157628546623)
-
-Current branch **tsadman_v3.0_ui** covers the final step of the exercise where we add the ui application.
+Current branch **tsadman_v3.0_ui** covers the final step of the exercise where we add the UI elements for the application.
 
 **Hint**: You can compare current branch with previous one by opening a new Pull Request in GitHub (**tsadman_v3.0_ui** changes to **tsadman_v2.0_services**), or directly from accessing [this link](https://github.com/SAP-samples/cloud-sdk-learning-journey/compare/tsadman_v2.0_services...tsadman_v3.0_ui?expand=1).
 
 ## Requirements
 
-The requirements from [previous branch](https://github.com/SAP-samples/cloud-sdk-learning-journey/blob/tsadman_v2.0_services/ts-adman/README.md) are mandatory to be applied in order to run the application at the state of current branch.
+Make sure you have latest versions of node and npm installed.
+
+1. **Install node and npm** (skip this test if you have already installed node and npm)
+
+###### How to check if node is installed on your system:
+
+From terminal, run:
+
+```
+node -v
+npm -v
+```
+
+If no version is retrieved, please install node and npm following the steps from [official documentation](https://nodejs.org/en/download) .
+
+2. Make sure you are in the root of **ts-adman** project: **open the terminal**
+
+3. **Install all dependencies defined in the project**: run `npm install`
+4. **Install Nest.js client for node** by running command: `npm install -g @nestjs/cli`
+5. **Generate the OData services** by running command: `npm run generate:client`
+
+Check the services were generated under **service-specifications** folder.
+
+6. **Retrieve your API Key**: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
+   Open the environment file **.env** from **ts-adman** root folder. At the beginning of the file, we define a variable for the API KEY. Set the value to be your API Key. Example:
+
+```
+API_KEY="G6aeNlgsbSEW"
+```
+
+**Hint**: In Visual Studio Code you can navigate to a file using shortcut: Ctrl + P.
+
+## Running the app
+
+From terminal, in the root folder of project ts-adman please run:
+
+```sh
+npm run build
+npm run start:dev
+```
 
 ## Running the app
 
