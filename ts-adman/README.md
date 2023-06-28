@@ -9,7 +9,7 @@ As a starting point for your learning experience, we recommend you go to the ful
 ## Current branch
 
 This branch is part of [Exercice:Building a BP address manager extension using TypeScript](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk/exercise-building-a-bp-address-manager-extension-using-typescript_a3b13216-a20d-407c-9469-157628546623)
-Current branch **tsadman_v1.0_hello** is the initial part from the exercise, where we setup a hello world application using Nest.js.
+Current branch **tsadman_v1.0_hello** is the initial part from the exercise, where we setup a hello world application using Nest.js framework.
 
 ## Requirements
 
@@ -30,7 +30,7 @@ If no version is retrieved, please install Node and npm following [official docu
 
 ## Running the app
 
-From terminal, in the root folder of project ts-adman please run:
+From terminal, in the root folder of project **ts-adman** please run the following commands:
 
 ```sh
 npm install
