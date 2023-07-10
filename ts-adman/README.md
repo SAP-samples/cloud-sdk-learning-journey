@@ -8,7 +8,7 @@ As a starting point for your learning experience, we recommend you go to the ful
 
 ## Current branch
 
-This branch is part of [Exercice:Building a BP address manager extension using TypeScript](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk/exercise-building-a-bp-address-manager-extension-using-typescript_a3b13216-a20d-407c-9469-157628546623)
+This branch is part of [Exercise:Building a BP address manager extension using TypeScript](https://learning.sap.com/learning-journey/develop-advanced-extensions-with-sap-cloud-sdk/exercise-building-a-bp-address-manager-extension-using-typescript_a3b13216-a20d-407c-9469-157628546623)
 Current branch **tsadman_v2.0_services** covers the second step of the exercise, where we generate the back-end services.
 
 **Hint**: You can compare current branch with previous one by opening a new Pull Request in GitHub (**tsadman_v2.0_services** changes to **tsadman_v1.0_hello**), or directly from accessing [this link](https://github.com/SAP-samples/cloud-sdk-learning-journey/compare/tsadman_v1.0_hello...tsadman_v2.0_services?expand=1).
