@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "cwd": "${workspaceFolder}/src",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "name": "Launch Program",
+      "runtimeArgs": ["run", "start:dev"],
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/src/dist/main.ts",
+      "console": "integratedTerminal",
+      "restart": true,
+      "autoAttachChildProcesses": true,
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "env": {
+        "S4_APIKEY": "H6aeNlgso5S5f2sSJbFFoRZXqQembSEW",
+        "S4_URL": "https://sandbox.api.sap.com/s4hanacloud"
+      }
+    }
+  ]
+}

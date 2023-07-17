@@ -3,9 +3,8 @@ import {
   BusinessPartnerAddress,
   businessPartnerService,
 } from 'services/business-partner-service';
-import { getAPIKey } from 'src/config/config-service';
+import { BackendConnector } from 'src/config/backend-connector';
 
-const API_KEY = getAPIKey();
 const { businessPartnerAddressApi } = businessPartnerService();
 
 @Injectable()
@@ -17,11 +16,9 @@ export class BusinessPartnerAddressService {
       .requestBuilder()
       .create(address)
       .addCustomHeaders({
-        APIKey: API_KEY,
+        APIKey: BackendConnector.getApikey(),
       })
-      .execute({
-        url: 'https://sandbox.api.sap.com/s4hanacloud',
-      })
+      .execute(BackendConnector.getDestination())
       .catch((error) => {
         console.log(error);
         throw error;
@@ -36,11 +33,9 @@ export class BusinessPartnerAddressService {
       .update(address)
       .ignoreVersionIdentifier()
       .addCustomHeaders({
-        APIKey: API_KEY,
+        APIKey: BackendConnector.getApikey(),
       })
-      .execute({
-        url: 'https://sandbox.api.sap.com/s4hanacloud',
-      });
+      .execute(BackendConnector.getDestination());
   }
 
   public static delete(
@@ -50,9 +45,6 @@ export class BusinessPartnerAddressService {
     return businessPartnerAddressApi
       .requestBuilder()
       .delete(businessPartner, addressId)
-      .addCustomHeaders({
-        APIKey: API_KEY,
-      })
       .execute({
         url: 'https://sandbox.api.sap.com/s4hanacloud',
       })
