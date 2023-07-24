@@ -19,13 +19,22 @@ export class BackendConnector {
   }
 
   public static getDestination(): HttpDestinationOrFetchOptions {
+    const destinationName: string = process.env.S4_DESTINATION;
     const url: never = process.env.S4_URL as never;
+    const username: never = process.env.S4_USERNAME as never;
+    const password: never = process.env.S4_PASSWORD as never;
 
-    if (!url) {
-      throw new Error(`Sandbox URL is empty env file!`);
+    if (destinationName) {
+      //if env configured for S4HANA, return complete Destination
+      return {
+        destinationName,
+        url,
+        username,
+        password,
+      };
     }
     return {
-      url,
+      url, //return only the url, no destination was configured
     };
   }
 }
