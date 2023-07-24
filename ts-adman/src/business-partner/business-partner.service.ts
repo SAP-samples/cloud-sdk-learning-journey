@@ -25,9 +25,9 @@ export class BusinessPartnerService {
       .filter(businessPartnerApi.schema.BUSINESS_PARTNER_CATEGORY.equals('1'))
       .orderBy(asc(businessPartnerApi.schema.LAST_NAME))
       .addCustomHeaders({
-        APIKey: BackendConnector.getApikey(),
+        APIKey: BackendConnector.getAPIKey(),
       })
-      .execute(BackendConnector.getDestination())
+      .execute(BackendConnector.readDestination())
       .catch((error) => {
         console.log(error.message);
         throw error;
@@ -56,9 +56,9 @@ export class BusinessPartnerService {
         ),
       )
       .addCustomHeaders({
-        APIKey: BackendConnector.getApikey(),
+        APIKey: BackendConnector.getAPIKey(),
       })
-      .execute(BackendConnector.getDestination())
+      .execute(BackendConnector.readDestination())
       .catch((error) => {
         console.log(error);
         throw error;

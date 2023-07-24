@@ -16,9 +16,9 @@ export class BusinessPartnerAddressService {
       .requestBuilder()
       .create(address)
       .addCustomHeaders({
-        APIKey: BackendConnector.getApikey(),
+        APIKey: BackendConnector.getAPIKey(),
       })
-      .execute(BackendConnector.getDestination())
+      .execute(BackendConnector.readDestination())
       .catch((error) => {
         console.log(error);
         throw error;
@@ -33,9 +33,9 @@ export class BusinessPartnerAddressService {
       .update(address)
       .ignoreVersionIdentifier()
       .addCustomHeaders({
-        APIKey: BackendConnector.getApikey(),
+        APIKey: BackendConnector.getAPIKey(),
       })
-      .execute(BackendConnector.getDestination());
+      .execute(BackendConnector.readDestination());
   }
 
   public static delete(

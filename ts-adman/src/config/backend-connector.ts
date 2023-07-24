@@ -1,50 +1,40 @@
 import { HttpDestinationOrFetchOptions } from '@sap-cloud-sdk/connectivity';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+export interface Destination {
+  destinationName: string;
+  url: string;
+  username: string;
+  password: string;
+}
 
 export class BackendConnector {
-  private static destination: HttpDestinationOrFetchOptions;
-  private static apikey: string;
-
-  public static getDestination(): HttpDestinationOrFetchOptions {
-    if (this.destination == null) {
-      // Get the environment variables
-      const destinationName: string = process.env.S4_DESTINATION;
-      const url: string = process.env.S4_URL;
-      const username: string = process.env.S4_USERNAME;
-      const password: string = process.env.S4_PASSWORD;
-
-      if (destinationName != null) {
-        // Get the destination via the Destination service
-        // of Cloud Foundry, in the SCP.
-        this.destination = {
-          destinationName: destinationName,
-        };
-      } else {
-        // Create the destination at run time,
-        // using the URI and credentials
-        // provided in the environment variables.
-        if (username != null && password != null) {
-          // BasicAuthentication
-          this.destination = {
-            url: url,
-            username: username,
-            password: password,
-          };
-        } else {
-          // NoAuthentication
-          this.destination = {
-            url: url,
-          };
-        }
-      }
+  public static getAPIKey(): string {
+    const API_KEY = process.env.API_KEY;
+    if (!API_KEY) {
+      throw new Error(`API Key not found in env file!`);
     }
-    return this.destination;
+    return API_KEY;
   }
 
-  public static getApikey(): string {
-    if (this.apikey == null) {
-      if (process.env.S4_APIKEY == null) this.apikey = '';
-      else this.apikey = process.env.S4_APIKEY;
+  public static readDestination(): HttpDestinationOrFetchOptions {
+    const destinationName: string = process.env.S4_DESTINATION;
+    const url: never = process.env.S4_URL as never;
+
+    if (!destinationName) {
+      return {
+        url,
+      };
     }
-    return this.apikey;
+    const username: never = process.env.S4_USERNAME as never;
+    const password: never = process.env.S4_PASSWORD as never;
+
+    return {
+      destinationName,
+      url,
+      username,
+      password,
+    };
   }
 }

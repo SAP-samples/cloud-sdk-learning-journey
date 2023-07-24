@@ -14,11 +14,7 @@
       "restart": true,
       "autoAttachChildProcesses": true,
       "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
-      "env": {
-        "S4_APIKEY": "H6aeNlgso5S5f2sSJbFFoRZXqQembSEW",
-        "S4_URL": "https://sandbox.api.sap.com/s4hanacloud"
-      }
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
     }
   ]
 }
