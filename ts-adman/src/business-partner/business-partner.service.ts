@@ -27,7 +27,7 @@ export class BusinessPartnerService {
       .addCustomHeaders({
         APIKey: BackendConnector.getAPIKey(),
       })
-      .execute(BackendConnector.readDestination())
+      .execute(BackendConnector.getDestination())
       .catch((error) => {
         console.log(error.message);
         throw error;
@@ -58,7 +58,7 @@ export class BusinessPartnerService {
       .addCustomHeaders({
         APIKey: BackendConnector.getAPIKey(),
       })
-      .execute(BackendConnector.readDestination())
+      .execute(BackendConnector.getDestination())
       .catch((error) => {
         console.log(error);
         throw error;
