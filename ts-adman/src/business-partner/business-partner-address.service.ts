@@ -17,7 +17,7 @@ export class BusinessPartnerAddressService {
       .addCustomHeaders({
         APIKey: BackendConnector.getAPIKey(),
       })
-      .execute(BackendConnector.readDestination())
+      .execute(BackendConnector.getDestination())
       .catch((error) => {
         console.log(error);
         throw error;
@@ -34,7 +34,7 @@ export class BusinessPartnerAddressService {
       .addCustomHeaders({
         APIKey: BackendConnector.getAPIKey(),
       })
-      .execute(BackendConnector.readDestination());
+      .execute(BackendConnector.getDestination());
   }
 
   public static delete(
@@ -44,9 +44,10 @@ export class BusinessPartnerAddressService {
     return businessPartnerAddressApi
       .requestBuilder()
       .delete(businessPartner, addressId)
-      .execute({
-        url: 'https://sandbox.api.sap.com/s4hanacloud',
+      .addCustomHeaders({
+        APIKey: BackendConnector.getAPIKey(),
       })
+      .execute(BackendConnector.getDestination())
       .catch((error) => {
         console.log(error);
         throw error;

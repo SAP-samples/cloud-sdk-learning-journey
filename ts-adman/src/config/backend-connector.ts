@@ -18,23 +18,14 @@ export class BackendConnector {
     return API_KEY;
   }
 
-  public static readDestination(): HttpDestinationOrFetchOptions {
-    const destinationName: string = process.env.S4_DESTINATION;
+  public static getDestination(): HttpDestinationOrFetchOptions {
     const url: never = process.env.S4_URL as never;
 
-    if (!destinationName) {
-      return {
-        url,
-      };
+    if (!url) {
+      throw new Error(`Sandbox URL is empty env file!`);
     }
-    const username: never = process.env.S4_USERNAME as never;
-    const password: never = process.env.S4_PASSWORD as never;
-
     return {
-      destinationName,
       url,
-      username,
-      password,
     };
   }
 }
