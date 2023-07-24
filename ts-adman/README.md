@@ -19,18 +19,7 @@ Make sure you have latest versions of node and npm installed.
 
 1. **Install node and npm** (skip this test if you have already installed node and npm)
 
-###### How to check if node is installed on your system:
-
-From terminal, run:
-
-```
-node -v
-npm -v
-```
-
-If no version is retrieved, please install node and npm following the steps from [official documentation](https://nodejs.org/en/download) .
-
-2. Make sure you are in the root of **ts-adman** project: **open the terminal**
+2. Make sure you are in the root of ts-adman project. **Open the terminal** and run `cd ts-adman`.
 
 3. **Install all dependencies defined in the project**: run `npm install`
 4. **Install Nest.js client for node** by running command: `npm install -g @nestjs/cli`
@@ -38,14 +27,22 @@ If no version is retrieved, please install node and npm following the steps from
 
 Check the services were generated under **services/business-partner-service** folder.
 
-6. **Retrieve your API Key**: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
+6. If you are using Sandbox API, **Retrieve your API Key**: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
    Open the environment file **.env** from **ts-adman** root folder. At the beginning of the file, we define a variable for the API KEY. Set the value to be your API Key. Example:
 
 ```
-API_KEY="G6aeNlgsbSEW"
+API_KEY="G6aeNlgsbSEWfgwws...wFg"
 ```
 
-**Hint**: In Visual Studio Code you can navigate to a file using shortcut: Ctrl + P.
+Then, in same .env file, populate the **S4_URL** variable with the url to your API. If using Sandbox API, the url will be:
+
+```
+S4_URL=https://sandbox.api.sap.com/s4hanacloud
+```
+
+If you are not using Sandbox API, you still have to populate the two environment variables: **API_KEY** and **S4_URL** that are corresponding to your API.
+
+**Hint**: In Visual Studio Code you can navigate to a file using shortcut: Ctrl + P and type the name of the file.
 
 ## Running the app
 
