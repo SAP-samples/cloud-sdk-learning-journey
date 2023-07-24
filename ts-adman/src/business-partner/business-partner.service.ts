@@ -5,11 +5,10 @@ import {
   BusinessPartner,
   businessPartnerService,
 } from 'services/business-partner-service';
-import { getAPIKey } from 'src/config/config-service';
+import { BackendConnector } from 'src/config/backend-connector';
 
 const { businessPartnerApi, businessPartnerAddressApi } =
   businessPartnerService();
-const API_KEY = getAPIKey();
 
 @Injectable()
 export class BusinessPartnerService {
@@ -26,11 +25,9 @@ export class BusinessPartnerService {
       .filter(businessPartnerApi.schema.BUSINESS_PARTNER_CATEGORY.equals('1'))
       .orderBy(asc(businessPartnerApi.schema.LAST_NAME))
       .addCustomHeaders({
-        APIKey: API_KEY,
+        APIKey: BackendConnector.getAPIKey(),
       })
-      .execute({
-        url: 'https://sandbox.api.sap.com/s4hanacloud',
-      })
+      .execute(BackendConnector.readDestination())
       .catch((error) => {
         console.log(error.message);
         throw error;
@@ -59,11 +56,9 @@ export class BusinessPartnerService {
         ),
       )
       .addCustomHeaders({
-        APIKey: API_KEY,
+        APIKey: BackendConnector.getAPIKey(),
       })
-      .execute({
-        url: 'https://sandbox.api.sap.com/s4hanacloud',
-      })
+      .execute(BackendConnector.readDestination())
       .catch((error) => {
         console.log(error);
         throw error;

@@ -36,7 +36,7 @@ If no version is retrieved, please install node and npm following the steps from
 4. **Install Nest.js client for node** by running command: `npm install -g @nestjs/cli`
 5. **Generate the OData services** by running command: `npm run generate:client`
 
-Check the services were generated under **service-specifications** folder.
+Check the services were generated under **services/business-partner-service** folder.
 
 6. **Retrieve your API Key**: Sign into [api.sap.com](https://api.sap.com/api/API_BUSINESS_PARTNER/overview), click on **Show API Key** and copy the value.
    Open the environment file **.env** from **ts-adman** root folder. At the beginning of the file, we define a variable for the API KEY. Set the value to be your API Key. Example:

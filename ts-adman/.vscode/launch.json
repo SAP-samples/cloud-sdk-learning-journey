@@ -3,30 +3,21 @@
   "configurations": [
     {
       "name": "Launch Application - sandbox",
-      "type": "pwa-node",
+      "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/ts-adman/dist/src/main",
-      "skipFiles": ["<node_internals>/**"],
-      "env": {
-        "S4_APIKEY": ">>>YOUR API KEY<<<",
-        "S4_URL": "https://sandbox.api.sap.com/s4hanacloud"
-      }
+      "skipFiles": ["<node_internals>/**"]
     },
     {
       "name": "Launch Application - s4cloud",
-      "type": "pwa-node",
+      "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/dist/main",
-      "skipFiles": ["<node_internals>/**"],
-      "env": {
-        "S4_URL": "https://my000000.s4hana.ondemand.com",
-        "S4_USERNAME": "ADDRESS_MANAGER_###",
-        "S4_PASSWORD": "WelcomeToTheClouds1!"
-      }
+      "skipFiles": ["<node_internals>/**"]
     },
     {
       "name": "Attach Application",
-      "type": "pwa-node",
+      "type": "node",
       "request": "attach",
       "port": 9229,
       "localRoot": "${workspaceFolder}",
