@@ -1,25 +1,24 @@
 <project>
-
+  
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>app</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>8</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
-
+  
   <build>  
       <plugins>  
           <plugin>  
               <!-- Build an executable JAR -->  
               <groupId>org.apache.maven.plugins</groupId>  
               <artifactId>maven-jar-plugin</artifactId>  
-              <version>3.3.0</version>  
               <configuration>  
                   <archive>  
                       <manifest>  
@@ -27,8 +26,21 @@
                       </manifest>  
                   </archive>  
               </configuration>  
-          </plugin>  
+          </plugin> 
+          <plugin>
+            <!-- Include dependencies in the JAR archive -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+              <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin> 
       </plugins>  
-  </build> 
-
+  </build>
+  
 </project>
