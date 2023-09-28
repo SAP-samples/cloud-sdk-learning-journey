@@ -35,7 +35,7 @@ public class BusinessPartnerController {
                                                 .property("Authentication", "NoAuthentication")
                                                 .build().asHttp();
 
-        // Destination to the SAP API Business Hub Sandbox
+        // Destination to the api.sap.com Sandbox
         // final HttpDestination destination = DefaultDestination.builder()
         //                                         .property("Name", "mydestination")
         //                                         .property("URL", "https://sandbox.api.sap.com/s4hanacloud")
