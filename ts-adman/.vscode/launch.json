@@ -8,7 +8,7 @@
             "name": "Launch Application - sandbox",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/ts-adman/dist/src/main",
+            "program": "${workspaceFolder}/dist/src/main",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -19,9 +19,9 @@
         },
         {
             "name": "Launch Application - s4cloud",
-            "type": "pwa-node",
+            "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/ts-adman/dist/src/main",
+            "program": "${workspaceFolder}/dist/src/main",
             "skipFiles": [
                 "<node_internals>/**"
             ],
