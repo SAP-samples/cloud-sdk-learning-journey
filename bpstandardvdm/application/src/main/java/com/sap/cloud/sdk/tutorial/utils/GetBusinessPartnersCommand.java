@@ -37,7 +37,7 @@ public class GetBusinessPartnersCommand {
         this(destination, new DefaultAPIBUSINESSPARTNERService());
     }
 
-    public GetBusinessPartnersCommand(HttpDestination destination, APIBUSINESSPARTNERService service) {
+    public GetBusinessPartnersCommand(HttpDestination destination, DefaultAPIBUSINESSPARTNERService service) {
         this.destination = destination;
         businessPartnerService = service;
 
