@@ -18,7 +18,7 @@ import com.sap.vdm.services.DefaultAPIBUSINESSPARTNERService;
 @RestController
 public class BusinessPartnerController {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerVDMController.class);
+    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerController.class);
 
     private static final String CATEGORY_PERSON = "1";
     private static final String APIKEY_HEADER = "apikey";
