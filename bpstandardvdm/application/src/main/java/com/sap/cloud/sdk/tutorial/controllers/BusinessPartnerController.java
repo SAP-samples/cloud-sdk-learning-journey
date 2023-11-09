@@ -9,17 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestination;
 import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.datamodel.odata.helper.Order;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
+import com.sap.vdm.namespaces.businesspartner.BusinessPartner;
+import com.sap.vdm.services.DefaultAPIBUSINESSPARTNERService;
 
 @RestController
 public class BusinessPartnerController {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerController.class);
+    private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerVDMController.class);
 
     private static final String CATEGORY_PERSON = "1";
     private static final String APIKEY_HEADER = "apikey";
@@ -55,15 +54,15 @@ public class BusinessPartnerController {
         //                                         .build().asHttp();
 
         final List<BusinessPartner> businessPartners =
-                    new DefaultBusinessPartnerService()
+                    new DefaultAPIBUSINESSPARTNERService()
                             .getAllBusinessPartner()
                             .select(BusinessPartner.BUSINESS_PARTNER,
                                     BusinessPartner.LAST_NAME,
                                     BusinessPartner.FIRST_NAME,
-                                    BusinessPartner.IS_MALE,
-                                    BusinessPartner.IS_FEMALE,
-                                    BusinessPartner.CREATION_DATE)
-                            .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(CATEGORY_PERSON))
+                                    BusinessPartner.MALE,
+                                    BusinessPartner.FEMALE,
+                                    BusinessPartner.CREATED_AT)
+                            .filter(BusinessPartner.BP_CATEGORY.eq(CATEGORY_PERSON))
                             .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
                             .top(200)
                             .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)

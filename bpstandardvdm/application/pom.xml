@@ -139,12 +139,6 @@
                             <defaultBasePath>sap/opu/odata/sap/</defaultBasePath>
                             <compileScope>COMPILE</compileScope>
                             <serviceMethodsPerEntitySet>true</serviceMethodsPerEntitySet>
-                            <!-- (Optional) You can add a custom copyright header:
-                <copyrightHeader>Copyright (c) this year, my company</copyrightHeader>
-
-                Or use the SAP copyright header:
-                <sapCopyrightHeader>true</sapCopyrightHeader>
-                -->
                         </configuration>
                     </execution>
                 </executions>
