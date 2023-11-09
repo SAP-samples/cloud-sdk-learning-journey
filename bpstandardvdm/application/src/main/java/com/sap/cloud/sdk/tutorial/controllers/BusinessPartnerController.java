@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestination;
 import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.vdm.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.tutorial.utils.GetBusinessPartnersCommand;
 
 @RestController
