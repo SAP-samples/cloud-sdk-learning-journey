@@ -14,9 +14,10 @@ import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
 import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.datamodel.odata.helper.Order;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
+import com.sap.vdm.namespaces.businesspartner.BusinessPartner;
+import com.sap.vdm.namespaces.businesspartner.BusinessPartnerByKeyFluentHelper;
+import com.sap.vdm.services.APIBUSINESSPARTNERService;
+import com.sap.vdm.services.DefaultAPIBUSINESSPARTNERService;
 
 public class GetBusinessPartnersCommand {
     private static final long serialVersionUID = 1L;
@@ -27,18 +28,18 @@ public class GetBusinessPartnersCommand {
     private static final String APIKEY_HEADER = "apikey";
     private static final String SANDBOX_APIKEY = "YOUR APIKEY GOES HERE";
 
-    private final BusinessPartnerService businessPartnerService;
+    private final APIBUSINESSPARTNERService businessPartnerService;
     private final ResilienceConfiguration myResilienceConfig;
 
     public GetBusinessPartnersCommand(HttpDestination destination) {
-        this(destination, new DefaultBusinessPartnerService());
+        this(destination, new DefaultAPIBUSINESSPARTNERService());
     }
 
-    public GetBusinessPartnersCommand(HttpDestination destination, BusinessPartnerService service) {
+    public GetBusinessPartnersCommand(HttpDestination destination, APIBUSINESSPARTNERService service) {
         this.destination = destination;
         businessPartnerService = service;
 
-        myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
+        myResilienceConfig = ResilienceConfiguration.of(APIBUSINESSPARTNERService.class)
                 .isolationMode(ResilienceIsolationMode.TENANT_AND_USER_OPTIONAL)
                 .timeLimiterConfiguration(
                         ResilienceConfiguration.TimeLimiterConfiguration.of().timeoutDuration(Duration.ofMillis(10000)))
@@ -63,10 +64,10 @@ public class GetBusinessPartnersCommand {
                     .select(BusinessPartner.BUSINESS_PARTNER, 
                             BusinessPartner.LAST_NAME, 
                             BusinessPartner.FIRST_NAME,
-                            BusinessPartner.IS_MALE, 
-                            BusinessPartner.IS_FEMALE, 
-                            BusinessPartner.CREATION_DATE)
-                    .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(CATEGORY_PERSON))
+                            BusinessPartner.MALE, 
+                            BusinessPartner.FEMALE, 
+                            BusinessPartner.CREATED_AT)
+                    .filter(BusinessPartner.BP_CATEGORY.eq(CATEGORY_PERSON))
                     .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
                     .top(200)
                     // TODO: Uncomment the line below, if you are using the sandbox service

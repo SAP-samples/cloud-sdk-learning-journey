@@ -25,7 +25,7 @@ import com.sap.cloud.sdk.tutorial.utils.GetBusinessPartnersCommand;
 import com.sap.cloud.sdk.tutorial.utils.CreateBusinessPartnerCommand;
 import com.sap.cloud.sdk.tutorial.utils.UpdateBusinessPartnerCommand;
 import com.sap.cloud.sdk.tutorial.utils.DeleteBusinessPartnerCommand;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.vdm.namespaces.businesspartner.BusinessPartner;
 
 @RestController
 @RequestMapping("/businessPartners")
