@@ -67,7 +67,8 @@
             "http://localhost:4004/**",
             "https://*.*.applicationstudio.cloud.sap/**",
             "https://*.cfapps.*.hana.ondemand.com/**",
-            "https://*.authentication.*.hana.ondemand.com/**"
+            "https://*.authentication.*.hana.ondemand.com/**",
+            "https://oauth.pstmn.io/v1/callback"
         ]
     }
 }
