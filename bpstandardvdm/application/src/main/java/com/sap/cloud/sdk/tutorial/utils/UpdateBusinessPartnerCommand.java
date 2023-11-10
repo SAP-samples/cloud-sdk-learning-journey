@@ -11,9 +11,10 @@ import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceIsolationMode;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
 import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
+import com.sap.vdm.namespaces.businesspartner.BusinessPartner;
+import com.sap.vdm.namespaces.businesspartner.BusinessPartnerByKeyFluentHelper;
+import com.sap.vdm.services.APIBUSINESSPARTNERService;
+import com.sap.vdm.services.DefaultAPIBUSINESSPARTNERService;
 
 
 public class UpdateBusinessPartnerCommand {
@@ -26,20 +27,20 @@ public class UpdateBusinessPartnerCommand {
     private static final String APIKEY_HEADER = "apikey";
     private static final String SANDBOX_APIKEY = "<YOUR APIKEY GOES HERE>";
 
-    private final BusinessPartnerService businessPartnerService;
+    private final APIBUSINESSPARTNERService businessPartnerService;
     private final ResilienceConfiguration myResilienceConfig;
 
     public UpdateBusinessPartnerCommand(HttpDestination destination, String id, BusinessPartner businessPartner) {
-        this(destination, id, businessPartner, new DefaultBusinessPartnerService());
+        this(destination, id, businessPartner, new DefaultAPIBUSINESSPARTNERService());
     }
 
-    public UpdateBusinessPartnerCommand(HttpDestination destination, String id, BusinessPartner businessPartner, BusinessPartnerService service) {
+    public UpdateBusinessPartnerCommand(HttpDestination destination, String id, BusinessPartner businessPartner, APIBUSINESSPARTNERService service) {
         this.destination = destination;
         this.id = id;
         this.businessPartner = businessPartner;
         businessPartnerService = service;
 
-        myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
+        myResilienceConfig = ResilienceConfiguration.of(APIBUSINESSPARTNERService.class)
                 .isolationMode(ResilienceIsolationMode.TENANT_AND_USER_OPTIONAL)
                 .timeLimiterConfiguration(
                         ResilienceConfiguration.TimeLimiterConfiguration.of().timeoutDuration(Duration.ofMillis(10000)))
@@ -60,9 +61,9 @@ public class UpdateBusinessPartnerCommand {
                     .select(BusinessPartner.BUSINESS_PARTNER, 
                             BusinessPartner.LAST_NAME, 
                             BusinessPartner.FIRST_NAME,
-                            BusinessPartner.IS_MALE, 
-                            BusinessPartner.IS_FEMALE, 
-                            BusinessPartner.CREATION_DATE)
+                            BusinessPartner.MALE, 
+                            BusinessPartner.FEMALE, 
+                            BusinessPartner.CREATED_AT)
                     .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
                     .executeRequest(destination);
 
