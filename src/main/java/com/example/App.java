@@ -15,7 +15,7 @@ public class App {
 
         // Create the destination class
 HttpDestination destination = DefaultDestination.builder()
-    .property("Name", "S4CLOUD")
+    .name("S4CLOUD")
     .property("URL", "https://my000000.s4hana.ondemand.com")
     .property("Type", "HTTP")
     .property("Authentication", "BasicAuthentication")
