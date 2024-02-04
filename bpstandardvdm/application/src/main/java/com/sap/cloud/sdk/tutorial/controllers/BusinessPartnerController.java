@@ -22,7 +22,7 @@ public class BusinessPartnerController {
 
     private static final String CATEGORY_PERSON = "1";
     private static final String APIKEY_HEADER = "apikey";
-    private static final String SANDBOX_APIKEY = "JIzPB8YwC3gFHFMfTmTks6yMxmQGKtuE";
+    private static final String SANDBOX_APIKEY = "<YOUR API KEY GOES HERE>";
 
     @RequestMapping( value = "/getBusinessPartners", method = RequestMethod.GET )
     public String getBusinessPartners() {
