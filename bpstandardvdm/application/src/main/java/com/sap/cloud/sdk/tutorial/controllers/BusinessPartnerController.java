@@ -38,6 +38,8 @@ public class BusinessPartnerController {
     final String destinationName = "mydestination";
     final HttpDestination destination = DestinationAccessor.getDestination(destinationName).asHttp();
 
+    // DESTINATION 1:  Destination to the local Mock Server
+    // Uncomment this section to test with mock server
     // private final HttpDestination destination = DefaultDestination.builder()
     //                                             .property("Name", "mydestination")
     //                                             .property("URL", "http://localhost:8081")
@@ -45,6 +47,8 @@ public class BusinessPartnerController {
     //                                             .property("Authentication", "NoAuthentication")
     //                                             .build().asHttp();
 
+    // DESTINATION 2:  Destination to the api.sap.com Sandbox
+    // Uncomment this section to test with sandbox in api.sap.com  
     // private final HttpDestination destination = DefaultDestination.builder()
     //                                             .property("Name", "mydestination")
     //                                             .property("URL", "https://sandbox.api.sap.com/s4hanacloud/")
