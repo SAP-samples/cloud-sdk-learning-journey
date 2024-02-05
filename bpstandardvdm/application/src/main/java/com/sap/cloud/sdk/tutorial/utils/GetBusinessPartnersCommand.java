@@ -28,7 +28,7 @@ public class GetBusinessPartnersCommand {
     private static final String CATEGORY_PERSON = "1";
     private final HttpDestination destination;
     private static final String APIKEY_HEADER = "apikey";
-    private static final String SANDBOX_APIKEY = "YOUR APIKEY GOES HERE";
+    private static final String SANDBOX_APIKEY = "<YOUR APIKEY GOES HERE>";
 
     private final APIBUSINESSPARTNERService  businessPartnerService;
     private final ResilienceConfiguration myResilienceConfig;

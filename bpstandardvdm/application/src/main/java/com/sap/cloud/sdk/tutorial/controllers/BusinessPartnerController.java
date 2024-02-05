@@ -22,7 +22,8 @@ public class BusinessPartnerController {
     @RequestMapping(value = "/getBusinessPartners", method = RequestMethod.GET)
     public String getBusinessPartners() {
         
-        // Destination to the local Mock Server
+        // DESTINATION 1:  Destination to the local Mock Server
+        // Uncomment this section to test with mock server
         final HttpDestination destination = DefaultDestination.builder()
                                                 .property("Name", "mydestination")
                                                 .property("URL", "http://localhost:8081")
@@ -30,7 +31,8 @@ public class BusinessPartnerController {
                                                 .property("Authentication", "NoAuthentication")
                                                 .build().asHttp();
 
-        // Destination to the SAP API Business Hub Sandbox
+        // DESTINATION 2:  Destination to the api.sap.com Sandbox
+        // Uncomment this section to test with sandbox in api.sap.com
         // final HttpDestination destination = DefaultDestination.builder()
         //                                         .property("Name", "mydestination")
         //                                         .property("URL", "https://sandbox.api.sap.com/s4hanacloud")
@@ -38,7 +40,8 @@ public class BusinessPartnerController {
         //                                         .property("Authentication", "NoAuthentication")
         //                                         .build().asHttp();
 
-        // Destination to a SAP S/4HANA Cloud (public edition) tenant
+        // DESTINATION 3:  Destination to a SAP S/4HANA Cloud (public edition) tenant
+        // Uncomment this section to test with actual SAP S/4HANA Cloud
         //final HttpDestination destination = DefaultDestination.builder()
         //                                         .property("Name", "mydestination")
         //                                         .property("URL", "https://my######.s4hana.ondemand.com")
