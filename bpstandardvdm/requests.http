@@ -9,10 +9,6 @@ GET http://localhost:8080/businessPartners
 GET http://localhost:8080/businessPartners/1003767
 
 
-### GET getBusinessPartner
-GET http://localhost:8080/businessPartners/9980001225
-
-
 ### PUT updateBusinessPartner
 PUT http://localhost:8080/businessPartners/1003767
 Content-Type: application/json
@@ -22,13 +18,4 @@ Content-Type: application/json
   "IsFemale": true,
   "IsMale": false,
   "LastName": "Coe"
-}
-
-
-### PUT updateBusinessPartner
-PUT http://localhost:8080/businessPartners/9980001225
-Content-Type: application/json
-
-{
-    "name": "Kyle"
 }

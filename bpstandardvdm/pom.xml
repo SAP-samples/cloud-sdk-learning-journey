@@ -31,7 +31,7 @@
             <dependency>
                 <groupId>com.sap.cloud.sdk</groupId>
                 <artifactId>sdk-bom</artifactId>
-                <version>4.6.0</version>
+                <version>4.26.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
