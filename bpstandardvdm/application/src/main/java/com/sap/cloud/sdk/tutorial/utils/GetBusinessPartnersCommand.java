@@ -68,7 +68,7 @@ public class GetBusinessPartnersCommand {
                             BusinessPartner.FEMALE, 
                             BusinessPartner.CREATED_AT)
                     .filter(BusinessPartner.BP_CATEGORY.eq(CATEGORY_PERSON))
-                    .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
+                    .orderBy(BusinessPartner.BUSINESS_PARTNER, Order.ASC)
                     .top(200)
                     // TODO: Uncomment the line below, if you are using the sandbox service
                     .withHeader(APIKEY_HEADER, System.getenv("API_KEY"))
