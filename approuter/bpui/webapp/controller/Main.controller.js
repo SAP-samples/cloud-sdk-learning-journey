@@ -17,7 +17,7 @@ sap.ui.define([
                 this._bpModel = this.getOwnerComponent().getModel("bpModel");
 
                 try {
-                    const response = await fetch("https://approuter-proud-sitatunga-uv.cfapps.us10.hana.ondemand.com/service/businessPartners");
+                    const response = await fetch("/service/businessPartners");
                     const businessPartners = await response.json();
                     this._bpModel.setData({ BusinessPartners: businessPartners });
                 } catch (error) {
@@ -40,7 +40,7 @@ sap.ui.define([
                     if (bp.dirty) {
                         delete bp.dirty;
                         try {
-                            const response = await fetch(`https://approuter-proud-sitatunga-uv.cfapps.us10.hana.ondemand.com/service/businessPartners/${bp.BusinessPartner}`, {
+                            const response = await fetch(`/service/businessPartners/${bp.BusinessPartner}`, {
                                 method: "PUT",
                                 headers: {
                                     "Content-Type": "application/json"
