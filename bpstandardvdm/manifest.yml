@@ -14,5 +14,5 @@ applications:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }, memory_calculator: { version: 3.+ } }'
     TARGET_RUNTIME: tomcat10
   services:
-  - myxsuaa
+  - mysecurexsuaa
   - mydestination
