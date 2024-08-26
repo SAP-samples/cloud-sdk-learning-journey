@@ -17,7 +17,7 @@ SETUP & DEPLOY:
 ----------------------------------------------------------------------------------------
 
 cf create-service destination lite mydestination
-cf create-service xsuaa application myxsuaa
+cf create-service xsuaa application mysecurexsuaa
 
 mvn clean install -Dmaven.test.skip=true
 cf push
